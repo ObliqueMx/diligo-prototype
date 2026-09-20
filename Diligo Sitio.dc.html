@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0}
+  body{background:#FAFBFB;-webkit-font-smoothing:antialiased}
+  a{color:oklch(.45 .11 300);text-decoration:none}
+  a:hover{color:oklch(.38 .11 300)}
+</style>
+</helmet>
+
+<div style="--ac:{{ ac }};--acT:{{ acT }};--acS:{{ acS }};--acD:{{ acD }};--ac2:{{ ac2 }};--ac3:{{ ac3 }};--ac4:{{ ac4 }};font-family:Geist,system-ui,sans-serif;color:#111417;background:#FAFBFB;font-size:16px;line-height:1.5;text-wrap:pretty">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(250,251,251,.92);backdrop-filter:blur(8px);border-bottom:1px solid #E4E8EA">
+    <div style="max-width:1120px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:28px">
+      <a href="#top" style="display:flex;align-items:center;gap:9px;color:#111417">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 8l8 8"></path><path d="M16 8l-8 8" stroke="var(--ac,oklch(.55 .11 300))"></path></svg>
+        <span style="font:700 22px/1 Geist,sans-serif;letter-spacing:-.045em">diligo</span>
+      </a>
+      <nav style="display:flex;gap:22px;margin-left:auto;font-size:14px;font-weight:500;flex-wrap:wrap">
+        <a href="#problema" style="color:#3A4147">El problema</a>
+        <a href="#producto" style="color:#3A4147">Qué hace</a>
+        <a href="#exposicion" style="color:#3A4147">Exposición</a>
+        <a href="#diagnostico" style="color:#3A4147">Diagnóstico</a>
+        <a href="#precio" style="color:#3A4147">Precio</a>
+        <a href="#preguntas" style="color:#3A4147">Preguntas</a>
+      </nav>
+      <a href="#contacto" style="height:38px;padding:0 16px;display:inline-flex;align-items:center;border-radius:6px;background:var(--ac,oklch(.55 .11 300));color:#fff;font-size:14px;font-weight:600;white-space:nowrap">Empezar el diagnóstico</a>
+    </div>
+  </header>
+
+  <section id="top" style="background:#0E1113;color:#EEF1F2;border-bottom:1px solid #0E1113">
+    <div style="max-width:1120px;margin:0 auto;padding:96px 24px 88px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+      <div>
+        <div style="font:500 12px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--acD,oklch(.72 .11 300))">Materialidad · Artículo 69-B · REPSE</div>
+        <h1 style="font:600 clamp(34px,5vw,58px)/1.04 Geist,sans-serif;letter-spacing:-.045em;margin:22px 0 0">Cuando llegue el requerimiento,<br>el expediente ya está armado.</h1>
+        <p style="font-size:clamp(17px,2vw,20px);line-height:1.55;color:#B9C1C7;margin:26px 0 0;max-width:520px">Diligo vigila a tus proveedores todos los días, documenta la operación mientras sucede y conserva la evidencia lista para exportar. La materialidad se construye antes, no después.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:34px">
+          <a href="#contacto" style="height:46px;padding:0 22px;display:inline-flex;align-items:center;border-radius:6px;background:var(--ac,oklch(.55 .11 300));color:#fff;font-size:15px;font-weight:600">Empezar el diagnóstico</a>
+          <a href="#producto" style="height:46px;padding:0 22px;display:inline-flex;align-items:center;border-radius:6px;border:1px solid #2A3035;color:#EEF1F2;font-size:15px;font-weight:600">Ver cómo funciona</a>
+        </div>
+      </div>
+
+      <div style="background:#171B1E;border:1px solid #262B2F;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;color:#8B949C">
+          <span>BARRIDO 06:40</span><span>1,240 RFC · 4 FUENTES</span>
+        </div>
+        <div style="background:#0E1113;border:1px solid #2A3035;border-radius:8px;padding:16px">
+          <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:oklch(.72 .17 25)"><span style="width:7px;height:7px;border-radius:50%;background:oklch(.62 .19 25)"></span>CRÍTICO · LISTA DEFINITIVA 69-B</div>
+          <div style="font:600 19px/1.25 Geist,sans-serif;letter-spacing:-.02em;margin-top:10px">Servicios Integrales del Bajío</div>
+          <div style="font:400 12.5px/1.7 'Geist Mono',ui-monospace,monospace;color:#8B949C;margin-top:6px">SIB040512AB3<br>$2,340,118.00 · 14 CFDI · 2024–25</div>
+          <div style="font-size:13px;color:#B9C1C7;line-height:1.55;margin-top:12px">Publicada el 12 de agosto en el DOF. Los CFDI del periodo señalado no producen efecto fiscal. Plazo para acreditar materialidad: 30 días hábiles.</div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:6px 16px;margin-top:16px;align-items:center">
+            <span style="font-size:12px;color:#8B949C">Expediente</span><span style="font:500 12px 'Geist Mono',monospace;color:var(--acD,oklch(.72 .11 300))">72% completo</span>
+            <div style="grid-column:1/-1;height:6px;background:#22282C;border-radius:999px;overflow:hidden"><div style="width:72%;height:100%;background:var(--acD,oklch(.72 .11 300));border-radius:999px"></div></div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#8B949C;line-height:1.5">Vista del producto. La alerta llega con la fuente oficial, la fecha de publicación y el monto facturado ya cruzado contra tus CFDI.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problema" style="border-bottom:1px solid #E4E8EA">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">01 · El problema</div>
+      <h2 style="font:600 clamp(28px,4vw,42px)/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:18px 0 0;max-width:760px">La evidencia que te piden es la que nunca se creó.</h2>
+      <p style="font-size:17px;line-height:1.6;color:#3A4147;margin:18px 0 0;max-width:680px">El proveedor operó hace tres años. La persona que lo contrató ya no está. El correo con los entregables está en una bandeja que nadie administra. Y el plazo corre.</p>
+
+      <div style="margin-top:44px;border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:26px 28px;display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;justify-content:space-between;gap:16px;font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;color:#6C757D"><span>DÍA 0 · LLEGA EL REQUERIMIENTO</span><span style="text-align:right">DÍA 30 · VENCE EL PLAZO</span></div>
+
+        <div style="display:grid;grid-template-columns:minmax(64px,auto) minmax(0,1fr);gap:10px 18px;align-items:center">
+          <div style="font:600 13px Geist,sans-serif;color:oklch(.45 .19 25)">Reactivo</div>
+          <div style="display:flex;height:44px;border:1px solid oklch(.88 .05 25);border-radius:6px;overflow:hidden">
+            <div style="flex:1;min-width:0;background:repeating-linear-gradient(135deg,oklch(.96 .02 25) 0 7px,#fff 7px 14px);display:flex;align-items:center;padding:0 12px;font-size:12.5px;font-weight:600;color:oklch(.45 .19 25);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Arqueología interna · días 1–15</div>
+            <div style="flex:1;min-width:0;background:oklch(.95 .04 25);display:flex;align-items:center;padding:0 12px;font-size:12.5px;font-weight:600;color:oklch(.45 .19 25);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-left:1px solid oklch(.88 .05 25)">Se arma lo que se pueda · 16–30</div>
+          </div>
+          <div></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:#6C757D"><span style="flex:none;width:120px;max-width:40%;height:5px;border-radius:999px;background:oklch(.88 .05 25)"></span>Expediente reconstruido después del hecho. Caro de producir, fácil de objetar.</div>
+
+          <div style="font:600 13px Geist,sans-serif;color:var(--acT,oklch(.45 .11 300));margin-top:10px">Activo</div>
+          <div style="height:44px;border:1px solid var(--ac,oklch(.55 .11 300));border-radius:6px;background:var(--acS,oklch(.95 .03 300));display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 12px;margin-top:10px">
+            <span style="font-size:12.5px;font-weight:600;color:var(--acT,oklch(.45 .11 300));white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Documentado mientras el servicio se prestaba</span>
+            <span style="font:500 12px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300));flex:none">100%</span>
+          </div>
+          <div></div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:#6C757D"><span style="flex:none;width:120px;max-width:40%;height:5px;border-radius:999px;background:var(--ac,oklch(.55 .11 300))"></span>El requerimiento se contesta con una exportación.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="producto" style="border-bottom:1px solid #E4E8EA;background:#fff">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">02 · Qué hace</div>
+      <h2 style="font:600 clamp(28px,4vw,42px)/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:18px 0 0;max-width:760px">Tres módulos. Un solo expediente por proveedor.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px">
+        <div style="border:1px solid #E4E8EA;border-radius:10px;padding:26px;background:#FAFBFB;display:flex;flex-direction:column;gap:12px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--ac,oklch(.55 .11 300))" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <h3 style="font:600 20px/1.25 Geist,sans-serif;letter-spacing:-.02em;margin:0">Vigilancia</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">Cruce diario de tu universo completo de proveedores contra las publicaciones oficiales: 69, 69-B, REPSE y otras fuentes. Cada alerta llega con la fuente, la fecha de publicación y los CFDI afectados.</p>
+          <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;overflow:hidden;font-size:12.5px">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #EEF1F2">
+              <div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:7px;height:7px;border-radius:50%;background:oklch(.62 .19 25);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Servicios Integrales del Bajío</span></div>
+              <span style="font:500 11px 'Geist Mono',monospace;color:oklch(.45 .19 25);white-space:nowrap">69-B definitivo</span>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid #EEF1F2">
+              <div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:7px;height:7px;border-radius:50%;background:oklch(.62 .17 50);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Ingeniería Cantera</span></div>
+              <span style="font:500 11px 'Geist Mono',monospace;color:oklch(.45 .16 50);white-space:nowrap">69-B presunto</span>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px">
+              <div style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:7px;height:7px;border-radius:50%;background:oklch(.7 .13 85);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Papelería Corporativa Mérida</span></div>
+              <span style="font:500 11px 'Geist Mono',monospace;color:#6C757D;white-space:nowrap">69 · no localizado</span>
+            </div>
+            <div style="padding:9px 12px;background:#FAFBFB;border-top:1px solid #E4E8EA;font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.04em">1,240 RFC · BARRIDO 06:40 · 4 FUENTES</div>
+          </div>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:10px;padding:26px;background:#FAFBFB;display:flex;flex-direction:column;gap:12px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--ac,oklch(.55 .11 300))" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M9 13l2 2 4-4"></path></svg>
+          <h3 style="font:600 20px/1.25 Geist,sans-serif;letter-spacing:-.02em;margin:0">Expedientes</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">Checklist por tipo de servicio: bloque contractual, bloque operativo y entregables. Quien estuvo en la obra sube la foto, la bitácora o el acta desde su teléfono, con liga directa y sin licencia.</p>
+          <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:12px;display:flex;flex-direction:column;gap:9px;font-size:12.5px">
+            <div style="display:flex;align-items:center;gap:8px"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--ac,oklch(.55 .11 300))" stroke-width="2" stroke-linecap="round"><path d="M3 8.5l3 3 7-7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Contrato y anexos firmados</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="var(--ac,oklch(.55 .11 300))" stroke-width="2" stroke-linecap="round"><path d="M3 8.5l3 3 7-7"></path></svg><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Alta REPSE vigente</span></div>
+            <div style="display:flex;align-items:center;gap:8px;color:oklch(.45 .16 50)"><span style="width:15px;height:15px;border-radius:4px;border:1.5px dashed oklch(.72 .13 50);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Bitácora de campo · 2 de 5</span></div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:2px">
+              <div style="height:44px;border-radius:5px;background:repeating-linear-gradient(135deg,#EEF1F2 0 6px,#F7F9F9 6px 12px);border:1px solid #E4E8EA"></div>
+              <div style="height:44px;border-radius:5px;background:repeating-linear-gradient(135deg,#EEF1F2 0 6px,#F7F9F9 6px 12px);border:1px solid #E4E8EA"></div>
+              <div style="height:44px;border-radius:5px;border:1.5px dashed #D5DADD;display:flex;align-items:center;justify-content:center;font:500 9px 'Geist Mono',monospace;color:#8B949C;text-align:center;padding:2px">FALTA<br>FOTO</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-top:2px"><span style="color:#6C757D">Completitud</span><span style="font:500 12px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300))">72%</span></div>
+            <div style="height:6px;border-radius:999px;background:#EEF1F2;overflow:hidden"><div style="width:72%;height:100%;border-radius:999px;background:var(--ac,oklch(.55 .11 300))"></div></div>
+          </div>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:10px;padding:26px;background:#FAFBFB;display:flex;flex-direction:column;gap:12px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--ac,oklch(.55 .11 300))" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg>
+          <h3 style="font:600 20px/1.25 Geist,sans-serif;letter-spacing:-.02em;margin:0">Priorización</h3>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">Nadie documenta mil proveedores. Diligo ordena por monto facturado, tipo de servicio y exposición real, y te dice por dónde empezar el lunes. El resto queda en vigilancia.</p>
+          <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 12px;display:flex;flex-direction:column;gap:10px;font-size:12px">
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Vidrio y Aluminio Peninsular</span><span style="font:500 11px 'Geist Mono',monospace;white-space:nowrap">$3.2 MDP</span>
+              <div style="grid-column:1/-1;height:8px;border-radius:2px;background:var(--ac,oklch(.55 .11 300))"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Ingeniería Cantera</span><span style="font:500 11px 'Geist Mono',monospace;white-space:nowrap">$2.7 MDP</span>
+              <div style="grid-column:1/-1;height:8px;border-radius:2px;width:84%;background:var(--ac2,oklch(.63 .1 300))"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Medios Digitales Anáhuac</span><span style="font:500 11px 'Geist Mono',monospace;white-space:nowrap">$2.1 MDP</span>
+              <div style="grid-column:1/-1;height:8px;border-radius:2px;width:65%;background:var(--ac3,oklch(.72 .08 300))"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:center;color:#6C757D">
+              <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Logística Frontera Norte</span><span style="font:500 11px 'Geist Mono',monospace;white-space:nowrap">$960 K</span>
+              <div style="grid-column:1/-1;height:8px;border-radius:2px;width:30%;background:#D5DADD"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:10px;border-top:1px solid #EEF1F2;padding-top:9px;font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.04em"><span>PRIMEROS 12</span><span>73% DEL GASTO</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px;border:1px solid #E4E8EA;border-radius:10px;padding:24px 26px;font-size:13.5px;color:#3A4147;line-height:1.55">
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Usuarios ilimitados</b>Compras, obra, jurídico y contabilidad en el mismo expediente.</div>
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Acceso para tu asesor</b>Tu despacho externo entra sin costo y revisa lo que le toca.</div>
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Tus datos son tuyos</b>Exportación completa siempre disponible, renueves o no.</div>
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Multi-RFC</b>Grupos corporativos: un proveedor se documenta una vez para todo el grupo.</div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showMath }}" hint-placeholder-val="{{ true }}">
+  <section id="exposicion" style="border-bottom:1px solid #E4E8EA">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:start">
+      <div>
+        <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">03 · La exposición</div>
+        <h2 style="font:600 clamp(28px,4vw,42px)/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:18px 0 0">La contingencia se parece al monto facturado.</h2>
+        <p style="font-size:17px;line-height:1.6;color:#3A4147;margin:18px 0 0">Cuando un proveedor cae en lista definitiva, el efecto fiscal de sus comprobantes se pierde. No es una fracción del monto: entre IVA acreditado, deducción rechazada, actualización, recargos y multa, la exposición se acerca a lo facturado.</p>
+        <p style="font-size:15px;line-height:1.6;color:#6C757D;margin:16px 0 0">Un solo proveedor de tamaño medio puede costar más que años de prevención. Y el 69-B no es el único escenario: un proveedor de servicios especializados sin REPSE genera un rechazo similar sin que haya lista de por medio.</p>
+      </div>
+      <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+        <div style="padding:20px 24px;border-bottom:1px solid #E4E8EA">
+          <div style="font:500 11px 'Geist Mono',monospace;letter-spacing:.06em;color:#6C757D">ESCENARIO · PROVEEDOR CON $10 MDP FACTURADOS</div>
+        </div>
+        <div style="padding:22px 24px 24px;display:flex;flex-direction:column;gap:22px">
+          <div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-size:13px;color:#6C757D">Facturado por ese proveedor</span><span style="font:500 15px 'Geist Mono',monospace">$10.0 MDP</span></div>
+            <div style="height:30px;border-radius:4px;background:#EEF1F2;margin-top:8px"></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-size:13px;color:#6C757D">Contingencia estimada</span><span style="font:500 22px 'Geist Mono',monospace;letter-spacing:-.02em;color:var(--acT,oklch(.45 .11 300))">$8 – 9 MDP</span></div>
+            <div style="display:flex;height:30px;border-radius:4px;overflow:hidden;background:#EEF1F2;margin-top:8px">
+              <div style="width:16%;background:var(--ac,oklch(.55 .11 300))"></div>
+              <div style="width:30%;background:var(--ac2,oklch(.63 .1 300))"></div>
+              <div style="width:12%;background:var(--ac3,oklch(.72 .08 300))"></div>
+              <div style="width:27%;background:var(--ac4,oklch(.82 .06 300))"></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 20px;font-size:12.5px">
+            <div style="display:flex;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:var(--ac,oklch(.55 .11 300));flex:none;margin-top:4px"></span><span><b style="display:block">IVA acreditado</b><span style="color:#6C757D">16% · $1.6 MDP</span></span></div>
+            <div style="display:flex;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:var(--ac2,oklch(.63 .1 300));flex:none;margin-top:4px"></span><span><b style="display:block">ISR rechazado</b><span style="color:#6C757D">30% · $3.0 MDP</span></span></div>
+            <div style="display:flex;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:var(--ac3,oklch(.72 .08 300));flex:none;margin-top:4px"></span><span><b style="display:block">Actualización y recargos</b><span style="color:#6C757D">según antigüedad</span></span></div>
+            <div style="display:flex;gap:8px"><span style="width:10px;height:10px;border-radius:2px;background:var(--ac4,oklch(.82 .06 300));flex:none;margin-top:4px"></span><span><b style="display:block">Multa</b><span style="color:#6C757D">55% – 75%</span></span></div>
+          </div>
+        </div>
+        <div style="padding:14px 24px;background:#FAFBFB;border-top:1px solid #E4E8EA;font-size:12px;line-height:1.55;color:#6C757D">Estimación ilustrativa con tasas generales vigentes, sujeta a revisión de tu asesor fiscal. El diagnóstico calcula este escenario con tus propios CFDI y proveedores.</div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="diagnostico" style="border-bottom:1px solid #E4E8EA;background:#fff">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">04 · Cómo empieza</div>
+      <h2 style="font:600 clamp(28px,4vw,42px)/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:18px 0 0;max-width:760px">Empieza con un diagnóstico sobre tus propios CFDI.</h2>
+      <p style="font-size:17px;line-height:1.6;color:#3A4147;margin:18px 0 0;max-width:680px">Sin integraciones, sin proyecto de implementación y sin tocar tu ERP. Subes los comprobantes que ya tienes y el reporte se genera solo.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;margin-top:44px;align-items:start">
+        <div style="border:1px solid #E4E8EA;border-radius:10px;background:#FAFBFB;padding:24px;display:flex;flex-direction:column;gap:22px">
+          <div style="font:500 11px 'Geist Mono',monospace;letter-spacing:.06em;color:#6C757D">DE TODO TU GASTO A DÓNDE EMPEZAR</div>
+          <div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-size:13px;color:#3A4147">Proveedores en tus CFDI</span><span style="font:500 17px 'Geist Mono',monospace">1,240</span></div>
+            <div style="height:16px;border-radius:3px;background:#E4E8EA;margin-top:8px"></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-size:13px;color:#3A4147">Con señal en listas oficiales</span><span style="font:500 17px 'Geist Mono',monospace">47</span></div>
+            <div style="height:16px;border-radius:3px;width:34%;background:var(--ac3,oklch(.72 .08 300));margin-top:8px"></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:baseline"><span style="font-size:13px;font-weight:600">A documentar primero</span><span style="font:500 17px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300))">12</span></div>
+            <div style="height:16px;border-radius:3px;width:12%;background:var(--ac,oklch(.55 .11 300));margin-top:8px"></div>
+          </div>
+          <div style="font-size:12.5px;color:#6C757D;line-height:1.55;border-top:1px solid #E4E8EA;padding-top:14px">Cifras de ejemplo. El diagnóstico las calcula con tu propio universo.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px 16px;align-items:start">
+          <div style="font:500 13px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300));padding-top:2px">01</div>
+          <div><div style="font:600 17px/1.3 Geist,sans-serif;letter-spacing:-.02em">Contratas el diagnóstico</div><p style="font-size:14px;line-height:1.6;color:#3A4147;margin:5px 0 0">En línea. Se crea tu cuenta y queda lista para cargar.</p></div>
+          <div style="font:500 13px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300));padding-top:2px">02</div>
+          <div><div style="font:600 17px/1.3 Geist,sans-serif;letter-spacing:-.02em">Cargas tus CFDI</div><p style="font-size:14px;line-height:1.6;color:#3A4147;margin:5px 0 0">XML recibidos del ejercicio anterior. Arrastras la carpeta o el ZIP tal como está.</p></div>
+          <div style="font:500 13px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300));padding-top:2px">03</div>
+          <div><div style="font:600 17px/1.3 Geist,sans-serif;letter-spacing:-.02em">Recibes el reporte</div><p style="font-size:14px;line-height:1.6;color:#3A4147;margin:5px 0 0">Proveedores con nombre y monto, exposición estimada y orden de atención.</p></div>
+          <div style="font:500 13px 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300));padding-top:2px">04</div>
+          <div><div style="font:600 17px/1.3 Geist,sans-serif;letter-spacing:-.02em">Se acredita a tu suscripción</div><p style="font-size:14px;line-height:1.6;color:#3A4147;margin:5px 0 0">Lo que pagaste por el diagnóstico se abona completo al primer año, si contratas dentro de 90 días.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="precio" style="border-bottom:1px solid #E4E8EA">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">05 · Precio</div>
+      <h2 style="font:600 clamp(28px,4vw,42px)/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:18px 0 0;max-width:820px">Cuánto cuesta, y cómo se calcula.</h2>
+      <p style="font-size:17px;line-height:1.6;color:#3A4147;margin:18px 0 0;max-width:680px">El diagnóstico tiene precio de lista. La suscripción se cotiza sobre el gasto que vigila, y ese dato sale de tus propios CFDI: no tienes que declararlo en una llamada.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:40px;align-items:start">
+
+        <div style="border:1px solid var(--ac,oklch(.55 .11 300));border-radius:10px;background:var(--acS,oklch(.95 .03 300));padding:28px;display:flex;flex-direction:column;gap:16px">
+          <div style="font:500 11px 'Geist Mono',monospace;letter-spacing:.08em;color:var(--acT,oklch(.45 .11 300))">DIAGNÓSTICO · PAGO ÚNICO</div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+            <span style="font:500 clamp(34px,5vw,46px)/1 'Geist Mono',monospace;letter-spacing:-.03em">{{ precioDx }}</span>
+            <span style="font-size:13px;color:#3A4147">más IVA</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;padding:12px 14px;background:#fff;border:1px solid var(--ac,oklch(.55 .11 300));border-radius:8px">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--acT,oklch(.45 .11 300))" stroke-width="2" stroke-linecap="round"><path d="M3 8.5l3 3 7-7"></path></svg>
+            <span style="font-size:13.5px;font-weight:600;color:var(--acT,oklch(.45 .11 300))">Se acredita al 100% contra el primer año</span>
+          </div>
+          <div style="font-size:13.5px;line-height:1.6;color:#3A4147">Si contratas dentro de 90 días, lo que pagaste por el diagnóstico se abona completo a tu primera suscripción. En la práctica es el costo de averiguar tu exposición, no un costo adicional.</div>
+          <div style="border-top:1px solid var(--ac,oklch(.55 .11 300));padding-top:14px;display:flex;flex-direction:column;gap:7px;font-size:13px;color:#3A4147">
+            <span>Ejercicio fiscal completo, tu universo entero de proveedores.</span>
+            <span>Reporte con nombres, montos y exposición estimada.</span>
+            <span>Sin implementación, sin acceso a tus sistemas.</span>
+          </div>
+        </div>
+
+        <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:28px;display:flex;flex-direction:column;gap:20px">
+          <div>
+            <div style="font:500 11px 'Geist Mono',monospace;letter-spacing:.08em;color:#6C757D">SUSCRIPCIÓN · RENTA ANUAL POR RFC</div>
+            <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:12px 0 0">La cifra depende del gasto que Diligo vigila. Se calcula con el total de CFDI recibidos del ejercicio anterior, se re-mide una vez al año y no se mueve por un ejercicio atípico.</p>
+          </div>
+
+          <sc-if value="{{ showPct }}" hint-placeholder-val="{{ true }}">
+          <div style="border:1px solid #E4E8EA;border-radius:8px;background:#FAFBFB;padding:18px;display:flex;flex-direction:column;gap:16px">
+            <div style="font-size:13px;font-weight:600">Menos de 0.2% del gasto vigilado, y el porcentaje baja conforme el gasto sube.</div>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:#3A4147"><span>Gasto menor</span><span style="font:500 12.5px 'Geist Mono',monospace">0.18%</span></div>
+                <div style="height:10px;border-radius:2px;background:var(--ac,oklch(.55 .11 300));margin-top:6px"></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:#3A4147"><span>Gasto intermedio</span><span style="font:500 12.5px 'Geist Mono',monospace">0.06%</span></div>
+                <div style="height:10px;border-radius:2px;width:33%;background:var(--ac2,oklch(.63 .1 300));margin-top:6px"></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;gap:12px;font-size:12.5px;color:#3A4147"><span>Gasto mayor</span><span style="font:500 12.5px 'Geist Mono',monospace">0.02%</span></div>
+                <div style="height:10px;border-radius:2px;width:11%;background:var(--ac3,oklch(.72 .08 300));margin-top:6px"></div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:#6C757D;line-height:1.55;border-top:1px solid #E4E8EA;padding-top:12px">Precio anual como porcentaje del gasto vigilado. La empresa grande paga más en absoluto y menos en relativo.</div>
+          </div>
+          </sc-if>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;font-size:13px;line-height:1.6">
+            <div>
+              <div style="font-weight:600;margin-bottom:8px">Sí mueve el precio</div>
+              <div style="display:flex;flex-direction:column;gap:6px;color:#3A4147">
+                <span>Plazo multianual con precio fijo.</span>
+                <span>RFC adicionales del grupo, en escalera descendente.</span>
+                <span>Almacenamiento de evidencia por arriba del incluido.</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-weight:600;margin-bottom:8px">Nunca se cobra por</div>
+              <div style="display:flex;flex-direction:column;gap:6px;color:#6C757D">
+                <span>Proveedor monitoreado.</span>
+                <span>Factura, expediente o usuario.</span>
+                <span>Resultado, contingencia evitada o éxito.</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid #E4E8EA;padding-top:16px;font-size:13.5px;line-height:1.6;color:#3A4147">Cobrar por proveedor castigaría justo lo que sirve: meter tu universo completo. El proveedor que dejas fuera es el que no vigilas.</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:22px 26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;font-size:13px;line-height:1.55;color:#3A4147">
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Todo incluido</b>Los tres módulos, usuarios, proveedores, facturas y expedientes ilimitados.</div>
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Un solo límite</b>El almacenamiento de fotos y video. CFDI y expedientes no consumen cuota: se conservan todos.</div>
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Sin declarar nada</b>Tu banda se deriva del diagnóstico. La propuesta llega con la cifra ya calculada.</div>
+        <div><b style="display:block;color:#111417;margin-bottom:4px">Contrato anual</b>Prepago o dos exhibiciones. Tus datos son exportables siempre, renueves o no.</div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showPartner }}" hint-placeholder-val="{{ true }}">
+  <section style="border-bottom:1px solid #E4E8EA">
+    <div style="max-width:860px;margin:0 auto;padding:72px 24px;text-align:center">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">Criterio</div>
+      <sc-if value="{{ mostrarLogoPeya }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;justify-content:center;margin:26px 0 0">
+        <div role="img" aria-label="PEYA" style="width:64px;height:64px;background:#3A4147;-webkit-mask:url(./peya-logo.svg) center/contain no-repeat;mask:url(./peya-logo.svg) center/contain no-repeat"></div>
+      </div>
+      </sc-if>
+      <p style="font:600 clamp(26px,3.4vw,38px)/1.2 Geist,sans-serif;letter-spacing:-.035em;margin:24px 0 0;text-wrap:pretty">Desarrollado junto con PEYA.</p>
+      <p style="font-size:17px;line-height:1.65;color:#3A4147;margin:16px auto 0;max-width:600px;text-wrap:pretty">{{ partnerLine }}</p>
+      <div style="width:40px;height:1px;background:#E4E8EA;margin:30px auto 0"></div>
+      <p style="font-size:14px;line-height:1.6;color:#6C757D;margin:20px 0 0">Diligo no da asesoría fiscal. Construye y conserva la evidencia con la que tu asesor te defiende.</p>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="preguntas" style="border-bottom:1px solid #E4E8EA;background:#fff">
+    <div style="max-width:1120px;margin:0 auto;padding:80px 24px">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6C757D">06 · Preguntas</div>
+      <h2 style="font:600 clamp(28px,4vw,42px)/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:18px 0 0;max-width:760px">Lo que preguntan antes de contratar.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:36px">
+        <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+          <div style="font:600 16px/1.35 Geist,sans-serif;letter-spacing:-.015em">¿Esto sustituye a mi despacho fiscal?</div>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">No. Diligo no da asesoría fiscal: construye y conserva la evidencia con la que tu asesor te defiende. Tu despacho entra a la plataforma sin costo adicional y revisa lo que le toca.</p>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+          <div style="font:600 16px/1.35 Geist,sans-serif;letter-spacing:-.015em">¿Y si el diagnóstico no encuentra nada grave?</div>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">Entonces sabes cuál es tu exposición real y por cuáles proveedores conviene empezar. El reporte es tuyo, contrates o no.</p>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+          <div style="font:600 16px/1.35 Geist,sans-serif;letter-spacing:-.015em">¿Quién sube la evidencia de campo?</div>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">Quien estuvo ahí. Recibe una liga en su teléfono, sube la foto, la bitácora o el acta, y no necesita cuenta ni licencia.</p>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+          <div style="font:600 16px/1.35 Geist,sans-serif;letter-spacing:-.015em">¿Y los proveedores de ejercicios anteriores?</div>
+          <p style="font-size:14.5px;line-height:1.6;color:#3A4147;margin:0">Se documentan igual, priorizados por monto y exposición. Reconstruir después del hecho cuesta más que documentar en vivo: por eso el orden importa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="background:#0E1113;color:#EEF1F2">
+    <div style="max-width:1120px;margin:0 auto;padding:88px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+      <div>
+        <h2 style="font:600 clamp(30px,4.5vw,46px)/1.08 Geist,sans-serif;letter-spacing:-.04em;margin:0">Sé activo antes<br>del requerimiento.</h2>
+        <p style="font-size:17px;line-height:1.6;color:#B9C1C7;margin:20px 0 0;max-width:460px">El diagnóstico se contrata en línea, se ejecuta sobre tus propios CFDI y su costo se acredita completo contra el primer año de suscripción si contratas dentro de 90 días.</p>
+        <p style="font-size:14.5px;line-height:1.6;color:#8B949C;margin:16px 0 0;max-width:460px">Sin proyecto de implementación, sin acceso a tus sistemas y sin llamada obligatoria. El tiempo total es el tiempo de carga.</p>
+      </div>
+      <div style="background:#171B1E;border:1px solid #262B2F;border-radius:10px;overflow:hidden">
+        <div style="padding:18px 26px;border-bottom:1px solid #262B2F;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <span style="font:600 16px Geist,sans-serif;letter-spacing:-.02em;color:#EEF1F2">{{ pasoTitulo }}</span>
+          <span style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;color:#8B949C">{{ pasoLabel }}</span>
+        </div>
+        <div style="display:flex;gap:4px;padding:0 26px;background:#171B1E">
+          <sc-for list="{{ barras }}" as="b" hint-placeholder-count="3">
+            <div style="flex:1;height:3px;background:{{ b.bg }}"></div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ es1 }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:24px 26px;display:flex;flex-direction:column;gap:18px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <label style="font-size:12px;font-weight:600;color:#B9C1C7">Nombre</label>
+              <input value="{{ nombre }}" onChange="{{ setNombre }}" placeholder="Mariana Cervantes" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px Geist,sans-serif;outline:none;min-width:0;width:100%;box-sizing:border-box">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <label style="font-size:12px;font-weight:600;color:#B9C1C7">Cargo</label>
+              <input value="{{ cargo }}" onChange="{{ setCargo }}" placeholder="Directora fiscal" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px Geist,sans-serif;outline:none;min-width:0;width:100%;box-sizing:border-box">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <label style="font-size:12px;font-weight:600;color:#B9C1C7">Empresa</label>
+              <input value="{{ empresa }}" onChange="{{ setEmpresa }}" placeholder="Grupo Altamira" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px Geist,sans-serif;outline:none;min-width:0;width:100%;box-sizing:border-box">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+              <label style="font-size:12px;font-weight:600;color:#B9C1C7">Teléfono</label>
+              <input value="{{ tel }}" onChange="{{ setTel }}" placeholder="55 0000 0000" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px 'Geist Mono',monospace;outline:none;min-width:0;width:100%;box-sizing:border-box">
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <label style="font-size:12px;font-weight:600;color:#B9C1C7">Correo corporativo</label>
+            <input value="{{ correo }}" onChange="{{ setCorreo }}" placeholder="nombre@empresa.mx" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px 'Geist Mono',monospace;outline:none;min-width:0;width:100%;box-sizing:border-box">
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label style="font-size:12px;font-weight:600;color:#B9C1C7">¿Cuántos RFC quieres monitorear?</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <sc-for list="{{ rfcOpts }}" as="o" hint-placeholder-count="4">
+                <button onClick="{{ o.go }}" style="height:34px;padding:0 16px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid {{ o.border }};background:{{ o.bg }};color:{{ o.color }};font:600 13px 'Geist Mono',monospace;cursor:pointer">{{ o.label }}</button>
+              </sc-for>
+            </div>
+            <div style="font-size:12px;color:#8B949C;line-height:1.5">Si es un grupo corporativo, los RFC se dan de alta después, dentro de tu cuenta.</div>
+          </div>
+
+          <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:12.5px;color:oklch(.72 .17 25);line-height:1.5">{{ error }}</div>
+          </sc-if>
+          <button onClick="{{ irPago }}" style="height:46px;border:0;border-radius:6px;background:var(--ac,oklch(.55 .11 300));color:#fff;font:600 15px Geist,sans-serif;cursor:pointer;width:100%">Continuar al pago</button>
+        </div>
+
+        <div style="padding:16px 26px;background:#0E1113;border-top:1px solid #262B2F;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 12px;font-size:12px;color:#8B949C;line-height:1.55">
+          <span style="font:500 11px 'Geist Mono',monospace;color:#8B949C">02</span><span>Contratas el diagnóstico y se crea tu cuenta.</span>
+          <span style="font:500 11px 'Geist Mono',monospace;color:#8B949C">03</span><span>Cargas tus CFDI y el reporte se genera solo.</span>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ es2 }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:24px 26px;display:flex;flex-direction:column;gap:18px">
+          <div style="border:1px solid #2A3035;border-radius:8px;background:#0E1113;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;font-size:13px">
+            <span style="color:#B9C1C7">Diagnóstico Diligo</span><span style="font:500 13px 'Geist Mono',monospace;color:#EEF1F2;text-align:right">{{ resumenRfc }}</span>
+            <span style="color:#8B949C;font-size:12px">Acreditable al primer año dentro de 90 días</span><span style="font:500 13px 'Geist Mono',monospace;color:var(--acD,oklch(.72 .11 300));text-align:right">100%</span>
+            <div style="grid-column:1/-1;border-top:1px solid #262B2F;margin-top:6px;padding-top:10px;display:flex;justify-content:space-between;gap:12px;align-items:baseline">
+              <span style="font-weight:600;color:#EEF1F2">Total</span>
+              <span style="font:500 15px 'Geist Mono',monospace;color:#EEF1F2">{{ precioDx }} + IVA</span>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label style="font-size:12px;font-weight:600;color:#B9C1C7">Forma de pago</label>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <sc-for list="{{ metodoOpts }}" as="m" hint-placeholder-count="2">
+                <button onClick="{{ m.go }}" style="height:34px;padding:0 16px;display:inline-flex;align-items:center;border-radius:999px;border:1px solid {{ m.border }};background:{{ m.bg }};color:{{ m.color }};font:600 13px Geist,sans-serif;cursor:pointer">{{ m.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-if value="{{ esTarjeta }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <label style="font-size:12px;font-weight:600;color:#B9C1C7">Número de tarjeta</label>
+              <input value="{{ tarjeta }}" onChange="{{ setTarjeta }}" placeholder="4242 4242 4242 4242" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px 'Geist Mono',monospace;outline:none;width:100%;box-sizing:border-box">
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px">
+              <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+                <label style="font-size:12px;font-weight:600;color:#B9C1C7">Vencimiento</label>
+                <input value="{{ vence }}" onChange="{{ setVence }}" placeholder="MM / AA" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px 'Geist Mono',monospace;outline:none;width:100%;box-sizing:border-box">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+                <label style="font-size:12px;font-weight:600;color:#B9C1C7">CVV</label>
+                <input value="{{ cvv }}" onChange="{{ setCvv }}" placeholder="123" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px 'Geist Mono',monospace;outline:none;width:100%;box-sizing:border-box">
+              </div>
+              <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+                <label style="font-size:12px;font-weight:600;color:#B9C1C7">RFC de facturación</label>
+                <input value="{{ rfcFact }}" onChange="{{ setRfcFact }}" placeholder="ALT980312QK4" style="height:42px;border-radius:6px;border:1px solid #2A3035;background:#0E1113;color:#EEF1F2;padding:0 12px;font:400 14px 'Geist Mono',monospace;outline:none;width:100%;box-sizing:border-box">
+              </div>
+            </div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ esTransferencia }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid #2A3035;border-radius:8px;background:#0E1113;padding:16px;font-size:13px;color:#B9C1C7;line-height:1.6">
+            Recibes la factura y los datos de transferencia por correo. La cuenta se abre en cuanto se confirma el pago; normalmente el mismo día hábil.
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+            <div style="font-size:12.5px;color:oklch(.72 .17 25);line-height:1.5">{{ error }}</div>
+          </sc-if>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button onClick="{{ volver1 }}" style="height:46px;padding:0 18px;border:1px solid #2A3035;border-radius:6px;background:transparent;color:#B9C1C7;font:600 14px Geist,sans-serif;cursor:pointer">Atrás</button>
+            <button onClick="{{ irCarga }}" style="flex:1;min-width:180px;height:46px;border:0;border-radius:6px;background:var(--ac,oklch(.55 .11 300));color:#fff;font:600 15px Geist,sans-serif;cursor:pointer">{{ botonPago }}</button>
+          </div>
+          <div style="font-size:12px;color:#8B949C;line-height:1.5">Al confirmar se crea tu cuenta y se habilita la carga de CFDI. No pedimos acceso a tus sistemas.</div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ es3 }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:24px 26px;display:flex;flex-direction:column;gap:18px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--acD,oklch(.72 .11 300))">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--acD,oklch(.72 .11 300))" stroke-width="2" stroke-linecap="round"><path d="M3 8.5l3 3 7-7"></path></svg>
+            <span>Cuenta creada para {{ cuentaDe }}</span>
+          </div>
+
+          <sc-if value="{{ sinCarga }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ cargar }}" style="border:1.5px dashed #2A3035;border-radius:8px;background:#0E1113;padding:32px 20px;display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;width:100%">
+            <span style="font:600 14px Geist,sans-serif;color:#EEF1F2">Arrastra tus CFDI aquí</span>
+            <span style="font-size:12.5px;color:#8B949C;text-align:center;line-height:1.5">XML recibidos del ejercicio anterior. ZIP o carpeta completa. El formato no se declara: se detecta.</span>
+          </button>
+          </sc-if>
+
+          <sc-if value="{{ subiendo }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid #2A3035;border-radius:8px;background:#0E1113;padding:18px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;gap:12px;font-size:12.5px"><span style="color:#B9C1C7">Procesando CFDI</span><span style="font:500 12.5px 'Geist Mono',monospace;color:var(--acD,oklch(.72 .11 300))">{{ pctLabel }}</span></div>
+            <div style="height:6px;border-radius:999px;background:#22282C;overflow:hidden"><div style="width:{{ pctW }};height:100%;border-radius:999px;background:var(--acD,oklch(.72 .11 300))"></div></div>
+            <div style="font-size:12px;color:#8B949C">{{ pasoCarga }}</div>
+          </div>
+          </sc-if>
+
+          <sc-if value="{{ listo }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid #2A3035;border-radius:8px;background:#0E1113;overflow:hidden">
+            <div style="padding:14px 16px;border-bottom:1px solid #262B2F;font:500 11px 'Geist Mono',monospace;letter-spacing:.06em;color:#8B949C">REPORTE LISTO · EJERCICIO 2025</div>
+            <div style="padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:14px">
+              <div><div style="font:500 22px 'Geist Mono',monospace;letter-spacing:-.02em;color:#EEF1F2">1,240</div><div style="font-size:12px;color:#8B949C;line-height:1.4">proveedores</div></div>
+              <div><div style="font:500 22px 'Geist Mono',monospace;letter-spacing:-.02em;color:oklch(.72 .17 25)">47</div><div style="font-size:12px;color:#8B949C;line-height:1.4">con señal</div></div>
+              <div><div style="font:500 22px 'Geist Mono',monospace;letter-spacing:-.02em;color:var(--acD,oklch(.72 .11 300))">12</div><div style="font-size:12px;color:#8B949C;line-height:1.4">a documentar</div></div>
+            </div>
+          </div>
+          <button style="height:46px;border:0;border-radius:6px;background:var(--ac,oklch(.55 .11 300));color:#fff;font:600 15px Geist,sans-serif;cursor:pointer;width:100%">Abrir el reporte</button>
+          <div style="font-size:12px;color:#8B949C;line-height:1.5">Cifras de ejemplo en esta maqueta. El reporte real trae nombres, montos y orden de atención de tu propio universo.</div>
+          </sc-if>
+
+          <button onClick="{{ reiniciar }}" style="align-self:flex-start;background:transparent;border:0;padding:0;color:#8B949C;font:500 12.5px Geist,sans-serif;cursor:pointer;text-decoration:underline">Empezar de nuevo</button>
+        </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#0E1113;color:#8B949C;border-top:1px solid #1C2124">
+    <div style="max-width:1120px;margin:0 auto;padding:28px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;font-size:13px">
+      <div style="display:flex;align-items:center;gap:8px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B949C" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><path d="M8 8l8 8"></path><path d="M16 8l-8 8" stroke="var(--acD,oklch(.72 .11 300))"></path></svg>
+        <span style="font:700 16px/1 Geist,sans-serif;letter-spacing:-.045em;color:#B9C1C7">diligo</span>
+      </div>
+      <span>Infraestructura de evidencia · Ciudad de México</span>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;margin-left:auto;align-items:center">
+        <a href="mailto:hola@diligo.mx" style="color:#8B949C">hola@diligo.mx</a>
+        <a href="#aviso" style="color:#8B949C">Aviso de privacidad</a>
+        <a href="#terminos" style="color:#8B949C">Términos</a>
+        <span>© 2026 Diligo</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;acento&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Violeta 300&quot;,&quot;Verde-azul 175&quot;],&quot;default&quot;:&quot;Violeta 300&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;credito&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Sin nombrar el despacho&quot;,&quot;Nombrar a PEYA&quot;,&quot;Sin bloque de criterio&quot;],&quot;default&quot;:&quot;Nombrar a PEYA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;mostrarExposicion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;precioDiagnostico&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$35,000 MXN&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Precio&quot;},&quot;mostrarPorcentaje&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Precio&quot;}}">
+class Component extends DCLogic {
+  state = {
+    paso: 1, nombre: '', cargo: '', empresa: '', tel: '', correo: '', rfc: '1',
+    metodo: 'Tarjeta', tarjeta: '', vence: '', cvv: '', rfcFact: '',
+    error: '', subiendo: false, pct: 0, listo: false,
+  };
+
+  componentWillUnmount() { clearInterval(this._t); }
+
+  set(k) { return e => this.setState({ [k]: e.target.value, error: '' }); }
+
+  cargar = () => {
+    this.setState({ subiendo: true, pct: 0 });
+    clearInterval(this._t);
+    this._t = setInterval(() => {
+      this.setState(s => {
+        const pct = s.pct + 6;
+        if (pct >= 100) { clearInterval(this._t); return { pct: 100, subiendo: false, listo: true }; }
+        return { pct };
+      });
+    }, 110);
+  };
+
+  renderVals() {
+    const s = this.state;
+    const ok = v => String(v || '').trim().length > 1;
+    const pasoTitulos = { 1: 'Abrir tu diagnóstico', 2: 'Contratar el diagnóstico', 3: 'Cargar tus CFDI' };
+    const rfcResumen = { '1': '1 RFC', '2–5': '2 a 5 RFC', '6–15': '6 a 15 RFC', '16+': '16 RFC o más' };
+    const pillOn = { bg: 'var(--ac,oklch(.55 .11 300))', color: '#fff', border: 'var(--ac,oklch(.55 .11 300))' };
+    const pillOff = { bg: 'transparent', color: '#B9C1C7', border: '#2A3035' };
+    const flowVals = {
+      paso: s.paso,
+      pasoTitulo: pasoTitulos[s.paso],
+      pasoLabel: `PASO ${s.paso} DE 3`,
+      barras: [1, 2, 3].map(n => ({ bg: n <= s.paso ? 'var(--ac,oklch(.55 .11 300))' : '#262B2F' })),
+      es1: s.paso === 1, es2: s.paso === 2, es3: s.paso === 3,
+      nombre: s.nombre, cargo: s.cargo, empresa: s.empresa, tel: s.tel, correo: s.correo,
+      tarjeta: s.tarjeta, vence: s.vence, cvv: s.cvv, rfcFact: s.rfcFact,
+      setNombre: this.set('nombre'), setCargo: this.set('cargo'), setEmpresa: this.set('empresa'),
+      setTel: this.set('tel'), setCorreo: this.set('correo'), setTarjeta: this.set('tarjeta'),
+      setVence: this.set('vence'), setCvv: this.set('cvv'), setRfcFact: this.set('rfcFact'),
+      rfcOpts: ['1', '2–5', '6–15', '16+'].map(v => ({
+        label: v, go: () => this.setState({ rfc: v }), ...(s.rfc === v ? pillOn : pillOff),
+      })),
+      metodoOpts: ['Tarjeta', 'Transferencia'].map(v => ({
+        label: v, go: () => this.setState({ metodo: v, error: '' }), ...(s.metodo === v ? pillOn : pillOff),
+      })),
+      esTarjeta: s.metodo === 'Tarjeta',
+      esTransferencia: s.metodo === 'Transferencia',
+      resumenRfc: rfcResumen[s.rfc],
+      botonPago: s.metodo === 'Tarjeta' ? 'Pagar y crear cuenta' : 'Solicitar factura y crear cuenta',
+      error: s.error,
+      irPago: () => {
+        if (!ok(s.nombre) || !ok(s.empresa)) return this.setState({ error: 'Falta tu nombre o el de la empresa.' });
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(s.correo)) return this.setState({ error: 'Revisa el correo corporativo.' });
+        this.setState({ paso: 2, error: '' });
+      },
+      volver1: () => this.setState({ paso: 1, error: '' }),
+      irCarga: () => {
+        if (s.metodo === 'Tarjeta' && s.tarjeta.replace(/\D/g, '').length < 15) {
+          return this.setState({ error: 'Captura los 16 dígitos de la tarjeta.' });
+        }
+        this.setState({ paso: 3, error: '' });
+      },
+      cuentaDe: s.empresa.trim() || 'tu empresa',
+      cargar: this.cargar,
+      sinCarga: !s.subiendo && !s.listo,
+      subiendo: s.subiendo,
+      listo: s.listo,
+      pct: s.pct,
+      pctLabel: s.pct + '%',
+      pctW: s.pct + '%',
+      pasoCarga: s.pct < 40 ? 'Leyendo XML y validando estructura' : s.pct < 75 ? 'Agrupando por RFC emisor' : 'Cruzando contra publicaciones oficiales',
+      reiniciar: () => { clearInterval(this._t); this.setState({ paso: 1, subiendo: false, listo: false, pct: 0, error: '' }); },
+    };
+    return { ...flowVals, ...this.brandVals() };
+  }
+
+  brandVals() {
+    const hue = (this.props.acento ?? 'Violeta 300') === 'Verde-azul 175' ? 175 : 300;
+    const credito = this.props.credito ?? 'Nombrar a PEYA';
+    return {
+      ac: `oklch(.55 .11 ${hue})`,
+      acT: `oklch(.45 .11 ${hue})`,
+      acS: `oklch(.95 .03 ${hue})`,
+      acD: `oklch(.72 .11 ${hue})`,
+      ac2: `oklch(.63 .1 ${hue})`,
+      ac3: `oklch(.72 .08 ${hue})`,
+      ac4: `oklch(.82 .06 ${hue})`,
+      showMath: this.props.mostrarExposicion ?? true,
+      showPct: this.props.mostrarPorcentaje ?? true,
+      precioDx: this.props.precioDiagnostico ?? '$35,000 MXN',
+      showPartner: credito !== 'Sin bloque de criterio',
+      mostrarLogoPeya: credito === 'Nombrar a PEYA',
+      partnerLine: credito === 'Nombrar a PEYA'
+        ? 'Una de las firmas fiscales más importantes de México. PEYA defiende materialidad todos los días, y su criterio revisa cada decisión de producto que tomamos.'
+        : 'Una de las firmas fiscales más importantes de México, que defiende materialidad todos los días. Su criterio revisa cada decisión de producto que tomamos.',
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#0E1113;font-family:Geist,system-ui,sans-serif}a{color:#111417}a:hover{color:#000}
+@keyframes deck-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes deck-fade{from{opacity:0}to{opacity:1}}
+@keyframes deck-wipe{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  [data-deck-slide]>*{animation:none}
+  [data-deck-active]>*{animation:deck-rise .62s cubic-bezier(.16,.84,.26,1) both}
+  [data-deck-active]>*:nth-child(1){animation-delay:.04s}
+  [data-deck-active]>*:nth-child(2){animation-delay:.14s}
+  [data-deck-active]>*:nth-child(3){animation-delay:.24s}
+  [data-deck-active]>*:nth-child(4){animation-delay:.34s}
+  [data-deck-active]>*:nth-child(5){animation-delay:.42s}
+  [data-deck-active]>*:nth-child(n+6){animation-delay:.5s}
+  [data-deck-active]>div[style*="position:absolute"]{animation:deck-fade .9s ease both;animation-delay:.2s}
+  [data-deck-active] image-slot{animation:deck-wipe .7s cubic-bezier(.16,.84,.26,1) both;animation-delay:.34s}
+}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+<section data-label="Portada" data-screen-label="01" data-speaker-notes="Presentación breve. Agradecer el tiempo de la firma para esta primera reunión." style="padding:96px 104px;background:#0E1113;color:#FAFBFB;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;justify-content:space-between;--ac:oklch(.62 .11 300)">
+  <div style="display:flex;align-items:center;gap:14px;font:500 26px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8B949C">Materialidad fiscal · Propuesta de producto</div>
+  <div style="display:flex;align-items:center;gap:72px">
+    <div style="display:flex;align-items:center;gap:22px">
+      <svg width="88" height="88" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#FAFBFB"></rect><path d="M8 8 L16 16" stroke="#FAFBFB"></path><path d="M16 8 L8 16" stroke="oklch(.62 .11 300)"></path></svg>
+      <span style="font:700 88px/1 Geist,sans-serif;letter-spacing:-.045em">diligo</span>
+    </div>
+    <span style="font:400 56px/1 Geist,sans-serif;color:#6C757D">×</span>
+    <div style="display:flex;align-items:center;gap:22px">
+      <img src="./peya-logo-white.svg" alt="PEYA" style="width:88px;height:88px;object-fit:contain">
+      <span style="font:600 76px/1 Geist,sans-serif;letter-spacing:-.04em">PEYA</span>
+    </div>
+  </div>
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid #2A3035;padding-top:32px">
+    <div style="font:600 30px/1.3 Geist,sans-serif;letter-spacing:-.02em">Oblique Technologies S.A.S.</div>
+    <div style="font:400 26px 'Geist Mono',ui-monospace,monospace;color:#8B949C">Septiembre 2026 · Ciudad de México</div>
+  </div>
+</section>
+
+<section data-label="Objetivo" data-screen-label="02" data-speaker-notes="Dejar claro que hoy no cerramos nada: es presentarnos y abrir conversación." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:56px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">02 · Objetivo de la reunión</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0;max-width:1300px;text-wrap:pretty">Qué queremos lograr hoy</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:60px;flex:1">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px">
+        <span style="flex:none;width:60px;height:60px;border-radius:50%;background:oklch(.93 .022 300);color:oklch(.42 .11 300);font:500 26px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">01</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Presentarnos</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Quién es Oblique y quién está detrás de Diligo.</span></span>
+      </div>
+      <div style="width:2px;height:24px;background:oklch(.9 .03 300);margin-left:60px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px">
+        <span style="flex:none;width:60px;height:60px;border-radius:50%;background:oklch(.93 .022 300);color:oklch(.42 .11 300);font:500 26px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">02</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Compartir la visión de Diligo</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Qué problema queremos resolver y desde dónde lo vemos.</span></span>
+      </div>
+      <div style="width:2px;height:24px;background:oklch(.9 .03 300);margin-left:60px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px">
+        <span style="flex:none;width:60px;height:60px;border-radius:50%;background:oklch(.93 .022 300);color:oklch(.42 .11 300);font:500 26px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">03</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Mostrar el alcance inicial</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Los tres módulos de la primera versión, y sus límites.</span></span>
+      </div>
+      <div style="width:2px;height:24px;background:oklch(.55 .11 300);margin-left:60px"></div>
+      <div style="background:oklch(.32 .06 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px;color:#FAFBFB;flex:1">
+        <span style="flex:none;width:60px;height:60px;border-radius:50%;background:oklch(.42 .09 300);color:#FAFBFB;font:500 26px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">04</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Abrir la conversación</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#E7E2F0">Cómo podríamos trabajar juntos. Nada de esto está definido.</span></span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="flex:1;min-height:220px;border-radius:10px;border:1px solid oklch(.86 .04 300);background:oklch(.96 .014 300);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:40px">
+        <span style="display:flex;align-items:center;gap:40px">
+          <span style="display:flex;flex-direction:column;align-items:center;gap:16px">
+            <span style="width:150px;height:150px;border-radius:18px;background:#FFFFFF;border:1px solid oklch(.88 .03 300);display:flex;align-items:center;justify-content:center">
+              <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#111417"></rect><path d="M8 8 L16 16" stroke="#111417"></path><path d="M16 8 L8 16" stroke="oklch(.55 .11 300)"></path></svg>
+            </span>
+            <span style="font:700 38px/1 Geist,sans-serif;letter-spacing:-.04em;color:#111417">diligo</span>
+          </span>
+          <span style="flex:none;width:64px;height:64px;border-radius:50%;background:oklch(.55 .11 300);color:#FAFBFB;font:400 34px/1 Geist,sans-serif;display:flex;align-items:center;justify-content:center;margin-bottom:44px">+</span>
+          <span style="display:flex;flex-direction:column;align-items:center;gap:16px">
+            <span style="width:150px;height:150px;border-radius:18px;background:#FFFFFF;border:1px solid oklch(.88 .03 300);display:flex;align-items:center;justify-content:center">
+              <img src="./peya-logo.svg" alt="PEYA" style="width:98px;height:98px;object-fit:contain">
+            </span>
+            <span style="font:600 38px/1 Geist,sans-serif;letter-spacing:-.02em;color:#111417">PEYA</span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Cómo llegamos aquí" data-screen-label="03" data-speaker-notes="Reconocer que el problema lo trajeron Mariana e Ioanna desde la práctica fiscal. La idea no nació en Oblique." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:64px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">03 · Cómo llegamos aquí</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">El proyecto empezó con una observación, no con un plan</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;flex:1">
+    <div style="padding-right:40px;border-top:2px solid oklch(.9 .03 300);padding-top:32px;display:flex;flex-direction:column;gap:16px;position:relative">
+      <div style="width:16px;height:16px;border-radius:50%;background:oklch(.62 .09 300);margin-top:-41px"></div>
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">Paso 01</div>
+      <div style="font:600 36px/1.15 Geist,sans-serif;letter-spacing:-.02em">Mariana e Ioanna traen el problema</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Lo ven en la práctica fiscal todos los días: la materialidad se arma tarde y a mano, expediente por expediente.</div>
+      <div style="height:184px;margin-top:auto;border-radius:10px;background:oklch(.965 .012 300);border:1px solid oklch(.92 .02 300);padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+        <span style="flex:1;display:flex;align-items:center;gap:16px">
+          <span style="display:flex;align-items:center">
+            <span style="flex:none;width:52px;height:52px;border-radius:50%;background:oklch(.86 .045 300)"></span>
+            <span style="flex:none;width:52px;height:52px;border-radius:50%;background:oklch(.78 .07 300);margin-left:-16px"></span>
+          </span>
+          <span style="font:400 32px/1 Geist,sans-serif;color:oklch(.6 .08 300)">→</span>
+          <span style="width:48px;height:60px;border-radius:4px;background:#fff;border:1px solid oklch(.86 .035 300);padding:10px;display:flex;flex-direction:column;justify-content:center;gap:6px"><span style="height:5px;border-radius:3px;background:oklch(.88 .035 300)"></span><span style="height:5px;border-radius:3px;background:oklch(.88 .035 300)"></span><span style="height:5px;border-radius:3px;background:oklch(.55 .11 300);width:60%"></span></span>
+        </span>
+        <span style="font:500 24px/1.4 'Geist Mono',ui-monospace,monospace;color:#6C757D">Viene de la práctica</span>
+      </div>
+    </div>
+    <div style="padding-right:40px;border-top:2px solid oklch(.9 .03 300);padding-top:32px;display:flex;flex-direction:column;gap:16px">
+      <div style="width:16px;height:16px;border-radius:50%;background:oklch(.62 .09 300);margin-top:-41px"></div>
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">Paso 02</div>
+      <div style="font:600 36px/1.15 Geist,sans-serif;letter-spacing:-.02em">Oblique confirma que es viable</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Las listas son públicas y la evidencia es estructurable. Se puede construir.</div>
+      <div style="height:216px;margin-top:auto;border-radius:10px;background:oklch(.965 .012 300);border:1px solid oklch(.92 .02 300);padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+        <span style="flex:1;display:flex;align-items:center;gap:18px">
+          <span style="flex:none;box-sizing:border-box;width:84px;height:84px;border-radius:50%;background:#fff;border:1px solid oklch(.86 .035 300);display:flex;align-items:center;justify-content:center">
+            <svg width="42" height="42" viewBox="0 0 81 81" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M71.4273 40.1773C71.427 35.1295 70.23 30.3611 68.1044 26.1406L74.6751 19.57C78.2825 25.595 80.3561 32.644 80.3563 40.1773C80.3563 62.3673 62.3673 80.3563 40.1773 80.3563C32.6439 80.3561 25.595 78.2825 19.5699 74.6751L26.1406 68.1045C30.3611 70.23 35.1295 71.4271 40.1773 71.4273C57.4362 71.4273 71.4273 57.4362 71.4273 40.1773ZM0.00149536 40.1773C0.00149536 47.7111 2.07483 54.7606 5.68207 60.7863L12.2513 54.217C10.1248 49.9957 8.92728 45.2264 8.92728 40.1773C8.92803 22.9195 22.9195 8.92806 40.1773 8.92731C45.2263 8.92731 49.9957 10.1248 54.2169 12.2514L60.7862 5.6821C54.7605 2.07486 47.711 0.00152588 40.1773 0.00152588C17.9884 0.00227849 0.00224797 17.9884 0.00149536 40.1773Z" fill="oklch(.55 .11 300)"></path><path d="M72.7365 1.30744L1.30744 72.7365C-0.435735 74.4799 -0.435892 77.3082 1.30744 79.0516C3.05079 80.7947 5.87919 80.7947 7.62255 79.0516L79.0516 7.62255C80.7947 5.87919 80.7947 3.05079 79.0516 1.30744C77.3082 -0.435892 74.4799 -0.435735 72.7365 1.30744Z" fill="oklch(.55 .11 300)"></path></svg>
+          </span>
+          <span style="flex:none;width:54px;height:54px;border-radius:50%;background:oklch(.55 .11 300);display:flex;align-items:center;justify-content:center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FAFBFB" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 L10 17.5 L19 7"></path></svg></span>
+        </span>
+        <span style="font:500 24px/1.4 'Geist Mono',ui-monospace,monospace;color:#6C757D">Es construible</span>
+      </div>
+    </div>
+    <div style="padding-right:40px;border-top:2px solid oklch(.9 .03 300);padding-top:32px;display:flex;flex-direction:column;gap:16px">
+      <div style="width:16px;height:16px;border-radius:50%;background:oklch(.62 .09 300);margin-top:-41px"></div>
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">Paso 03</div>
+      <div style="font:600 36px/1.15 Geist,sans-serif;letter-spacing:-.02em">Llega a la mesa de PEYA</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Con el criterio de que el problema es real y vale la pena revisarlo como firma.</div>
+      <div style="height:248px;margin-top:auto;border-radius:10px;background:oklch(.965 .012 300);border:1px solid oklch(.92 .02 300);padding:26px 28px;display:flex;flex-direction:column;gap:14px">
+        <span style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;width:max-content">
+          <span style="display:flex;gap:18px"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:oklch(.78 .07 300)"></span><span style="flex:none;width:32px;height:32px;border-radius:50%;background:oklch(.78 .07 300)"></span></span>
+          <span style="width:186px;height:18px;border-radius:9px;background:oklch(.55 .11 300)"></span>
+          <span style="display:flex;gap:18px"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:oklch(.78 .07 300)"></span><span style="flex:none;width:32px;height:32px;border-radius:50%;background:oklch(.78 .07 300)"></span></span>
+        </span>
+        <span style="font:500 24px/1.4 'Geist Mono',ui-monospace,monospace;color:#6C757D">A la mesa de la firma</span>
+      </div>
+    </div>
+    <div style="border-top:2px solid oklch(.55 .11 300);padding-top:32px;display:flex;flex-direction:column;gap:16px">
+      <div style="width:16px;height:16px;border-radius:50%;background:oklch(.55 .11 300);margin-top:-41px"></div>
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Hoy</div>
+      <div style="font:600 36px/1.15 Geist,sans-serif;letter-spacing:-.02em">Esta conversación</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Queremos entender cómo lo ven ustedes antes de seguir construyendo.</div>
+      <div style="height:280px;margin-top:auto;border-radius:10px;background:oklch(.32 .06 300);padding:26px 28px;display:flex;flex-direction:column;gap:16px">
+        <span style="flex:1;display:flex;align-items:center">
+          <span style="flex:none;box-sizing:border-box;width:124px;height:124px;border-radius:50%;border:2px solid oklch(.78 .09 300);display:flex;align-items:center;justify-content:center;padding-right:30px"><img src="./peya-logo-white.svg" alt="PEYA" style="width:52px;height:52px;object-fit:contain"></span>
+          <span style="flex:none;box-sizing:border-box;width:124px;height:124px;border-radius:50%;border:2px solid oklch(.78 .09 300);background:rgba(250,251,251,.12);margin-left:-40px;display:flex;align-items:center;justify-content:center;padding-left:30px">
+            <svg width="50" height="50" viewBox="0 0 81 81" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M71.4273 40.1773C71.427 35.1295 70.23 30.3611 68.1044 26.1406L74.6751 19.57C78.2825 25.595 80.3561 32.644 80.3563 40.1773C80.3563 62.3673 62.3673 80.3563 40.1773 80.3563C32.6439 80.3561 25.595 78.2825 19.5699 74.6751L26.1406 68.1045C30.3611 70.23 35.1295 71.4271 40.1773 71.4273C57.4362 71.4273 71.4273 57.4362 71.4273 40.1773ZM0.00149536 40.1773C0.00149536 47.7111 2.07483 54.7606 5.68207 60.7863L12.2513 54.217C10.1248 49.9957 8.92728 45.2264 8.92728 40.1773C8.92803 22.9195 22.9195 8.92806 40.1773 8.92731C45.2263 8.92731 49.9957 10.1248 54.2169 12.2514L60.7862 5.6821C54.7605 2.07486 47.711 0.00152588 40.1773 0.00152588C17.9884 0.00227849 0.00224797 17.9884 0.00149536 40.1773Z" fill="#FAFBFB"></path><path d="M72.7365 1.30744L1.30744 72.7365C-0.435735 74.4799 -0.435892 77.3082 1.30744 79.0516C3.05079 80.7947 5.87919 80.7947 7.62255 79.0516L79.0516 7.62255C80.7947 5.87919 80.7947 3.05079 79.0516 1.30744C77.3082 -0.435892 74.4799 -0.435735 72.7365 1.30744Z" fill="#FAFBFB"></path></svg>
+          </span>
+        </span>
+        <span style="font:500 24px/1.4 'Geist Mono',ui-monospace,monospace;color:#C3CACE">PEYA y Oblique, una misma mesa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Oblique" data-screen-label="04" data-speaker-notes="Una o dos frases. No entrar en catálogo de servicios." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:56px">
+  <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300)">04 · Quiénes somos</div>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:80px;flex:1;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:36px">
+      <div style="display:flex;align-items:center;gap:20px">
+        <svg width="52" height="52" viewBox="0 0 81 81" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M71.4273 40.1773C71.427 35.1295 70.23 30.3611 68.1044 26.1406L74.6751 19.57C78.2825 25.595 80.3561 32.644 80.3563 40.1773C80.3563 62.3673 62.3673 80.3563 40.1773 80.3563C32.6439 80.3561 25.595 78.2825 19.5699 74.6751L26.1406 68.1045C30.3611 70.23 35.1295 71.4271 40.1773 71.4273C57.4362 71.4273 71.4273 57.4362 71.4273 40.1773ZM0.00149536 40.1773C0.00149536 47.7111 2.07483 54.7606 5.68207 60.7863L12.2513 54.217C10.1248 49.9957 8.92728 45.2264 8.92728 40.1773C8.92803 22.9195 22.9195 8.92806 40.1773 8.92731C45.2263 8.92731 49.9957 10.1248 54.2169 12.2514L60.7862 5.6821C54.7605 2.07486 47.711 0.00152588 40.1773 0.00152588C17.9884 0.00227849 0.00224797 17.9884 0.00149536 40.1773Z" fill="oklch(.55 .11 300)"></path><path d="M72.7365 1.30744L1.30744 72.7365C-0.435735 74.4799 -0.435892 77.3082 1.30744 79.0516C3.05079 80.7947 5.87919 80.7947 7.62255 79.0516L79.0516 7.62255C80.7947 5.87919 80.7947 3.05079 79.0516 1.30744C77.3082 -0.435892 74.4799 -0.435735 72.7365 1.30744Z" fill="oklch(.55 .11 300)"></path></svg>
+        <span style="font:600 44px/1 Geist,sans-serif;letter-spacing:-.04em">OBLIQUE</span>
+      </div>
+      <div style="font:600 58px/1.12 Geist,sans-serif;letter-spacing:-.03em;text-wrap:pretty">Firma de ingeniería y producto en Ciudad de México. Diseñamos y construimos los sistemas de los que depende un negocio.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:28px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Constitución</div>
+        <div style="font:500 30px/1.3 Geist,sans-serif">S.A.S. en México · CDMX</div>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:28px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Qué hacemos</div>
+        <div style="font:500 30px/1.3 Geist,sans-serif">Product discovery y UX · Product engineering · Plataforma y arquitectura · AI y data · Modernización de sistemas</div>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:28px 32px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Contacto</div>
+        <div style="font:500 30px/1.3 Geist,sans-serif">oblique.mx · init@oblique.mx</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="El equipo" data-screen-label="05" data-speaker-notes="Una línea por persona. No leer la tarjeta: decir en qué parte del proyecto entra cada uno." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:56px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">05 · El equipo</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Los tres fundadores están en el proyecto</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;flex:1">
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:40px;display:flex;flex-direction:column;gap:26px">
+      <image-slot id="peya-team-luis" style="width:150px;height:150px" shape="circle" placeholder="Foto Luis"></image-slot>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 40px/1.1 Geist,sans-serif;letter-spacing:-.025em">Luis Montes</div>
+        <div style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Head of Engineering</div>
+      </div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#3A4147">Años construyendo backend y sistemas distribuidos en fintech y SaaS, con equipos de ingeniería a su cargo.</div>
+      <div style="font:500 24px/1.45 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300);border-top:1px solid oklch(.9 .03 300);padding-top:20px;margin-top:auto">Construye la plataforma. Ya operó cumplimiento regulatorio a escala y con auditoría encima.</div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:40px;display:flex;flex-direction:column;gap:26px">
+      <image-slot id="peya-team-kevin" style="width:150px;height:150px" shape="circle" placeholder="Foto Kevin"></image-slot>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 40px/1.1 Geist,sans-serif;letter-spacing:-.025em">Kevin Salas</div>
+        <div style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Product Engineering</div>
+      </div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#3A4147">Hoy construye el frontend de una plataforma de cumplimiento PLD/AML para sujetos obligados en México, con diseño de interfaz y producto de base.</div>
+      <div style="font:500 24px/1.45 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300);border-top:1px solid oklch(.9 .03 300);padding-top:20px;margin-top:auto">Construye la interfaz con la que trabajará el equipo. Ya traduce requisitos regulatorios en flujos de captura.</div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:40px;display:flex;flex-direction:column;gap:26px">
+      <image-slot id="peya-team-elias" style="width:150px;height:150px" shape="circle" placeholder="Foto Elias"></image-slot>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 40px/1.1 Geist,sans-serif;letter-spacing:-.025em">Elias Cohen</div>
+        <div style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Head of Product</div>
+      </div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#3A4147">Años de producto en B2B SaaS, en herramientas de automatización y cumplimiento para equipos internos de empresas.</div>
+      <div style="font:500 24px/1.45 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300);border-top:1px solid oklch(.9 .03 300);padding-top:20px;margin-top:auto">Define el producto con ustedes. Su trabajo diario es traducir reglas de cumplimiento en flujos que la gente sí usa.</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="El problema" data-screen-label="06" data-speaker-notes="Plantearlo como pregunta. Él es el experto: escuchar más que explicar." style="padding:84px 100px;background:#0E1113;color:#FAFBFB;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:52px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8B949C;margin-bottom:24px">06 · El problema</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0;max-width:1400px;text-wrap:pretty">Visto desde la empresa, la materialidad casi siempre se arma tarde</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1.15fr 1fr;gap:56px;flex:1">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#8B949C;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px">Cómo pasa hoy</div>
+      <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:24px">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:#20262A;color:#8B949C;font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">01</span>
+        <span style="font:500 30px/1.3 Geist,sans-serif">La empresa contrata al proveedor, deduce el gasto y acredita el IVA</span>
+      </div>
+      <div style="width:2px;height:22px;background:#2A3035;margin-left:54px"></div>
+      <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:24px">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:#20262A;color:#8B949C;font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">02</span>
+        <span style="font:500 30px/1.3 Geist,sans-serif">El SAT publica la lista y nadie lo nota</span>
+      </div>
+      <div style="width:2px;height:22px;background:#2A3035;margin-left:54px"></div>
+      <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:24px">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:#20262A;color:#8B949C;font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">03</span>
+        <span style="font:500 30px/1.3 Geist,sans-serif">Llega el requerimiento</span>
+      </div>
+      <div style="width:2px;height:22px;background:oklch(.55 .11 300);margin-left:54px"></div>
+      <div style="background:oklch(.32 .06 300);border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:24px;flex:1">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:oklch(.42 .09 300);color:#FAFBFB;font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">04</span>
+        <span style="font:500 30px/1.3 Geist,sans-serif;color:#FAFBFB">El expediente se arma a la carrera, con el tiempo en contra</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <div style="border-top:2px solid #2A3035;padding-top:22px;display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 32px/1.2 Geist,sans-serif;letter-spacing:-.02em">Proveedores que caen en listas</div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#C3CACE">Se sabe cuando ya se facturó, ya se pagó y ya se dedujo.</div>
+      </div>
+      <div style="border-top:2px solid #2A3035;padding-top:22px;display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 32px/1.2 Geist,sans-serif;letter-spacing:-.02em">Evidencia dispersa</div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#C3CACE">Contratos, entregables y comprobantes en correos y carpetas distintas.</div>
+      </div>
+      <div style="border-top:2px solid oklch(.55 .11 300);padding-top:22px;display:flex;flex-direction:column;gap:10px">
+        <div style="font:600 32px/1.2 Geist,sans-serif;letter-spacing:-.02em">49 Bis, presión nueva</div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#C3CACE">Un frente más de vigilancia y menos tiempo para responder.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Qué es Diligo" data-screen-label="07" data-speaker-notes="Insistir: Diligo no interpreta. El criterio legal sigue siendo de la firma." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:48px">
+  <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300)">07 · Qué es Diligo</div>
+  <div style="display:grid;grid-template-columns:1.12fr 1fr;gap:64px;flex:1">
+    <div style="display:flex;flex-direction:column;gap:34px">
+      <div style="display:flex;align-items:center;gap:20px">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#111417"></rect><path d="M8 8 L16 16" stroke="#111417"></path><path d="M16 8 L8 16" stroke="oklch(.55 .11 300)"></path></svg>
+        <span style="font:700 64px/1 Geist,sans-serif;letter-spacing:-.045em">diligo</span>
+        <span style="align-self:center;padding:8px 16px;border:1px solid oklch(.82 .05 300);border-radius:999px;font:500 25px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.04em;text-transform:uppercase;color:oklch(.45 .11 300)">nombre tentativo</span>
+      </div>
+      <h2 style="font:600 60px/1.12 Geist,sans-serif;letter-spacing:-.035em;margin:0;text-wrap:pretty">Plataforma de materialidad fiscal enfocada en <span style="color:oklch(.55 .11 300)">predicción y prevención</span>: detecta el riesgo antes de que llegue el requerimiento.</h2>
+      <div style="margin-top:auto;background:#fff;border:2px solid oklch(.55 .11 300);border-radius:10px;padding:32px 36px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.42 .11 300);letter-spacing:.06em;text-transform:uppercase">Límite explícito</div>
+        <div style="font:400 28px/1.45 Geist,sans-serif;color:#111417"><b>Diligo no interpreta, solo informa.</b> El criterio legal y fiscal sigue siendo del despacho.</div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147;border-top:1px solid oklch(.9 .03 300);padding-top:14px">Diligo es un nombre tentativo de trabajo, todavía no el definitivo.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px">Qué hace</div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px;flex:1">
+        <span style="flex:none;width:84px;height:84px;border-radius:10px;background:oklch(.93 .022 300);display:flex;align-items:center;justify-content:center"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="oklch(.55 .11 300)" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.5 15.5 L21 21"></path></svg></span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Vigila</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Revisa las listas del SAT contra los proveedores del cliente.</span></span>
+      </div>
+      <div style="width:2px;height:22px;background:oklch(.9 .03 300);margin-left:56px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px;flex:1">
+        <span style="flex:none;width:84px;height:84px;border-radius:10px;background:oklch(.93 .022 300);display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 20px"><span style="height:5px;border-radius:3px;background:oklch(.72 .07 300)"></span><span style="height:5px;border-radius:3px;background:oklch(.72 .07 300);width:75%"></span><span style="height:5px;border-radius:3px;background:oklch(.55 .11 300);width:50%"></span></span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Documenta</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Ordena la evidencia por servicio, ejercicio y mes.</span></span>
+      </div>
+      <div style="width:2px;height:22px;background:oklch(.9 .03 300);margin-left:56px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:26px;flex:1">
+        <span style="flex:none;width:84px;height:84px;border-radius:10px;background:oklch(.93 .022 300);display:flex;align-items:center;justify-content:center"><svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="oklch(.55 .11 300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L22 20 L2 20 Z"></path><path d="M12 9 L12 14"></path><path d="M12 17 L12 17.2"></path></svg></span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Avisa</span><span style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Señala qué falta y qué cambió, antes de que sea urgente.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Alcance inicial" data-screen-label="08" data-speaker-notes="Vista general. Los tres módulos se detallan en las siguientes tres láminas." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:56px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">08 · Alcance inicial</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Tres módulos en la primera versión</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;flex:1">
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="flex:none;height:300px;background:repeating-linear-gradient(135deg,oklch(.93 .022 300) 0 14px,oklch(.975 .012 300) 14px 28px);border-bottom:1px solid oklch(.9 .03 300);display:flex;align-items:center;justify-content:center">
+        <span style="width:170px;background:oklch(.98 .008 300);border:2px solid oklch(.72 .07 300);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:10px">
+          <span style="height:7px;border-radius:4px;background:oklch(.85 .04 300)"></span>
+          <span style="height:7px;border-radius:4px;background:oklch(.55 .11 300)"></span>
+          <span style="height:7px;border-radius:4px;background:oklch(.85 .04 300)"></span>
+          <span style="height:7px;border-radius:4px;background:oklch(.85 .04 300);width:60%"></span>
+        </span>
+      </div>
+      <div style="padding:34px 38px;display:flex;flex-direction:column;gap:16px">
+        <div style="font:500 26px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Módulo 01</div>
+        <div style="font:600 46px/1.1 Geist,sans-serif;letter-spacing:-.03em">Vigilancia</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#3A4147">Monitoreo de listas del SAT cruzado contra los proveedores del cliente.</div>
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">69-B · 69 · 49 Bis</div>
+      </div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="flex:none;height:300px;background:repeating-linear-gradient(135deg,oklch(.93 .022 300) 0 14px,oklch(.975 .012 300) 14px 28px);border-bottom:1px solid oklch(.9 .03 300);display:flex;align-items:center;justify-content:center">
+        <span style="width:210px;display:flex;flex-direction:column;gap:10px">
+          <span style="height:40px;border-radius:8px;background:oklch(.98 .008 300);border:2px solid oklch(.72 .07 300)"></span>
+          <span style="height:40px;border-radius:8px;background:oklch(.98 .008 300);border:2px solid oklch(.72 .07 300);margin-left:28px"></span>
+          <span style="height:40px;border-radius:8px;background:oklch(.55 .11 300);margin-left:56px"></span>
+        </span>
+      </div>
+      <div style="padding:34px 38px;display:flex;flex-direction:column;gap:16px">
+        <div style="font:500 26px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Módulo 02</div>
+        <div style="font:600 46px/1.1 Geist,sans-serif;letter-spacing:-.03em">Expedientes</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#3A4147">Evidencia de materialidad ordenada en tres niveles, abierta de forma preventiva.</div>
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">Empresa · Servicio · Periodo</div>
+      </div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="flex:none;height:300px;background:repeating-linear-gradient(135deg,oklch(.93 .022 300) 0 14px,oklch(.975 .012 300) 14px 28px);border-bottom:1px solid oklch(.9 .03 300);display:flex;align-items:center;justify-content:center">
+        <span style="width:110px;height:110px;border-radius:50%;background:oklch(.98 .008 300);border:2px solid oklch(.72 .07 300)"></span>
+        <span style="width:110px;height:110px;border-radius:50%;border:2px solid oklch(.55 .11 300);margin-left:-40px;background:rgba(250,251,251,.7)"></span>
+      </div>
+      <div style="padding:34px 38px;display:flex;flex-direction:column;gap:16px">
+        <div style="font:500 26px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Módulo 03</div>
+        <div style="font:600 46px/1.1 Geist,sans-serif;letter-spacing:-.03em">Asesor y terceros</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#3A4147">Acceso para el despacho externo que revisa que la materialidad esté completa.</div>
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">Revisión · Observaciones</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Vigilancia" data-screen-label="09" data-speaker-notes="Tres listas, un cruce, una alerta. Preguntar si falta alguna fuente." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:48px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">09 · Módulo 01</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Vigilancia</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 150px 1.15fr 110px 1.05fr;gap:0;align-items:stretch;flex:1">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.45 .11 300);letter-spacing:.06em;text-transform:uppercase">01 · Fuentes</div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:22px;flex:1">
+        <span style="flex:none;width:64px;height:64px;border-radius:8px;background:oklch(.93 .022 300);display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 14px"><span style="height:4px;border-radius:2px;background:oklch(.55 .11 300)"></span><span style="height:4px;border-radius:2px;background:oklch(.78 .05 300)"></span><span style="height:4px;border-radius:2px;background:oklch(.78 .05 300);width:70%"></span></span>
+        <span style="display:flex;flex-direction:column;gap:4px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">69-B</span><span style="font:400 25px/1.35 Geist,sans-serif;color:#3A4147">Operaciones simuladas</span></span>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:22px;flex:1">
+        <span style="flex:none;width:64px;height:64px;border-radius:8px;background:oklch(.93 .022 300);display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 14px"><span style="height:4px;border-radius:2px;background:oklch(.78 .05 300)"></span><span style="height:4px;border-radius:2px;background:oklch(.55 .11 300)"></span><span style="height:4px;border-radius:2px;background:oklch(.78 .05 300);width:70%"></span></span>
+        <span style="display:flex;flex-direction:column;gap:4px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">69</span><span style="font:400 25px/1.35 Geist,sans-serif;color:#3A4147">No localizados</span></span>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:24px 28px;display:flex;align-items:center;gap:22px;flex:1">
+        <span style="flex:none;width:64px;height:64px;border-radius:8px;background:oklch(.93 .022 300);display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 14px"><span style="height:4px;border-radius:2px;background:oklch(.78 .05 300)"></span><span style="height:4px;border-radius:2px;background:oklch(.78 .05 300)"></span><span style="height:4px;border-radius:2px;background:oklch(.55 .11 300);width:70%"></span></span>
+        <span style="display:flex;flex-direction:column;gap:4px"><span style="display:flex;align-items:center;gap:12px"><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">49 Bis</span><span style="font:500 20px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#FAFBFB;background:oklch(.45 .11 300);border-radius:4px;padding:4px 10px">Nuevo</span></span><span style="font:400 25px/1.35 Geist,sans-serif;color:#3A4147">Lista de CFDI presuntamente falsos</span></span>
+      </div>
+    </div>
+    <div style="display:flex;align-items:stretch;padding:54px 0 0">
+      <svg width="100%" height="100%" viewBox="0 0 150 560" preserveAspectRatio="none" fill="none" style="display:block">
+        <path d="M0 68 C 64 68, 58 268, 104 268 L104 292 C58 292, 64 112, 0 112 Z" fill="oklch(.9 .035 300)"></path>
+        <path d="M0 258 C 64 258, 58 268, 104 268 L104 292 C58 292, 64 302, 0 302 Z" fill="oklch(.86 .05 300)"></path>
+        <path d="M0 448 C 64 448, 58 268, 104 268 L104 292 C58 292, 64 492, 0 492 Z" fill="oklch(.9 .035 300)"></path>
+        <rect x="100" y="266" width="46" height="28" rx="14" fill="oklch(.55 .11 300)"></rect>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.45 .11 300);letter-spacing:.06em;text-transform:uppercase">02 · Cruce</div>
+      <div style="background:#0E1113;color:#FAFBFB;border-radius:10px;padding:32px 34px;display:flex;flex-direction:column;gap:20px;flex:1">
+        <div style="font:600 34px/1.15 Geist,sans-serif;letter-spacing:-.02em">Padrón de proveedores del cliente</div>
+        <div style="display:flex;flex-direction:column;gap:10px;flex:1;justify-content:center">
+          <span style="display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:8px;background:#171B1E"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:#3A4147"></span><span style="flex:1;height:8px;border-radius:4px;background:#2A3035"></span></span>
+          <span style="display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:8px;background:#171B1E"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:#3A4147"></span><span style="flex:1;height:8px;border-radius:4px;background:#2A3035"></span></span>
+          <span style="display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:8px;background:oklch(.32 .06 300);border:1px solid oklch(.55 .11 300)"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:oklch(.72 .11 300)"></span><span style="flex:1;height:8px;border-radius:4px;background:oklch(.55 .11 300)"></span><span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:#FAFBFB">coincidencia</span></span>
+          <span style="display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:8px;background:#171B1E"><span style="flex:none;width:12px;height:12px;border-radius:50%;background:#3A4147"></span><span style="flex:1;height:8px;border-radius:4px;background:#2A3035"></span></span>
+        </div>
+        <div style="font:400 25px/1.4 Geist,sans-serif;color:#C3CACE">Cada publicación se compara contra los RFC con los que la empresa opera.</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:stretch;padding:54px 0 0">
+      <svg width="100%" height="100%" viewBox="0 0 110 560" preserveAspectRatio="none" fill="none" style="display:block">
+        <path d="M22 266 C 54 266, 50 128, 84 128 L84 152 C50 152, 54 290, 22 290 Z" fill="oklch(.86 .05 300)"></path>
+        <path d="M22 266 C 54 266, 50 408, 84 408 L84 432 C50 432, 54 290, 22 290 Z" fill="oklch(.9 .035 300)"></path>
+        <rect x="-8" y="264" width="40" height="28" rx="14" fill="oklch(.55 .11 300)"></rect>
+        <rect x="80" y="126" width="34" height="26" rx="13" fill="oklch(.55 .11 300)"></rect>
+        <rect x="80" y="406" width="34" height="26" rx="13" fill="oklch(.55 .11 300)"></rect>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.45 .11 300);letter-spacing:.06em;text-transform:uppercase">03 · Salida</div>
+      <div style="background:#fff;border:2px solid oklch(.55 .11 300);border-radius:10px;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px;flex:1">
+        <div style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.42 .11 300);letter-spacing:.06em;text-transform:uppercase">Con coincidencia</div>
+        <div style="font:600 34px/1.15 Geist,sans-serif;letter-spacing:-.02em">Alerta al responsable</div>
+        <div style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">Proveedor, lista y fecha de publicación. Sin conclusión legal.</div>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:28px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px;flex:1">
+        <div style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Sin coincidencia</div>
+        <div style="font:600 34px/1.15 Geist,sans-serif;letter-spacing:-.02em">Queda el registro</div>
+        <div style="font:400 25px/1.4 Geist,sans-serif;color:#3A4147">La revisión se archiva con su fecha, aunque no haya nada que reportar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Si la fuente falla" data-screen-label="10" data-speaker-notes="Respuesta directa a la pregunta de Paolo: qué pasa si el sistema no puede leer las listas o simplemente no avisa. El principio es que la ausencia de alerta nunca se interpreta como 'todo bien'." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:48px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">10 · Failsafe</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0;max-width:1520px;text-wrap:pretty">Si la fuente no se puede leer, el sistema lo dice. No se queda callado</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:56px;flex:1">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px">Qué pasa ese día</div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:24px">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:oklch(.93 .025 300);color:oklch(.42 .11 300);font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">01</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 32px/1.2 Geist,sans-serif;letter-spacing:-.02em">Reintenta con todas las URLs de esa lista</span><span style="font:400 24px/1.4 Geist,sans-serif;color:#3A4147">Guardamos cada URL conocida por lista. Si una cambia o deja de responder, se prueban las demás.</span></span>
+      </div>
+      <div style="width:2px;height:20px;background:oklch(.9 .03 300);margin-left:54px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:24px">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:oklch(.93 .025 300);color:oklch(.42 .11 300);font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">02</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 32px/1.2 Geist,sans-serif;letter-spacing:-.02em">Si todas fallan, avisa al equipo</span><span style="font:400 24px/1.4 Geist,sans-serif;color:#3A4147">Notificación el mismo día a los tres responsables, con la lista y el motivo del fallo.</span></span>
+      </div>
+      <div style="width:2px;height:20px;background:oklch(.9 .03 300);margin-left:54px"></div>
+      <div style="background:#fff;border:2px solid oklch(.55 .11 300);border-radius:10px;padding:26px 30px;display:flex;align-items:center;gap:24px">
+        <span style="flex:none;width:54px;height:54px;border-radius:50%;background:oklch(.55 .11 300);color:#FAFBFB;font:500 25px 'Geist Mono',ui-monospace,monospace;display:flex;align-items:center;justify-content:center">03</span>
+        <span style="display:flex;flex-direction:column;gap:6px"><span style="font:600 32px/1.2 Geist,sans-serif;letter-spacing:-.02em">Back office: carga manual</span><span style="font:400 24px/1.4 Geist,sans-serif;color:#3A4147">Subimos el archivo publicado y actualizamos la URL de la lista. La revisión del día se completa.</span></span>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:#0E1113;color:#FAFBFB;border-radius:10px;padding:32px 36px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300);letter-spacing:.06em;text-transform:uppercase">El principio</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#C3CACE">No recibir alerta no significa que todo esté bien. Significa que la revisión corrió y no hubo coincidencia.</div>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:32px 36px;display:flex;flex-direction:column;gap:12px;flex:1;justify-content:center">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Queda en el registro</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#3A4147">Cada día tiene su estado: revisada, revisada con carga manual, o pendiente de fuente. El expediente muestra cuál fue.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Expedientes" data-screen-label="11" data-speaker-notes="Los tres niveles. Aclarar que se abren antes de que haya requerimiento." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:48px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">11 · Módulo 02</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Expedientes</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:64px;flex:1;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:30px 34px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Nivel 1</span><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Documentos de la empresa</span></div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Acta, poderes, opinión de cumplimiento, constancia de situación fiscal.</div>
+      </div>
+      <div style="width:2px;height:28px;background:oklch(.9 .03 300);margin-left:44px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:30px 34px;display:flex;flex-direction:column;gap:8px;margin-left:44px">
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Nivel 2</span><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Evidencia por servicio</span></div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Contrato, entregables, correos, fotos, reportes: lo que prueba que el servicio ocurrió.</div>
+      </div>
+      <div style="width:2px;height:28px;background:oklch(.9 .03 300);margin-left:88px"></div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:30px 34px;display:flex;flex-direction:column;gap:8px;margin-left:88px">
+        <div style="display:flex;align-items:baseline;gap:16px"><span style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">Nivel 3</span><span style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Orden por ejercicio y mes</span></div>
+        <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">La evidencia se archiva en el periodo al que corresponde, no en una carpeta suelta.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <div style="background:#0E1113;color:#FAFBFB;border-radius:10px;padding:32px 36px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300);letter-spacing:.06em;text-transform:uppercase">Preventivo</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#C3CACE">El expediente se abre cuando empieza la relación, no cuando llega el requerimiento.</div>
+      </div>
+      <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:32px 36px;display:flex;flex-direction:column;gap:12px">
+        <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Vigencias</div>
+        <div style="font:400 27px/1.45 Geist,sans-serif;color:#3A4147">Los documentos con fecha de vencimiento piden renovación antes de caducar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Asesor y terceros" data-screen-label="12" data-speaker-notes="Lámina clave para PEYA: aquí aparece el despacho dentro del producto." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:48px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">12 · Módulo 03</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Asesor y terceros</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr auto 1.15fr;gap:40px;align-items:stretch;flex:1">
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:36px 34px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">Empresa cliente</div>
+      <div style="font:600 36px/1.15 Geist,sans-serif;letter-spacing:-.02em">Carga y mantiene su evidencia</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Invita al despacho con el alcance que decida: una entidad, un ejercicio, un proveedor.</div>
+    </div>
+    <div style="font:400 40px Geist,sans-serif;color:oklch(.55 .11 300);align-self:center">→</div>
+    <div style="background:oklch(.32 .06 300);color:#FAFBFB;border-radius:10px;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.85 .06 300);letter-spacing:.06em;text-transform:uppercase">Despacho externo</div>
+      <div style="font:600 40px/1.12 Geist,sans-serif;letter-spacing:-.025em">Revisa que la materialidad esté completa</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#E7E2F0">Entra con su propio acceso, ve el expediente como está y deja observaciones sobre lo que falta.</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:auto">
+    <div style="border-top:2px solid oklch(.9 .03 300);padding-top:24px;display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 30px/1.2 Geist,sans-serif;letter-spacing:-.02em">Acceso por alcance</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">El cliente controla qué ve el tercero y hasta cuándo.</div>
+    </div>
+    <div style="border-top:2px solid oklch(.9 .03 300);padding-top:24px;display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 30px/1.2 Geist,sans-serif;letter-spacing:-.02em">Observaciones en el expediente</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Lo que el despacho pide queda como tarea, no como correo aparte.</div>
+    </div>
+    <div style="border-top:2px solid oklch(.9 .03 300);padding-top:24px;display:flex;flex-direction:column;gap:10px">
+      <div style="font:600 30px/1.2 Geist,sans-serif;letter-spacing:-.02em">Trazabilidad</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Queda registro de quién revisó qué y en qué fecha.</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Qué no incluye" data-screen-label="13" data-speaker-notes="Poner límites genera confianza. El primero es el importante: Diligo no interpreta. Preguntar qué otro límite le preocuparía." style="padding:84px 100px;background:#0E1113;color:#FAFBFB;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:52px;position:relative;overflow:hidden">
+  <div style="position:absolute;top:0;right:0;width:280px;height:100%;background:repeating-linear-gradient(135deg,rgba(255,255,255,.055) 0 14px,transparent 14px 28px);pointer-events:none"></div>
+  <div style="position:relative">
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.72 .11 300);margin-bottom:24px">13 · Límites</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0;text-wrap:pretty">Qué no incluye la primera versión</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;flex:1;position:relative">
+  <div style="display:flex;flex-direction:column;justify-content:center">
+    <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:40px 42px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:oklch(.72 .11 300)">El límite que importa</div>
+      <div style="font:600 48px/1.08 Geist,sans-serif;letter-spacing:-.03em">Diligo no interpreta</div>
+      <div style="font:400 27px/1.45 Geist,sans-serif;color:#C3CACE">Informa y ordena la evidencia. La lectura fiscal y la conclusión las firma el despacho.</div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;justify-content:center;gap:16px;position:relative;padding-right:220px">
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:#8E979D">Fuera del alcance del MVP</div>
+    <div style="display:flex;align-items:flex-start;gap:16px;border-top:1px solid rgba(250,251,251,.14);padding-top:16px">
+      <span style="flex:none;width:12px;height:2px;background:oklch(.62 .11 300);margin-top:14px"></span>
+      <span style="font:500 28px/1.3 Geist,sans-serif">Integraciones con ERP</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;border-top:1px solid rgba(250,251,251,.14);padding-top:16px">
+      <span style="flex:none;width:12px;height:2px;background:oklch(.62 .11 300);margin-top:14px"></span>
+      <span style="font:500 28px/1.3 Geist,sans-serif">Descarga automatizada con credenciales del SAT</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;border-top:1px solid rgba(250,251,251,.14);padding-top:16px">
+      <span style="flex:none;width:12px;height:2px;background:oklch(.62 .11 300);margin-top:14px"></span>
+      <span style="display:flex;flex-direction:column;gap:5px">
+        <span style="font:500 28px/1.3 Geist,sans-serif">Constancia NOM-151</span>
+        <span style="font:400 24px/1.35 Geist,sans-serif;color:#8E979D">Documento digital con sello de tiempo que certifica fecha, hora exacta e integridad de un archivo. Queda para v1.1, pero la arquitectura de hashes la soporta desde el día uno.</span>
+      </span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;border-top:1px solid rgba(250,251,251,.14);padding-top:16px">
+      <span style="flex:none;width:12px;height:2px;background:oklch(.62 .11 300);margin-top:14px"></span>
+      <span style="font:500 28px/1.3 Geist,sans-serif">App móvil nativa</span>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:16px;border-top:1px solid rgba(250,251,251,.14);padding-top:16px">
+      <span style="flex:none;width:12px;height:2px;background:oklch(.62 .11 300);margin-top:14px"></span>
+      <span style="font:500 28px/1.3 Geist,sans-serif">Analítica avanzada de red de proveedores</span>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section data-label="Qué hay para PEYA" data-screen-label="14" data-speaker-notes="Aquí escuchar más que hablar: cuántos clientes se lo han pedido y qué les han contestado. Este es el punto donde el producto deja de ser un favor y se vuelve un servicio que la firma puede cobrar." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:52px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">14 · Qué hay para PEYA</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0;text-wrap:pretty">Lo que ya piden sus clientes, pero con el estándar de PEYA</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;flex:1">
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:36px 34px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">01 · Confianza</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;height:145px;align-content:center;margin-bottom:6px">
+        <div style="height:44px;border-radius:6px;background:oklch(.32 .06 300)"></div>
+        <div style="height:44px;border-radius:6px;background:oklch(.32 .06 300)"></div>
+        <div style="height:44px;border-radius:6px;background:oklch(.32 .06 300)"></div>
+        <div style="height:44px;border-radius:6px;border:1.5px dashed oklch(.82 .03 300)"></div>
+        <div style="height:44px;border-radius:6px;background:oklch(.32 .06 300)"></div>
+        <div style="height:44px;border-radius:6px;border:1.5px dashed oklch(.82 .03 300)"></div>
+        <div style="height:44px;border-radius:6px;border:1.5px dashed oklch(.82 .03 300)"></div>
+        <div style="height:44px;border-radius:6px;background:oklch(.32 .06 300)"></div>
+      </div>
+      <div style="font:600 38px/1.13 Geist,sans-serif;letter-spacing:-.025em;min-height:86px">Los clientes preguntan a PEYA por esto</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#3A4147">Varios clientes ya le han pedido a la firma una solución para su materialidad. Confían en su criterio para resolverlo.</div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:36px 34px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;letter-spacing:.06em;text-transform:uppercase">02 · El mercado</div>
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:8px;height:145px;align-content:center;margin-bottom:6px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:#FFF;border:1px solid oklch(.9 .03 300);border-radius:6px;padding:12px 16px">
+          <span style="font:400 25px Geist,sans-serif;color:#3A4147">¿Está en la lista?</span>
+          <span style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#FAFBFB;background:#B4402F;border-radius:4px;padding:5px 12px">SÍ</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;background:#FFF;border:1px solid oklch(.9 .03 300);border-radius:6px;padding:12px 16px">
+          <span style="font:400 25px Geist,sans-serif;color:#3A4147">¿Cuánto está en la línea?</span>
+          <span style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D;white-space:nowrap">sin dato</span>
+        </div>
+      </div>
+      <div style="font:600 38px/1.13 Geist,sans-serif;letter-spacing:-.025em;min-height:86px">Lo que ofrece el mercado se queda corto</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#3A4147">Las herramientas disponibles avisan que hay una alerta, pero no dicen cuánto dinero está en la línea ni en qué estado está la materialidad.</div>
+    </div>
+    <div style="background:oklch(.32 .06 300);color:#FAFBFB;border-radius:10px;padding:36px 34px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.88 .05 300);letter-spacing:.06em;text-transform:uppercase">03 · Oportunidad</div>
+      <div style="display:flex;flex-direction:column;justify-content:center;gap:10px;height:145px;margin-bottom:6px">
+        <div style="display:flex;justify-content:space-between;font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.88 .05 300)"><span>EN LA LÍNEA</span><span>$ 4.2 M</span></div>
+        <div style="height:18px;border-radius:4px;background:rgba(250,251,251,.18);overflow:hidden"><div style="width:68%;height:100%;background:#FAFBFB"></div></div>
+        <div style="display:flex;align-items:center;gap:10px;font:400 25px Geist,sans-serif;color:#E7E2F0"><span style="width:26px;height:2px;background:oklch(.88 .05 300);flex:none"></span>68 % de la materialidad soportada</div>
+      </div>
+      <div style="font:600 38px/1.13 Geist,sans-serif;letter-spacing:-.025em;min-height:86px">PEYA revisa y opina sobre la materialidad</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#E7E2F0">Con el expediente ordenado y actualizado, la firma puede ofrecer esa revisión como un servicio recurrente, no como una consulta suelta.</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:20px;border-top:2px solid oklch(.9 .03 300);padding-top:28px">
+    <span style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:oklch(.45 .11 300);flex:none">Para conversar</span>
+    <span style="font:400 27px/1.4 Geist,sans-serif;color:#3A4147">¿Cuántos clientes se lo han pedido y con qué se han quedado hasta ahora?</span>
+  </div>
+</section>
+
+<section data-label="Trabajar con PEYA" data-screen-label="15" data-speaker-notes="Presentar como propuesta para conversar, no como términos. En el punto 04 no abrir números: solo pedir su orientación más adelante." style="padding:84px 100px;background:#0E1113;color:#FAFBFB;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:52px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8B949C;margin-bottom:24px">15 · Propuesta para conversar</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Cómo imaginamos trabajar con PEYA</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:32px;flex:1">
+    <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:36px 40px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">01 · Know-how</div>
+      <div style="font:600 38px/1.15 Geist,sans-serif;letter-spacing:-.025em">El criterio de la firma define el producto</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#C3CACE">Qué evidencia cuenta, qué documentos piden, qué revisan primero. La definición la trabajamos con el equipo de PEYA.</div>
+    </div>
+    <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:36px 40px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">02 · Beta</div>
+      <div style="font:600 38px/1.15 Geist,sans-serif;letter-spacing:-.025em">Probarlo con casos reales de la firma</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#C3CACE">Pocos expedientes, ciclos cortos de ajuste, sin mover la operación diaria.</div>
+    </div>
+    <div style="background:#171B1E;border:1px solid #2A3035;border-radius:10px;padding:36px 40px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">03 · Lanzamiento</div>
+      <div style="font:600 38px/1.15 Geist,sans-serif;letter-spacing:-.025em">Que salga cuando PEYA dé el visto bueno</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#C3CACE">Nada se lanza sin la aprobación final de Paolo. No queremos algo que la firma no respaldaría frente a un cliente.</div>
+    </div>
+    <div style="background:oklch(.32 .06 300);border-radius:10px;padding:36px 40px;display:flex;flex-direction:column;gap:14px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.88 .05 300)">04 · Modelo comercial</div>
+      <div style="font:600 38px/1.15 Geist,sans-serif;letter-spacing:-.025em">Nos gustaría su orientación cuando llegue el momento</div>
+      <div style="font:400 26px/1.45 Geist,sans-serif;color:#E7E2F0">Tenemos ideas de cómo llevarlo al mercado. Cuando el producto esté listo, queremos escuchar su lectura sobre ellas.</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Estado y siguientes pasos" data-screen-label="16" data-speaker-notes="Dónde estamos hoy y qué proponemos hacer en las próximas semanas." style="padding:84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;gap:52px">
+  <div>
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:24px">16 · Estado</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0">Dónde estamos y siguientes pasos</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;flex:1">
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:32px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300);letter-spacing:.06em;text-transform:uppercase">Avanzado</div>
+      <div style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Discovery</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Problema, usuarios y alcance de la primera versión definidos.</div>
+      <div style="display:flex;gap:8px;margin-top:8px"><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.9 .03 300)"></span></div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:32px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300);letter-spacing:.06em;text-transform:uppercase">En curso</div>
+      <div style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Arquitectura</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Modelo de datos, multi-tenancy y manejo de archivos.</div>
+      <div style="display:flex;gap:8px;margin-top:8px"><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.9 .03 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.9 .03 300)"></span></div>
+    </div>
+    <div style="background:oklch(.975 .012 300);border:1px solid oklch(.9 .03 300);border-radius:10px;padding:32px 34px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+      <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300);letter-spacing:.06em;text-transform:uppercase">Listos</div>
+      <div style="font:600 34px/1.2 Geist,sans-serif;letter-spacing:-.02em">Primeros diseños</div>
+      <div style="font:400 25px/1.45 Geist,sans-serif;color:#3A4147">Pantallas de los tres módulos, en versión borrador.</div>
+      <div style="display:flex;gap:8px;margin-top:8px"><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span><span style="flex:1;height:12px;border-radius:6px;background:oklch(.55 .11 300)"></span></div>
+    </div>
+  </div>
+  <div style="background:#0E1113;color:#FAFBFB;border-radius:10px;padding:44px 48px;display:flex;flex-direction:column;gap:28px;margin-top:auto">
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;color:#8B949C;letter-spacing:.08em;text-transform:uppercase">Siguientes pasos que proponemos</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+      <div style="display:flex;gap:18px;align-items:baseline"><span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">01</span><span style="font:500 30px/1.3 Geist,sans-serif">Sesiones de definición con PEYA</span></div>
+      <div style="display:flex;gap:18px;align-items:baseline"><span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">02</span><span style="font:500 30px/1.3 Geist,sans-serif">Validar los diseños contra expedientes reales</span></div>
+      <div style="display:flex;gap:18px;align-items:baseline"><span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">03</span><span style="font:500 30px/1.3 Geist,sans-serif">Definir juntos el alcance de una beta</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Diseños iniciales" data-screen-label="17" data-speaker-notes="Opcional. Aclarar que son borrador sobre el PRD v1 y no reflejan la estructura de tres niveles." style="padding:84px 0 84px 100px;background:oklch(.98 .008 300);color:#111417;font-family:Geist,system-ui,sans-serif;display:grid;grid-template-columns:.78fr 1.22fr;gap:70px;position:relative;overflow:hidden">
+  <div style="display:flex;flex-direction:column">
+    <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:oklch(.45 .11 300);margin-bottom:26px">17 · Diseños iniciales</div>
+    <h2 style="font:600 68px/1.05 Geist,sans-serif;letter-spacing:-.03em;margin:0 0 36px;text-wrap:pretty">Pantallas clave, en borrador</h2>
+    <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid oklch(.88 .03 300)">
+      <div style="display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid oklch(.88 .03 300)">
+        <span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">01</span>
+        <span style="font:600 30px/1.2 Geist,sans-serif;letter-spacing:-.02em">Vigilancia</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid oklch(.88 .03 300)">
+        <span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">02</span>
+        <span style="font:600 30px/1.2 Geist,sans-serif;letter-spacing:-.02em">Expedientes</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:20px;padding:20px 0;border-bottom:1px solid oklch(.88 .03 300)">
+        <span style="font:500 24px 'Geist Mono',ui-monospace,monospace;color:oklch(.55 .11 300)">03</span>
+        <span style="font:600 30px/1.2 Geist,sans-serif;letter-spacing:-.02em">Asesor y terceros</span>
+      </div>
+    </div>
+    <div style="margin-top:auto;border-left:2px solid oklch(.55 .11 300);padding-left:24px;font:400 25px/1.45 Geist,sans-serif;color:#3A4147;max-width:560px">Se hicieron sobre la primera versión del PRD. Todavía no reflejan varias correcciones, como la estructura de expedientes en tres niveles.</div>
+  </div>
+  <div style="position:relative;background:oklch(.955 .016 300);border-left:1px solid oklch(.9 .03 300);margin:-84px 0;overflow:hidden">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(135deg,oklch(.93 .022 300) 0 16px,transparent 16px 32px);opacity:.55"></div>
+    <div style="position:absolute;left:66px;top:96px;width:660px;border:1px solid oklch(.86 .035 300);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -26px rgba(14,17,19,.3)">
+      <div style="height:52px;display:flex;align-items:center;gap:12px;padding:0 18px;background:oklch(.975 .012 300);border-bottom:1px solid oklch(.9 .03 300)">
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="margin-left:8px;font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">01 · Vigilancia</span>
+      </div>
+      <div style="height:330px;overflow:hidden">
+        <img src="./shots/app-vigilancia.png" alt="Vigilancia" style="display:block;width:100%;-webkit-mask-image:linear-gradient(#000 74%,transparent);mask-image:linear-gradient(#000 74%,transparent)">
+      </div>
+    </div>
+    <div style="position:absolute;left:196px;top:326px;width:660px;border:1px solid oklch(.86 .035 300);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -26px rgba(14,17,19,.3)">
+      <div style="height:52px;display:flex;align-items:center;gap:12px;padding:0 18px;background:oklch(.975 .012 300);border-bottom:1px solid oklch(.9 .03 300)">
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="margin-left:8px;font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">02 · Expedientes</span>
+      </div>
+      <div style="height:330px;overflow:hidden">
+        <img src="./shots/app-expedientes.png" alt="Expedientes" style="display:block;width:100%;margin-top:-227px;-webkit-mask-image:linear-gradient(#000 74%,transparent);mask-image:linear-gradient(#000 74%,transparent)">
+      </div>
+    </div>
+    <div style="position:absolute;left:326px;top:556px;width:660px;border:1px solid oklch(.86 .035 300);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 40px 70px -26px rgba(14,17,19,.3)">
+      <div style="height:52px;display:flex;align-items:center;gap:12px;padding:0 18px;background:oklch(.975 .012 300);border-bottom:1px solid oklch(.9 .03 300)">
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="width:9px;height:9px;border-radius:50%;background:oklch(.86 .035 300)"></span>
+        <span style="margin-left:8px;font:500 25px 'Geist Mono',ui-monospace,monospace;color:#6C757D">03 · Asesor y terceros</span>
+      </div>
+      <div style="height:330px;overflow:hidden">
+        <img src="./shots/app-asesor.png" alt="Asesor y terceros" style="display:block;width:100%;margin-top:-726px;-webkit-mask-image:linear-gradient(#000 74%,transparent);mask-image:linear-gradient(#000 74%,transparent)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Preguntas y cierre" data-screen-label="18" data-speaker-notes="Abrir. Las preguntas de él valen más que cualquier lámina anterior." style="padding:96px 104px;background:#0E1113;color:#FAFBFB;font-family:Geist,system-ui,sans-serif;display:flex;flex-direction:column;justify-content:space-between;">
+  <div style="font:500 25px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;color:#8B949C">18 · Cierre</div>
+  <div style="display:flex;flex-direction:column;gap:36px">
+    <h2 style="font:600 96px/1.05 Geist,sans-serif;letter-spacing:-.04em;margin:0;max-width:1400px;text-wrap:pretty">Preguntas</h2>
+    <div style="font:400 34px/1.4 Geist,sans-serif;color:#C3CACE;max-width:1100px">Lo que no vimos hoy, lo que cambiarían, y lo que ustedes ven con sus clientes que nosotros no.</div>
+    <div style="font:500 26px/1.4 'Geist Mono',ui-monospace,monospace;color:oklch(.72 .11 300)">El veredicto es suyo, Mr. Peyaco.</div>
+  </div>
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid #2A3035;padding-top:32px">
+    <div style="display:flex;align-items:center;gap:16px">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" stroke="#FAFBFB"></rect><path d="M8 8 L16 16" stroke="#FAFBFB"></path><path d="M16 8 L8 16" stroke="oklch(.62 .11 300)"></path></svg>
+      <span style="font:700 40px/1 Geist,sans-serif;letter-spacing:-.04em">diligo</span>
+    </div>
+    <div style="font:400 26px/1.5 'Geist Mono',ui-monospace,monospace;color:#8B949C;text-align:right">Oblique Technologies S.A.S.<br>init@oblique.mx · oblique.mx</div>
+  </div>
+</section>
+
+</x-import>
+</x-dc>
+</body>
+</html>

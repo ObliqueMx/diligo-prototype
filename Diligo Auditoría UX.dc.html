@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><script src="./doc-page.js"></script><style>doc-page:not(:defined){visibility:hidden}body{margin:0;font-family:Geist,system-ui,sans-serif;color:#111417;-webkit-font-smoothing:antialiased}a{color:oklch(.45 .11 300)}a:hover{color:#111417}.keep{break-inside:avoid}</style></helmet>
+
+<doc-page margin="0.8in">
+  <div slot="header" style="display:flex;align-items:center;justify-content:space-between;padding:0 0 10pt;border-bottom:1px solid #E4E8EA;font-family:Geist,system-ui,sans-serif">
+    <span style="display:inline-flex;align-items:center;gap:6pt"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="oklch(.55 .11 300)"></line></svg><span style="font:700 12pt/1 Geist,sans-serif;letter-spacing:-.04em">diligo</span></span>
+    <span style="font:400 10pt 'Geist Mono',monospace;color:#6C757D">Auditoría de etiquetas, botones y navegación · rev. 10 sep 2026 · cierre</span>
+  </div>
+  <div slot="footer" style="display:flex;align-items:center;justify-content:space-between;padding:10pt 0 0;border-top:1px solid #E4E8EA;font:400 9.5pt/1.4 Geist,system-ui,sans-serif;color:#6C757D">
+    <span>Revisión sobre el prototipo Diligo App, persona Cliente y persona Asesor.</span><span style="font-family:'Geist Mono',monospace">Interno</span>
+  </div>
+
+  <div style="font-family:Geist,system-ui,sans-serif;font-size:12pt;line-height:1.5;color:#111417">
+
+    <div style="padding:36pt 0 26pt;border-bottom:1px solid #111417">
+      <div style="font:500 10pt 'Geist Mono',monospace;color:oklch(.45 .11 300);letter-spacing:.04em">AUDITORÍA DE PRODUCTO</div>
+      <h1 style="font:600 30pt/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:12pt 0 0">Que cada clic diga a dónde lleva</h1>
+      <p style="font-size:12.5pt;color:#3A4147;margin:10pt 0 0;max-width:34em;text-wrap:pretty">Revisión de las 18 pantallas del prototipo: qué nombre recibe cada objeto, qué promete cada botón y qué pasa al presionarlo. Al final hay una lista de verificación para usar en cada pantalla nueva.</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14pt;margin-top:26pt">
+        <div><div style="font:500 24pt/1 'Geist Mono',monospace">195</div><div style="font-size:10.5pt;color:#6C757D;margin-top:3pt">botones revisados</div></div>
+        <div><div style="font:500 24pt/1 'Geist Mono',monospace;color:oklch(0.45 0.19 25)">0</div><div style="font-size:10.5pt;color:#6C757D;margin-top:3pt">sin destino</div></div>
+        <div><div style="font:500 24pt/1 'Geist Mono',monospace;">21</div><div style="font-size:10.5pt;color:#6C757D;margin-top:3pt">destinos resueltos</div></div>
+        <div><div style="font:500 24pt/1 'Geist Mono',monospace;">0</div><div style="font-size:10.5pt;color:#6C757D;margin-top:3pt">términos en conflicto</div></div>
+      </div>
+    </div>
+
+    <h2 style="font:600 16pt/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:28pt 0 10pt">1. Lo que hay que arreglar primero</h2>
+    <div class="keep" style="border:1px solid #111417;border-radius:6pt;padding:12pt 14pt;margin:0 0 14pt;font-size:11pt;line-height:1.5">
+      <div style="font:500 9.5pt 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D;text-transform:uppercase;margin-bottom:6pt">Estado al 10 de septiembre · corregido en el prototipo</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6pt 18pt">
+        <div><b>21 destinos cerrados</b> · los 7 botones mudos confirman o navegan y los 6 enlaces a <span style="font-family:'Geist Mono',monospace;font-size:10pt">#</span> apuntan a su destino real.</div>
+        <div><b>Glosario aplicado</b> · «Materialidad» pasó a <b>Expedientes</b> y «Seguimiento» a <b>Asesor y terceros</b> en menú, título y miga.</div>
+        <div><b>Una sola escala</b> · A/B/C ahora se llama <b>Alcance</b>; «Nivel 1 / Nivel 2» queda como única escala de documentación.</div>
+        <div><b>Cerrado</b> · las cuatro cifras del tablero abren su lista y cada línea de la bitácora abre el objeto citado.</div>
+      </div>
+    </div>
+    <p style="margin:0 0 12pt;max-width:38em;text-wrap:pretty">Tres problemas explican casi todos los hallazgos: el mismo objeto tiene varios nombres según dónde se le mencione, hay botones que prometen una acción y no hacen nada, y la misma etiqueta se comporta distinto en dos pantallas. Ninguno es de diseño visual; todos son de vocabulario.</p>
+
+    <div class="keep" style="border:1px solid #E4E8EA;border-radius:6pt;overflow:hidden;margin-bottom:14pt">
+      <div style="background:oklch(0.95 0.03 25);padding:10pt 14pt;border-bottom:1px solid #E4E8EA"><span style="font:600 11pt Geist,sans-serif;color:oklch(0.45 0.19 25)">P1 · El usuario se queda sin respuesta</span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:11pt">
+        <thead><tr style="text-align:left;color:#6C757D;font-size:10pt"><th style="padding:8pt 14pt;font-weight:600;width:32%">Dónde</th><th style="padding:8pt 14pt;font-weight:600">Qué pasa</th></tr></thead>
+        <tbody>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Tablero, Vigilancia, Expedientes, Datos, Aprobados, Diagnóstico</td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Cerrado. Exportar resumen (PDF) y Exportar alertas (CSV) confirman con aviso; Catálogo de checklists abre Configuración · Checklists; Programar recordatorio abre Notificaciones; Exportar aprobados lleva al flujo de paquetes; los tres Activar Diligo activan el tenant y aterrizan en el Tablero.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Tablero, Alerta, Datos</td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Cerrado. «Ver todas las alertas» va a Vigilancia, las dos fuentes oficiales abren el listado 69-B del SAT en pestaña nueva y los dos «Cargar XML» inician la carga de 2021–2022.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top">Alerta, Expediente, Archivos, Exportar</td><td style="padding:8pt 14pt;vertical-align:top">El menú lateral pierde el resaltado en cuanto se entra a una subpantalla. Estando en un expediente, ninguna sección aparece activa y no hay forma de saber en qué módulo se está.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="keep" style="border:1px solid #E4E8EA;border-radius:6pt;overflow:hidden;margin-bottom:14pt">
+      <div style="background:oklch(0.95 0.04 50);padding:10pt 14pt;border-bottom:1px solid #E4E8EA"><span style="font:600 11pt Geist,sans-serif;color:oklch(0.48 0.16 50)">P2 · La misma palabra significa dos cosas</span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:11pt">
+        <thead><tr style="text-align:left;color:#6C757D;font-size:10pt"><th style="padding:8pt 14pt;font-weight:600;width:30%">Etiqueta</th><th style="padding:8pt 14pt;font-weight:600">Conflicto</th></tr></thead>
+        <tbody>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D"><b>Abrir expediente</b> <span style="font:500 9pt 'Geist Mono',monospace">RESUELTO</span></td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Crear es <b>Nuevo expediente</b> y consultar es <b>Ver expediente</b> en toda la app, incluidas las listas del asesor y del diagnóstico.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D"><b>Escalar al asesor</b> <span style="font:500 9pt 'Geist Mono',monospace">RESUELTO</span></td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Escala y confirma igual desde la barra de selección de Vigilancia y desde el detalle de la alerta.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D"><b>Exportar paquete</b> <span style="font:500 9pt 'Geist Mono',monospace">RESUELTO</span></td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Abre el armado desde el expediente y desde Archivos del proveedor.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top"><b>Cargar CFDI</b></td><td style="padding:8pt 14pt;vertical-align:top">En el tablero navega a la pantalla de Datos. Dentro de Datos inicia la carga. El mismo texto para «ir a» y para «hacer».</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top"><b>Cerrar</b> / <b>Descartar</b> / <b>✕</b></td><td style="padding:8pt 14pt;vertical-align:top">Los avisos temporales se cierran de tres maneras distintas según la pantalla. Sin diferencia de comportamiento que lo justifique.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="keep" style="border:1px solid #E4E8EA;border-radius:6pt;overflow:hidden">
+      <div style="background:oklch(0.96 0.05 85);padding:10pt 14pt;border-bottom:1px solid #E4E8EA"><span style="font:600 11pt Geist,sans-serif;color:oklch(0.48 0.12 85)">P3 · La etiqueta no anticipa el resultado</span></div>
+      <table style="width:100%;border-collapse:collapse;font-size:11pt">
+        <thead><tr style="text-align:left;color:#6C757D;font-size:10pt"><th style="padding:8pt 14pt;font-weight:600;width:30%">Etiqueta actual</th><th style="padding:8pt 14pt;font-weight:600">Problema y propuesta</th></tr></thead>
+        <tbody>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Solicitar más <span style="font:500 9pt 'Geist Mono',monospace">RESUELTO</span></td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Ahora dice <b>Solicitar más almacenamiento</b>.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top">Pedir refuerzo</td><td style="padding:8pt 14pt;vertical-align:top">Jerga interna; el aviso posterior explica que se piden puntos faltantes al equipo fiscal. → <b>Pedir evidencia faltante</b>.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top">Solicitar acceso / Invitar asesor</td><td style="padding:8pt 14pt;vertical-align:top">Son los dos lados de la misma relación y no se leen como pareja. → <b>Solicitar acceso al cliente</b> (asesor) y <b>Invitar a un asesor</b> (cliente), con el mismo objeto nombrado igual en ambos.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Activar alcance propuesto <span style="font:500 9pt 'Geist Mono',monospace">RESUELTO</span></td><td style="padding:8pt 14pt;vertical-align:top;color:#6C757D">Ahora dice <b>Documentar los 68 proveedores propuestos</b> y lleva a Expedientes.</td></tr>
+          <tr style="border-top:1px solid #EEF1F2"><td style="padding:8pt 14pt;vertical-align:top">···  ·  –  ·  +</td><td style="padding:8pt 14pt;vertical-align:top">Controles sin nombre accesible en Materialidad y Configuración. Necesitan <span style="font-family:'Geist Mono',monospace;font-size:10pt">title</span> y etiqueta para lector de pantalla.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="font:600 16pt/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:28pt 0 10pt">2. Un nombre por cosa</h2>
+    <p style="margin:0 0 12pt;max-width:38em;text-wrap:pretty">Siete objetos se llaman distinto según la pantalla. La columna de la derecha es la propuesta: una sola palabra, usada en el menú, el título, la miga de pan y el botón que lleva ahí.</p>
+
+    <table class="keep" style="width:100%;border-collapse:collapse;font-size:11pt">
+      <thead><tr style="text-align:left;color:#6C757D;font-size:10pt"><th style="padding:6pt 0;border-bottom:1px solid #111417;font-weight:600;width:22%">Objeto</th><th style="padding:6pt 10pt;border-bottom:1px solid #111417;font-weight:600">Cómo se llama hoy</th><th style="padding:6pt 0 6pt 10pt;border-bottom:1px solid #111417;font-weight:600;width:24%">Nombre único</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Módulo de expedientes</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Materialidad» en el menú y el título, «Expedientes» en la miga de la pantalla de exportación. <b style="color:#6C757D">Aplicado: hoy dice Expedientes en los tres lugares.</b></td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>Expedientes</b>, con materialidad como concepto explicado dentro</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Módulo de alertas</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Vigilancia» en el menú, «Alertas» en la miga de la alerta, «Alertas abiertas» en el tablero</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>Vigilancia</b> para el módulo, <b>alerta</b> para cada elemento</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Carga de CFDI</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Datos» en el menú, «Carga de CFDI y cobertura» como título, «Cargar CFDI» en el tablero</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>CFDI</b> o <b>Carga de CFDI</b>, igual en los tres lugares</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Relación con el asesor</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Seguimiento» en el menú; el mensaje de bloqueo lo llama «el acceso del asesor»; contiene expedientes con el asesor, terceros y exportaciones. <b style="color:#6C757D">Aplicado: menú, título y miga dicen Asesor y terceros.</b></td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>Asesor y terceros</b></td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Evidencia del proveedor</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Archivos» en el botón, «Archivos del proveedor» como pantalla, «Ver archivos» dentro del expediente</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>Archivos</b>, y como pestaña dentro del expediente, no como pantalla aparte</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Nivel del proveedor</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Nivel 1 Proveedor» en el expediente y «Nivel A/B» en las listas, mientras la documentación usa su propia escala de niveles. Tres escalas con el mismo sustantivo. <b style="color:#6C757D">Aplicado: A/B/C es <i>Alcance</i>; «Nivel» queda solo para la documentación.</b></td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>Alcance A/B/C</b> para la profundidad exigida; <b>Nivel 1/2</b> para la documentación</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top">Salidas</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Exportar resumen · alertas · paquete · paquetes · expediente · aprobados · bitácora (CSV) · Descargar índice (CSV) · Descargar</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top"><b>Exportar «objeto» (formato)</b> para generar; <b>Descargar</b> solo para lo ya generado</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font:600 16pt/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:28pt 0 10pt">3. Rutas que no cierran</h2>
+    <div class="keep" style="display:grid;grid-template-columns:1fr 1fr;gap:12pt;font-size:11pt">
+      <div style="border:1px solid #E4E8EA;border-radius:6pt;padding:12pt 14pt"><div style="font-weight:600;margin-bottom:5pt">La miga de la alerta miente</div><div style="color:#3A4147;line-height:1.45">Siempre dice «Tablero / Alertas», pero a la alerta se llega también desde Vigilancia y desde el expediente. La miga debe reflejar de dónde vino el usuario o reducirse a «Vigilancia».</div></div>
+      <div style="border:1px solid #E4E8EA;border-radius:6pt;padding:12pt 14pt"><div style="font-weight:600;margin-bottom:5pt">Expediente y Archivos se apuntan mutuamente</div><div style="color:#3A4147;line-height:1.45">Son dos pantallas hermanas enlazadas entre sí en ambos sentidos, del mismo proveedor. Deberían ser una sola con pestañas.</div></div>
+      <div style="border:1px solid #E4E8EA;border-radius:6pt;padding:12pt 14pt"><div style="font-weight:600;margin-bottom:5pt">La bitácora no lleva a ningún lado <span style="font:500 9pt 'Geist Mono',monospace;color:#6C757D">RESUELTO</span></div><div style="color:#3A4147;line-height:1.45">Cada línea abre el objeto citado: proveedor, exportación, carga de datos, configuración o acceso del asesor, según el tipo de evento.</div></div>
+      <div style="border:1px solid #E4E8EA;border-radius:6pt;padding:12pt 14pt"><div style="font-weight:600;margin-bottom:5pt">Dos caminos al mismo paquete</div><div style="color:#3A4147;line-height:1.45">«Exportar expediente» en Seguimiento abre el armado; «Exportar paquetes» en Aprobados pide primero seleccionar. Conviene un solo flujo con el mismo primer paso.</div></div>
+    </div>
+
+    <h2 style="font:600 16pt/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:28pt 0 10pt">4. El proveedor se abre en dos pantallas distintas</h2>
+    <p style="margin:0 0 12pt;max-width:38em;text-wrap:pretty">Es el hallazgo estructural más importante y explica la sensación de que el tablero lleva a un callejón. Hacer clic en una fila abre una pantalla u otra según de qué lista se venga, aunque en los dos casos el objeto es el mismo proveedor.</p>
+
+    <table class="keep" style="width:100%;border-collapse:collapse;font-size:11pt;margin-bottom:14pt">
+      <thead><tr style="text-align:left;color:#6C757D;font-size:10pt"><th style="padding:6pt 0;border-bottom:1px solid #111417;font-weight:600;width:38%">Al hacer clic en una fila de…</th><th style="padding:6pt 0 6pt 10pt;border-bottom:1px solid #111417;font-weight:600">Se abre</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:7pt 0">Tablero · Requiere acción</td><td style="padding:7pt 0 7pt 10pt">Detalle de alerta</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:7pt 0">Vigilancia</td><td style="padding:7pt 0 7pt 10pt">Detalle de alerta</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:7pt 0">Materialidad</td><td style="padding:7pt 0 7pt 10pt">Expediente</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:7pt 0">Seguimiento · Cola de revisión</td><td style="padding:7pt 0 7pt 10pt">Expediente</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:7pt 0">Diagnóstico · Proveedores en listas</td><td style="padding:7pt 0 7pt 10pt">Expediente</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin:0 0 12pt;max-width:38em;text-wrap:pretty">Las dos pantallas ya se solapan: el detalle de alerta trae una sección «Expediente» y el expediente trae una sección «Listas del SAT» que regresa a la alerta. Son la misma ficha partida en dos, cada mitad con la cabecera, el RFC y el nombre del proveedor repetidos, y cada una alcanzable solo desde su propia lista.</p>
+
+    <div class="keep" style="display:grid;grid-template-columns:1fr 1fr;gap:12pt;font-size:11pt;margin-bottom:14pt">
+      <div style="border:1px solid #E4E8EA;border-radius:6pt;padding:12pt 14pt">
+        <div style="font:500 9.5pt 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D;text-transform:uppercase;margin-bottom:6pt">Hoy · Detalle de alerta</div>
+        <div style="color:#3A4147;line-height:1.5">Contingencia estimada · CFDI del proveedor · Expediente (resumen) · Historial en listas · Notificaciones</div>
+      </div>
+      <div style="border:1px solid #E4E8EA;border-radius:6pt;padding:12pt 14pt">
+        <div style="font:500 9.5pt 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D;text-transform:uppercase;margin-bottom:6pt">Hoy · Expediente</div>
+        <div style="color:#3A4147;line-height:1.5">Servicios y checklists · Nivel 1 Proveedor · Listas del SAT (resumen) · Listo para defensa · Asesor · Bitácora</div>
+      </div>
+    </div>
+
+    <div class="keep" style="border:1px solid #111417;border-radius:6pt;padding:14pt 16pt;margin-bottom:14pt">
+      <div style="font:600 12pt Geist,sans-serif;margin-bottom:8pt">Propuesta: una sola ficha de proveedor con pestañas</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6pt;margin-bottom:10pt;font-size:10.5pt">
+        <span style="padding:4pt 10pt;border-radius:999px;background:#111417;color:#EEF1F2;font-weight:600">Riesgo</span>
+        <span style="padding:4pt 10pt;border-radius:999px;background:#EEF1F2;color:#3A4147;font-weight:600">Expediente</span>
+        <span style="padding:4pt 10pt;border-radius:999px;background:#EEF1F2;color:#3A4147;font-weight:600">Archivos</span>
+        <span style="padding:4pt 10pt;border-radius:999px;background:#EEF1F2;color:#3A4147;font-weight:600">CFDI</span>
+        <span style="padding:4pt 10pt;border-radius:999px;background:#EEF1F2;color:#3A4147;font-weight:600">Bitácora</span>
+      </div>
+      <div style="font-size:11pt;line-height:1.5;color:#3A4147">La cabecera es siempre la misma: nombre, RFC, severidad vigente, plazo, gasto del periodo y completitud del expediente. Cualquier fila de cualquier lista abre esta ficha; lo único que cambia es la pestaña de entrada. Desde el tablero y desde Vigilancia entra en <b>Riesgo</b>, que es el contenido actual del detalle de alerta. Desde Materialidad, la cola del asesor y el diagnóstico entra en <b>Expediente</b>. Con esto desaparecen los saltos «Ver expediente» y «69-B definitivo», la pantalla suelta de Archivos, y las dos cabeceras duplicadas.</div>
+    </div>
+
+    <div class="keep" style="font-size:11pt;line-height:1.5;color:#3A4147;margin-bottom:4pt"><b style="color:#111417">Un proveedor sin alerta.</b> La pestaña Riesgo no queda vacía: muestra el estatus vigente en listas, la última revisión y el historial. Es la respuesta a «¿este proveedor está limpio?», que hoy no tiene pantalla.</div>
+
+    <h2 style="font:600 16pt/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:28pt 0 10pt">5. Pantalla por pantalla</h2>
+
+    <table class="keep" style="width:100%;border-collapse:collapse;font-size:10.5pt">
+      <thead><tr style="text-align:left;color:#6C757D;font-size:10pt"><th style="padding:6pt 0;border-bottom:1px solid #111417;font-weight:600;width:20%">Pantalla</th><th style="padding:6pt 10pt;border-bottom:1px solid #111417;font-weight:600">Qué corregir</th><th style="padding:6pt 0 6pt 10pt;border-bottom:1px solid #111417;font-weight:600;width:9%">Prio</th></tr></thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Tablero</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Las filas abren la alerta y no la ficha del proveedor. «Ver todas las alertas» ya lleva a Vigilancia, «Exportar resumen (PDF)» confirma con aviso y las cuatro cifras abren su lista: alertas y exposición a Vigilancia, cobertura y evidencia a Expedientes.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.45 0.19 25);font-weight:600">P1</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Vigilancia</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Escalar al asesor» y «Exportar alertas (CSV)» ya responden igual aquí y en el detalle. Queda por decidir la pestaña «Proveedores en listas»: es un universo completo escondido dentro de un módulo de alertas; merece nombre propio en el menú o quedar dentro de Expedientes.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.45 0.19 25);font-weight:600">P1</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Detalle de alerta</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Se fusiona con el expediente según la sección 4. «Escalar al asesor» y «Ajustar periodo» ya tienen destino; falta la miga de pan real.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.45 0.19 25);font-weight:600">P1</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Expedientes</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">«Nuevo expediente» y «Ver expediente» ya separan crear de consultar, y «Catálogo de checklists» abre Configuración · Checklists. Falta nombrar el menú «···» de cada fila.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.16 50);font-weight:600">P2</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Expediente</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Tres botones llevan a Archivos desde la misma pantalla con tres etiquetas distintas. «Pedir revisión al asesor» ya responde; falta unificar las tres etiquetas.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.45 0.19 25);font-weight:600">P1</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Archivos del proveedor</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Debe ser pestaña, no pantalla. «Exportar paquete» ya abre el armado; los nombres de archivo siguen sin abrir ni descargar nada, que es lo único que se viene a hacer aquí.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.45 0.19 25);font-weight:600">P1</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Exportar expediente</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Es de las pantallas más claras. Solo la miga: dice «Expedientes» donde el resto del producto dice «Materialidad».</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.12 85);font-weight:600">P3</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Seguimiento</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">El nombre no dice qué contiene. «Invitar tercero» e «Invitar asesor» abren el mismo formulario. La revocación de acceso está bien resuelta: sirve de patrón para las demás acciones irreversibles.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.16 50);font-weight:600">P2</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Datos</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">La carga funciona bien y el estado posterior es claro. «Programar recordatorio» abre Notificaciones y los dos «Cargar XML» inician la carga de 2021–2022.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.16 50);font-weight:600">P2</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Diagnóstico</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">El botón de conversión dice «Documentar los 68 proveedores propuestos» y los tres «Activar Diligo» activan el tenant y aterrizan en el Tablero.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.45 0.19 25);font-weight:600">P1</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Bitácora</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Cada línea abre el objeto citado. Pendiente solo afinar el destino de los eventos que citan a un usuario.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.12 85);font-weight:600">P3</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Configuración</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Es la pantalla más densa del producto y la que más subniveles tiene. Los controles «–» y «+» siguen sin nombre; «Solicitar más almacenamiento» ya dice de qué. El editor de plantillas es una pantalla completa dentro de una pestaña: merece salir a ruta propia.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.16 50);font-weight:600">P2</td></tr>
+        <tr style="border-bottom:1px solid #EEF1F2"><td style="padding:8pt 0;vertical-align:top;font-weight:600">Asesor · Cola, Clientes, Aprobados</td><td style="padding:8pt 10pt;vertical-align:top;color:#3A4147">Tres listas del mismo objeto con tres nombres de acción distintos. «Exportar paquetes aprobados» ya lleva al mismo flujo que «Exportar paquetes». «Pedir refuerzo» es jerga.</td><td style="padding:8pt 0 8pt 10pt;vertical-align:top;color:oklch(0.48 0.16 50);font-weight:600">P2</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font:600 16pt/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:28pt 0 10pt">6. Lista de verificación</h2>
+    <p style="margin:0 0 14pt;max-width:38em;text-wrap:pretty">Para pasar por cada pantalla existente y por cada pantalla nueva antes de darla por buena.</p>
+
+    <div class="keep" style="margin-bottom:16pt">
+      <div style="font:500 10pt 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(.45 .11 300);text-transform:uppercase;padding-bottom:6pt;border-bottom:1px solid #111417">Etiquetas</div>
+      <div style="display:grid;gap:0;font-size:11pt">
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>El nombre del módulo en el menú, el título de la pantalla y la miga de pan usan la misma palabra.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>El botón empieza con un verbo y nombra el objeto: «Exportar expediente», no «Exportar».</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Ninguna etiqueta se repite en el producto con dos comportamientos distintos.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Crear, consultar y navegar usan verbos distintos: <i>nuevo</i>, <i>ver</i>, <i>ir a</i>.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Cada icono sin texto tiene <span style="font-family:'Geist Mono',monospace;font-size:10pt">title</span> y etiqueta accesible.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Sin jerga interna: un director fiscal que abre la pantalla por primera vez entiende el botón sin contexto.</span></div>
+      </div>
+    </div>
+
+    <div class="keep" style="margin-bottom:16pt">
+      <div style="font:500 10pt 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(.45 .11 300);text-transform:uppercase;padding-bottom:6pt;border-bottom:1px solid #111417">Acciones</div>
+      <div style="display:grid;gap:0;font-size:11pt">
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Todo botón y todo enlace visible tiene destino. Lo que aún no existe se muestra deshabilitado con una razón, no habilitado y mudo.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Hay una sola acción principal por pantalla; las demás son secundarias en peso visual.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Toda acción confirma con un aviso que dice qué pasó y qué sigue, con la misma forma de cerrarlo en todo el producto.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Las acciones que quitan acceso, borran o notifican a un tercero piden confirmación explícita y quedan en bitácora.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Las acciones en lote y la acción de una sola fila producen el mismo resultado con el mismo nombre.</span></div>
+      </div>
+    </div>
+
+    <div class="keep" style="margin-bottom:16pt">
+      <div style="font:500 10pt 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(.45 .11 300);text-transform:uppercase;padding-bottom:6pt;border-bottom:1px solid #111417">Navegación</div>
+      <div style="display:grid;gap:0;font-size:11pt">
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Estando en una subpantalla, el menú marca la sección a la que pertenece.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>La miga de pan corresponde al camino real que siguió el usuario.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Todo dato mostrado en una lista o en la bitácora lleva al objeto que lo originó.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Un mismo objeto se abre siempre en la misma pantalla, sin importar desde dónde se entre.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Cada cifra del tablero lleva a la lista filtrada que la produce.</span></div>
+      </div>
+    </div>
+
+    <div class="keep">
+      <div style="font:500 10pt 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(.45 .11 300);text-transform:uppercase;padding-bottom:6pt;border-bottom:1px solid #111417">Permisos y estados</div>
+      <div style="display:grid;gap:0;font-size:11pt">
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Lo bloqueado en modo diagnóstico explica qué se activa con el contrato y ofrece un solo camino para activarlo.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Las pantallas del asesor y las del cliente nombran igual los mismos objetos y acciones.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Cada lista tiene estado vacío con la razón y la acción para salir de él.</span></div>
+        <div style="display:grid;grid-template-columns:16pt 1fr;gap:8pt;padding:7pt 0;border-bottom:1px solid #EEF1F2"><span style="width:11pt;height:11pt;border:1.2px solid #B8C0C6;border-radius:2pt;margin-top:2pt"></span><span>Los datos con fecha dicen de cuándo son y de qué fuente vienen.</span></div>
+      </div>
+    </div>
+
+    <div class="keep" style="margin-top:26pt;padding:14pt 16pt;background:#FAFBFB;border:1px solid #E4E8EA;border-radius:6pt;font-size:11pt;line-height:1.5">
+      <div style="font-weight:600;margin-bottom:4pt">Orden sugerido</div>
+      El glosario de la sección 2 ya está aplicado y los 21 destinos están cerrados, con las cifras del tablero y la bitácora navegables. Lo que sigue es la ficha única de proveedor de la sección 4, la única corrección que toca estructura y de la que dependen seis de los hallazgos de la sección 5; después, los pendientes menores: nombre accesible de los controles de icono, destino de «Pedir refuerzo» y ubicación de «Proveedores en listas».
+    </div>
+
+  </div>
+</doc-page>
+</x-dc>
+</body>
+</html>

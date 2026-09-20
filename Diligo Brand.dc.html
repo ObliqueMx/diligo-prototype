@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Public+Sans:wght@400;500;600&family=Figtree:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Schibsted+Grotesk:wght@400;500;600;700&family=Onest:wght@400;500;600;700&family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#EDEBE6;font-family:system-ui,sans-serif;color:#1a1a1a}a{color:#1a1a1a}a:hover{color:#000}.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}</style></helmet>
+
+<section style="padding:40px 44px 28px;border-bottom:1px solid rgba(0,0,0,.08);max-width:900px">
+  <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.08em;color:rgba(0,0,0,.5);text-transform:uppercase">Diligo · brand + system · turn 1</div>
+  <h1 style="font:600 22px/1.25 system-ui,sans-serif;margin:8px 0 14px">Brief, assumptions and reasoning</h1>
+  <div style="display:grid;grid-template-columns:140px 1fr;gap:8px 18px;font:13px/1.55 system-ui,sans-serif;color:#333">
+    <div style="color:rgba(0,0,0,.5)">Source</div><div>PRD v0.1. Three modules in a cycle: Vigilancia → Materialidad → Seguimiento. Evidence infrastructure, not fiscal opinion.</div>
+    <div style="color:rgba(0,0,0,.5)">Decided</div><div>UI in español (MX), impersonal address, sober + plain voice, contextual liability boundary, wordmark <b>diligo</b> lowercase, light + dark, 2 directions.</div>
+    <div style="color:rgba(0,0,0,.5)">Axes</div><div>Register (institutional-legal vs modern software) · density (operator console vs airy) · color (near-monochrome vs one accent).</div>
+    <div style="color:rgba(0,0,0,.5)">Logo</div><div>Crossed checkbox. Four constructions of the X shown per direction; the risk that "X = wrong" is handled by stroke weight and by never pairing the mark with red.</div>
+    <div style="color:rgba(0,0,0,.5)">Shared rules</div><div>Both directions share: the severity scale (same four hues, never used as brand color), prohibited vocabulary from §10, and the tone examples. They differ in type, palette, radius, density.</div>
+    <div style="color:rgba(0,0,0,.5)">Assumed</div><div>Mobile evidence link inherits the chosen direction (not selected as a day-one surface, but the PRD calls it the biggest execution risk — flagging). Numbers in examples are illustrative.</div>
+    <div style="color:rgba(0,0,0,.5)">Not done yet</div><div>No screens. Next: pick a direction (or mix), then dashboard / alert / expediente.</div>
+  </div>
+</section>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Señal, resolved: <a class="dv-oid" href="#1b">1b</a> + mark B4 + <a class="dv-oid" href="#2c">2c</a> violeta + <a class="dv-oid" href="#2k">2k</a> Geist. Tweaks: accent (<a class="dv-oid" href="#2a">2a</a>, <a class="dv-oid" href="#2e">2e</a>) and type (<a class="dv-oid" href="#2j">2j</a>)</span></div>
+<div class="dv-opts">
+<div class="dv-opt" id="3a"><div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>diligo · sistema base v0.1</div>
+<div class="dv-card" style="width:960px;background:#FAFBFB;color:#111417;font-family:var(--sans,Geist),system-ui,sans-serif;font-size:14px;line-height:1.5;--ac:{{ ac }};--acT:{{ acT }};--acS:{{ acS }};--acD:{{ acD }};--acArm:{{ acArm }};--sans:{{ sans }}">
+
+  <div style="padding:48px 48px 40px;border-bottom:1px solid #E4E8EA;display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" style="stroke:var(--acArm,oklch(.55 .11 300))"></line></svg>
+        <span style="font:700 42px/1 var(--sans,Geist),sans-serif;letter-spacing:-.045em">diligo</span>
+      </div>
+      <p style="font:400 17px/1.45 var(--sans,Geist),sans-serif;margin:26px 0 0;max-width:400px;color:#3A4147">Infraestructura de evidencia. Vigila, documenta, exporta. Un solo acento para lo que se puede hacer; color de severidad para lo que cambió; nada más.</p>
+    </div>
+    <div style="font-size:13px;color:#6C757D;display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-content:start">
+      <span>Marca</span><span style="color:#111417">Casilla redondeada, X inscrita, un brazo en acento: la parte que Diligo aporta sobre lo que ya está hecho.</span>
+      <span>Tipografía</span><span style="color:#111417">Una familia, dos voces: sans para leer, mono para RFC, UUID y dinero.</span>
+      <span>Color</span><span style="color:#111417">Neutros fríos. Violeta 300: criterio y autoridad experta, a 50° o más de cualquier severidad.</span>
+      <span>Ritmo</span><span style="color:#111417">Base 14px, filas 44px, radios 6 / 8 / pill, escala de 4.</span>
+    </div>
+  </div>
+
+  <div style="padding:36px 48px;border-bottom:1px solid #E4E8EA">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:20px">01 · Marca</div>
+    <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:16px">
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:flex-end;gap:18px">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" style="stroke:var(--acArm,oklch(.55 .11 300))"></line></svg>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" style="stroke:var(--acArm,oklch(.55 .11 300))"></line></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" style="stroke:var(--acArm,oklch(.55 .11 300))"></line></svg>
+        </div>
+        <div style="font-size:12px;color:#6C757D;line-height:1.5">Construcción: cuadrícula 24, caja 18 con rx 4, trazo 2, X de 8 a 16 con puntas redondas. A 16px el trazo sube a 2.4. El brazo de acento es siempre el que va de arriba-derecha a abajo-izquierda.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:20px;display:flex;align-items:center;justify-content:center;gap:9px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" style="stroke:var(--acArm,oklch(.55 .11 300))"></line></svg><span style="font:700 24px/1 var(--sans,Geist),sans-serif;letter-spacing:-.045em">diligo</span></div>
+      <div style="background:#0E1113;border-radius:8px;padding:20px;display:flex;align-items:center;justify-content:center;gap:9px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#EEF1F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" style="stroke:var(--acD,oklch(.72 .11 300))"></line></svg><span style="font:700 24px/1 var(--sans,Geist),sans-serif;letter-spacing:-.045em;color:#EEF1F2">diligo</span></div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:16px 18px;font-size:12px;color:#6C757D;line-height:1.55"><b style="color:#111417">Reglas</b><br>Mínimo 16px · resguardo ½ caja · monocromo permitido (brazo en gris 40%) · nunca en color de severidad · nunca junto a un badge de estado · no es el icono de cerrar.</div>
+    </div>
+  </div>
+
+  <div style="padding:36px 48px;border-bottom:1px solid #E4E8EA">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:20px">02 · Color</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+      <div>
+        <div style="font-size:12px;color:#6C757D;margin-bottom:10px">Claro</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;font:400 10.5px/1.4 'Geist Mono',monospace;color:#6C757D">
+          <div><div style="height:44px;background:#FAFBFB;border:1px solid #E4E8EA;border-radius:6px"></div>bg<br>#FAFBFB</div>
+          <div><div style="height:44px;background:#fff;border:1px solid #E4E8EA;border-radius:6px"></div>surface<br>#FFFFFF</div>
+          <div><div style="height:44px;background:#E4E8EA;border-radius:6px"></div>line<br>#E4E8EA</div>
+          <div><div style="height:44px;background:#6C757D;border-radius:6px"></div>muted<br>#6C757D</div>
+          <div><div style="height:44px;background:#111417;border-radius:6px"></div>ink<br>#111417</div>
+          <div><div style="height:44px;border-radius:6px;background:var(--ac,oklch(.55 .11 300))"></div>accent<br>.55 .11 H</div>
+          <div><div style="height:44px;border-radius:6px;border:1px solid #E4E8EA;background:var(--acS,oklch(.95 .03 300))"></div>accent-soft<br>.95 .03 H</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px;color:#6C757D;margin-bottom:10px">Oscuro</div>
+        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px;font:400 10.5px/1.4 'Geist Mono',monospace;color:#6C757D">
+          <div><div style="height:44px;background:#0E1113;border-radius:6px"></div>bg<br>#0E1113</div>
+          <div><div style="height:44px;background:#171B1E;border-radius:6px"></div>surface<br>#171B1E</div>
+          <div><div style="height:44px;background:#2A3035;border-radius:6px"></div>line<br>#2A3035</div>
+          <div><div style="height:44px;background:#8B949C;border-radius:6px"></div>muted<br>#8B949C</div>
+          <div><div style="height:44px;background:#EEF1F2;border-radius:6px"></div>ink<br>#EEF1F2</div>
+          <div><div style="height:44px;border-radius:6px;background:var(--acD,oklch(.72 .11 300))"></div>accent<br>.72 .11 H</div>
+          <div><div style="height:44px;border-radius:6px;background:oklch(.25 .04 300)"></div>accent-soft<br>.25 .04 H</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr) 1.4fr;gap:10px;font-size:12.5px">
+      <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.03 25);color:oklch(0.45 0.19 25)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.5 0.19 25)"></span>Crítico</span><div style="color:#6C757D;margin-top:8px">69-B definitiva · 49 Bis</div></div>
+      <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.04 50);color:oklch(0.48 0.16 50)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.62 0.17 50)"></span>Alto</span><div style="color:#6C757D;margin-top:8px">69-B presuntos · 69-B Bis</div></div>
+      <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.96 0.05 85);color:oklch(0.48 0.12 85)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.76 0.14 85)"></span>Medio</span><div style="color:#6C757D;margin-top:8px">69 · no localizado</div></div>
+      <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.02 250);color:oklch(0.45 0.06 250)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.55 0.06 250)"></span>Informativo</span><div style="color:#6C757D;margin-top:8px">Desvirtuado · favorable · salida</div></div>
+      <div style="border:1px dashed #D5DADD;border-radius:8px;padding:12px 14px;color:#6C757D;font-size:12px;line-height:1.5"><b style="color:#111417">Regla de color</b><br>Severidad solo en badges, puntos y la barra de plazo. El acento solo en acción, foco, progreso y liga. Nunca ambos en el mismo elemento.</div>
+    </div>
+  </div>
+
+  <div style="padding:36px 48px;border-bottom:1px solid #E4E8EA;display:grid;grid-template-columns:1.3fr 1fr;gap:40px">
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:20px">03 · Tipografía</div>
+      <div style="display:grid;grid-template-columns:1fr auto;gap:12px 20px;align-items:baseline">
+        <div style="font:600 34px/1.1 var(--sans,Geist),sans-serif;letter-spacing:-.035em">Contingencia estimada <span style="font:500 30px 'Geist Mono',monospace;letter-spacing:-.02em">$1.8–2.6 MDP</span></div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">display 34/600 · -.035em</div>
+        <div style="font:600 22px/1.25 var(--sans,Geist),sans-serif;letter-spacing:-.025em">Expediente · Servicios Integrales del Bajío</div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">h1 22/600</div>
+        <div style="font:600 16px/1.35 var(--sans,Geist),sans-serif;letter-spacing:-.01em">Checklist · bloque contractual</div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">h2 16/600</div>
+        <div style="font:400 14px/1.5 var(--sans,Geist),sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal.</div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">body 14/400</div>
+        <div style="font:600 12px/1.4 var(--sans,Geist),sans-serif;color:#3A4147">Lista · estatus</div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">label 12/600</div>
+        <div style="font:400 12px/1.45 var(--sans,Geist),sans-serif;color:#6C757D">Publicado por el SAT · 12 ago 2026 · fuente oficial</div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">meta 12/400 muted</div>
+        <div style="font:400 13px/1.5 'Geist Mono',monospace;color:#3A4147;font-variant-numeric:tabular-nums">SIB040512AB3 · $2,340,118.00 · 14 CFDI</div><div style="font:400 11px 'Geist Mono',monospace;color:#6C757D">data 13 mono</div>
+      </div>
+    </div>
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:20px">Espacio · radio · alturas</div>
+      <div style="display:flex;align-items:flex-end;gap:6px;height:64px">
+        <div style="width:4px;height:4px;background:#111417;border-radius:1px"></div><div style="width:8px;height:8px;background:#111417;border-radius:2px"></div><div style="width:12px;height:12px;background:#111417;border-radius:2px"></div><div style="width:16px;height:16px;background:#111417;border-radius:3px"></div><div style="width:24px;height:24px;background:#111417;border-radius:4px"></div><div style="width:32px;height:32px;background:#111417;border-radius:5px"></div><div style="width:48px;height:48px;background:#111417;border-radius:6px"></div><div style="width:64px;height:64px;background:#111417;border-radius:8px"></div>
+      </div>
+      <div style="font:400 10.5px 'Geist Mono',monospace;color:#6C757D;margin-top:6px">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64</div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin-top:20px;font-size:12.5px;color:#3A4147;align-items:center">
+        <div style="display:flex;gap:6px"><div style="width:28px;height:22px;border:1.5px solid #111417;border-radius:6px"></div><div style="width:28px;height:22px;border:1.5px solid #111417;border-radius:8px"></div><div style="width:28px;height:22px;border:1.5px solid #111417;border-radius:999px"></div></div><span>6 controles · 8 contenedores · pill badges</span>
+        <span style="font:400 11px 'Geist Mono',monospace;color:#6C757D">44 · 40 · 36 · 28</span><span>fila de tabla · input · botón · botón compacto</span>
+        <span style="font:400 11px 'Geist Mono',monospace;color:#6C757D">1px</span><span>bordes #E4E8EA; sombras solo en overlays (0 8px 24px / .08)</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:36px 48px;border-bottom:1px solid #E4E8EA">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:20px">04 · Componentes base</div>
+    <div style="display:grid;grid-template-columns:.9fr 1.4fr;gap:20px">
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:18px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button style="font:600 13.5px var(--sans,Geist),sans-serif;height:36px;padding:0 16px;color:#fff;border:0;border-radius:6px;background:var(--ac,oklch(.55 .11 300))">Solicitar evidencia</button>
+          <button style="font:600 13.5px var(--sans,Geist),sans-serif;height:36px;padding:0 16px;background:#fff;color:#111417;border:1px solid #D5DADD;border-radius:6px">Abrir expediente</button>
+          <button style="font:600 13.5px var(--sans,Geist),sans-serif;height:36px;padding:0 12px;background:transparent;border:0;border-radius:6px;color:var(--acT,oklch(.45 .11 300))">Ver fuente ↗</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px"><label style="font:600 12px var(--sans,Geist),sans-serif;color:#3A4147">RFC del proveedor</label><div style="height:40px;border-radius:6px;background:#fff;display:flex;align-items:center;padding:0 12px;font:400 13px 'Geist Mono',monospace;border:1px solid var(--ac,oklch(.55 .11 300));box-shadow:0 0 0 3px var(--acS,oklch(.95 .03 300))">SIB040512AB3</div><div style="font-size:12px;color:#6C757D">12 caracteres · persona moral</div></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:12px;font-weight:600">
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.95 0.03 25);color:oklch(0.45 0.19 25)">Crítico</span>
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.95 0.04 50);color:oklch(0.48 0.16 50)">Alto</span>
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.96 0.05 85);color:oklch(0.48 0.12 85)">Medio</span>
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.95 0.02 250);color:oklch(0.45 0.06 250)">Informativo</span>
+          <span style="padding:3px 10px;border-radius:999px;background:#EEF1F2;color:#6C757D">Solo metadata</span>
+          <span style="padding:3px 10px;border-radius:999px;background:#EEF1F2;color:#6C757D">Nivel A</span>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:2px 16px">
+          <div style="font:600 16px/1.2 var(--sans,Geist),sans-serif;letter-spacing:-.01em">Servicios Integrales del Bajío</div><div style="font:500 16px/1.2 'Geist Mono',monospace;color:var(--acT,oklch(.45 .11 300))">72%</div>
+          <div style="font-size:12px;color:#6C757D">Nivel A · 14 CFDI · actualizado hace 3 días</div><div style="font-size:12px;color:#6C757D;text-align:right">completitud</div>
+          <div style="grid-column:1/-1;height:6px;background:#EEF1F2;border-radius:999px;margin-top:10px;overflow:hidden"><div style="width:72%;height:100%;border-radius:999px;background:var(--ac,oklch(.55 .11 300))"></div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;font:600 12px var(--sans,Geist),sans-serif;color:#6C757D;border-bottom:1px solid #E4E8EA;padding:0 16px;height:40px;align-items:center;gap:12px;white-space:nowrap"><span>Proveedor</span><span>Lista · estatus</span><span style="text-align:right">Monto</span><span style="text-align:right">Plazo</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.5 0.19 25);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis">Servicios Integrales del Bajío</span></span><span style="color:#6C757D;font-size:12.5px">69-B · definitivo</span><span style="text-align:right;font:400 12.5px 'Geist Mono',monospace">$2.3 MDP</span><span style="text-align:right;font-weight:600">22 d</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.62 0.17 50);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis">Consultores Norte, S.C.</span></span><span style="color:#6C757D;font-size:12.5px">69-B · presunto</span><span style="text-align:right;font:400 12.5px 'Geist Mono',monospace">$840 K</span><span style="text-align:right;color:#6C757D">—</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.76 0.14 85);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis">Limpieza Total MX</span></span><span style="color:#6C757D;font-size:12.5px">69 · no localizado</span><span style="text-align:right;font:400 12.5px 'Geist Mono',monospace">$310 K</span><span style="text-align:right;color:#6C757D">—</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.55 0.06 250);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis">Fletes Peninsulares</span></span><span style="color:#6C757D;font-size:12.5px">69-B · desvirtuado</span><span style="text-align:right;font:400 12.5px 'Geist Mono',monospace">$1.1 MDP</span><span style="text-align:right;font-weight:600;color:var(--acT,oklch(.45 .11 300))">cerrado</span></div>
+        <div style="background:#0E1113;color:#EEF1F2;padding:18px 16px;display:flex;flex-direction:column;gap:12px">
+          <div style="font:500 10px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.08em">MODO OSCURO</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><button style="font:600 13.5px var(--sans,Geist),sans-serif;height:36px;padding:0 16px;color:#0E1113;border:0;border-radius:6px;background:var(--acD,oklch(.72 .11 300))">Solicitar evidencia</button><button style="font:600 13.5px var(--sans,Geist),sans-serif;height:36px;padding:0 16px;background:#171B1E;color:#EEF1F2;border:1px solid #2A3035;border-radius:6px">Abrir expediente</button><button style="font:600 13.5px var(--sans,Geist),sans-serif;height:36px;padding:0 12px;background:transparent;border:0;color:var(--acD,oklch(.72 .11 300))">Ver fuente ↗</button></div>
+          <div style="display:flex;gap:12px;align-items:center"><div style="flex:1;height:40px;border:1px solid #2A3035;border-radius:6px;background:#171B1E;display:flex;align-items:center;padding:0 12px;font:400 13px 'Geist Mono',monospace">SIB040512AB3</div><span style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:oklch(0.3 0.08 25);color:oklch(0.85 0.1 25)">Crítico</span><span style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#2A3035;color:#8B949C">Nivel A</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:36px 48px 48px">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:20px">05 · Tono — impersonal, sobrio, sin jerga innecesaria</div>
+    <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:32px">
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:12px 14px;font-size:13.5px;color:#3A4147;align-content:start">
+        <b style="color:#111417">1</b><span>El dato primero, la fuente al lado. Nunca una alerta sin lista, fecha de publicación y liga oficial.</span>
+        <b style="color:#111417">2</b><span>Se dice qué pasó y qué sigue. No se dice qué significa fiscalmente.</span>
+        <b style="color:#111417">3</b><span>Rangos, no cifras únicas. Método visible junto al número.</span>
+        <b style="color:#111417">4</b><span>Se notifica el cambio, nunca la permanencia. También se notifica lo bueno.</span>
+        <b style="color:#111417">5</b><span>Verbos en infinitivo o tercera persona. Sin "tú", sin "usted", sin signos de exclamación.</span>
+        <b style="color:#111417">6</b><span>Prohibido: garantiza · blinda · asegura · protege de · cumplimiento garantizado.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">ALERTA · CRÍTICO</div>Servicios Integrales del Bajío pasó de presunto a definitivo en 69-B. Publicado por el SAT el 12 ago 2026. 14 CFDI del periodo 2021–2022, $2.3 MDP. Plazo: 30 días hábiles, 22 restantes.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">CONTINGENCIA</div>$1.8 – 2.6 MDP. Método: IVA acreditado + ISR 30% + actualización y recargos + multa estimada. Calculado con XML.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">COBERTURA</div>Última carga de CFDI hace 52 días. La vigilancia es parcial hasta la siguiente carga.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">SIN CAMBIOS</div>Sin movimientos en listas desde el 3 de septiembre. 1,240 proveedores revisados hoy.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">LIGA MÓVIL · sin login</div>Evidencia solicitada: bitácora de asistencia, agosto 2026. Toma una foto o sube el archivo. 1 de 3.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">FRONTERA · junto al checklist</div>Puntos sugeridos con base en criterios de tribunales y práctica profesional. La suficiencia la determina el asesor.</div>
+        <div style="padding:12px 14px;border:1px dashed #D5DADD;border-radius:8px;color:#6C757D"><div style="font:500 10px 'Geist Mono',monospace;margin-bottom:5px;letter-spacing:.06em">NO</div><s>Tu empresa está blindada.</s> · <s>¡Todo en orden!</s> · <s>Diligo garantiza la deducibilidad.</s> · <s>¡Sube tu evidencia ya!</s></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+</div>
+<p class="dv-next">Try next: "start the director fiscal dashboard on <a class="dv-oid" href="#3a">3a</a>" · "show the mobile evidence link in <a class="dv-oid" href="#3a">3a</a>" · "email + PDF report header on <a class="dv-oid" href="#3a">3a</a>"</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Polishing <a class="dv-oid" href="#1b">1b</a> Señal · mark B4 · accent and type explorations (Google Fonts only)</span></div>
+
+<div style="font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.6);max-width:900px;margin:0 0 20px">Accent rule: one hue, never a severity hue. Excluded: red 25 (crítico), orange 50 (alto), amber 85 (medio), slate 250 (informativo) and their neighbors ±20. All candidates at oklch L .55 C .11 in light, L .72 in dark, so only hue changes. Each card tests the accent next to the four severity dots.</div>
+
+<div class="dv-opts" style="margin-bottom:36px">
+
+<div class="dv-opt" id="2a"><div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Verde-azul · 175 · actual</div>
+<div class="dv-card" style="width:300px;background:#FAFBFB;color:#111417;font-family:Figtree,system-ui,sans-serif;font-size:13px;line-height:1.5;padding:22px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;align-items:center;gap:8px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="oklch(0.55 0.11 175)"></line></svg><span style="font:700 22px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font:500 10px 'Geist Mono',monospace;color:#6C757D">oklch(.55 .11 175)</span></div>
+  <div style="font-size:12.5px;color:#3A4147"><b style="color:#111417">Psicología:</b> equilibrio entre azul (institución, orden) y verde (avance) sin ser ninguno. Clínico, calmado. No promete "todo bien", no alarma.</div>
+  <div style="display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.55 0.11 175);color:#fff;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.45 0.11 175);text-decoration:underline;text-underline-offset:3px">Ver fuente</span></div>
+  <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden"><div style="width:72%;height:100%;background:oklch(0.55 0.11 175)"></div></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border:1px solid #E4E8EA;border-radius:8px"><span style="width:12px;height:12px;border-radius:50%;background:oklch(0.55 0.11 175)"></span><span style="width:1px;height:14px;background:#E4E8EA"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.5 0.19 25)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.62 0.17 50)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.76 0.14 85)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.55 0.06 250)"></span><span style="margin-left:auto;font-size:11px;color:#6C757D">distinto de las 4</span></div>
+  <div style="background:#0E1113;border-radius:8px;padding:12px;display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.72 0.11 175);color:#0E1113;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.72 0.11 175);font-size:13px">Ver fuente</span></div>
+</div></div>
+
+<div class="dv-opt" id="2b"><div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Bosque · 150</div>
+<div class="dv-card" style="width:300px;background:#FAFBFB;color:#111417;font-family:Figtree,system-ui,sans-serif;font-size:13px;line-height:1.5;padding:22px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;align-items:center;gap:8px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="oklch(0.55 0.11 150)"></line></svg><span style="font:700 22px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font:500 10px 'Geist Mono',monospace;color:#6C757D">oklch(.55 .11 150)</span></div>
+  <div style="font-size:12.5px;color:#3A4147"><b style="color:#111417">Psicología:</b> crecimiento, "aprobado", finanzas. <b style="color:oklch(0.5 0.19 25)">Riesgo:</b> el verde se lee como "todo en orden", justo lo que la §10 prohíbe sugerir. También compite con el checkmark mental.</div>
+  <div style="display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.55 0.11 150);color:#fff;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.45 0.11 150);text-decoration:underline;text-underline-offset:3px">Ver fuente</span></div>
+  <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden"><div style="width:72%;height:100%;background:oklch(0.55 0.11 150)"></div></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border:1px solid #E4E8EA;border-radius:8px"><span style="width:12px;height:12px;border-radius:50%;background:oklch(0.55 0.11 150)"></span><span style="width:1px;height:14px;background:#E4E8EA"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.5 0.19 25)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.62 0.17 50)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.76 0.14 85)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.55 0.06 250)"></span><span style="margin-left:auto;font-size:11px;color:#6C757D">distinto, pero semántico</span></div>
+  <div style="background:#0E1113;border-radius:8px;padding:12px;display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.72 0.11 150);color:#0E1113;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.72 0.11 150);font-size:13px">Ver fuente</span></div>
+</div></div>
+
+<div class="dv-opt" id="2c"><div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Violeta · 300</div>
+<div class="dv-card" style="width:300px;background:#FAFBFB;color:#111417;font-family:Figtree,system-ui,sans-serif;font-size:13px;line-height:1.5;padding:22px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;align-items:center;gap:8px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="oklch(0.55 0.11 300)"></line></svg><span style="font:700 22px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font:500 10px 'Geist Mono',monospace;color:#6C757D">oklch(.55 .11 300)</span></div>
+  <div style="font-size:12.5px;color:#3A4147"><b style="color:#111417">Psicología:</b> juicio, criterio, autoridad experta (toga, tinta). Raro en fiscal: diferencia. Máxima distancia de las cuatro severidades. Puede sentirse "tech" si se satura.</div>
+  <div style="display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.55 0.11 300);color:#fff;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.45 0.11 300);text-decoration:underline;text-underline-offset:3px">Ver fuente</span></div>
+  <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden"><div style="width:72%;height:100%;background:oklch(0.55 0.11 300)"></div></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border:1px solid #E4E8EA;border-radius:8px"><span style="width:12px;height:12px;border-radius:50%;background:oklch(0.55 0.11 300)"></span><span style="width:1px;height:14px;background:#E4E8EA"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.5 0.19 25)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.62 0.17 50)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.76 0.14 85)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.55 0.06 250)"></span><span style="margin-left:auto;font-size:11px;color:#6C757D">distinto de las 4</span></div>
+  <div style="background:#0E1113;border-radius:8px;padding:12px;display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.72 0.11 300);color:#0E1113;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.72 0.11 300);font-size:13px">Ver fuente</span></div>
+</div></div>
+
+<div class="dv-opt" id="2d"><div class="dv-olabel"><a class="dv-oid" href="#2d">2d</a>Cobalto · 265</div>
+<div class="dv-card" style="width:300px;background:#FAFBFB;color:#111417;font-family:Figtree,system-ui,sans-serif;font-size:13px;line-height:1.5;padding:22px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;align-items:center;gap:8px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="oklch(0.55 0.11 265)"></line></svg><span style="font:700 22px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font:500 10px 'Geist Mono',monospace;color:#6C757D">oklch(.55 .11 265)</span></div>
+  <div style="font-size:12.5px;color:#3A4147"><b style="color:#111417">Psicología:</b> confianza, institución, banca. Lo que el comprador espera. <b style="color:oklch(0.5 0.19 25)">Riesgo:</b> a 15° del slate informativo; en pantallas mal calibradas se confunden. Y es el azul de todos.</div>
+  <div style="display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.55 0.11 265);color:#fff;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.45 0.11 265);text-decoration:underline;text-underline-offset:3px">Ver fuente</span></div>
+  <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden"><div style="width:72%;height:100%;background:oklch(0.55 0.11 265)"></div></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border:1px solid #E4E8EA;border-radius:8px"><span style="width:12px;height:12px;border-radius:50%;background:oklch(0.55 0.11 265)"></span><span style="width:1px;height:14px;background:#E4E8EA"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.5 0.19 25)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.62 0.17 50)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.76 0.14 85)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.55 0.06 250)"></span><span style="margin-left:auto;font-size:11px;color:oklch(0.5 0.19 25)">cerca del 4°</span></div>
+  <div style="background:#0E1113;border-radius:8px;padding:12px;display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:oklch(0.72 0.11 265);color:#0E1113;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:oklch(0.72 0.11 265);font-size:13px">Ver fuente</span></div>
+</div></div>
+
+<div class="dv-opt" id="2e"><div class="dv-olabel"><a class="dv-oid" href="#2e">2e</a>Tinta · sin acento cromático</div>
+<div class="dv-card" style="width:300px;background:#FAFBFB;color:#111417;font-family:Figtree,system-ui,sans-serif;font-size:13px;line-height:1.5;padding:22px;display:flex;flex-direction:column;gap:14px">
+  <div style="display:flex;align-items:center;gap:8px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="#6C757D"></line></svg><span style="font:700 22px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font:500 10px 'Geist Mono',monospace;color:#6C757D">#111417</span></div>
+  <div style="font-size:12.5px;color:#3A4147"><b style="color:#111417">Psicología:</b> restricción total. El único color en pantalla es severidad, así que color = algo cambió. Acción se marca con peso y subrayado. Sobrio; el B4 pierde su brazo de color (queda gris).</div>
+  <div style="display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:#111417;color:#fff;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:#111417;text-decoration:underline;text-underline-offset:3px">Ver fuente</span></div>
+  <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden"><div style="width:72%;height:100%;background:#111417"></div></div>
+  <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border:1px solid #E4E8EA;border-radius:8px"><span style="width:12px;height:12px;border-radius:50%;background:#111417"></span><span style="width:1px;height:14px;background:#E4E8EA"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.5 0.19 25)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.62 0.17 50)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.76 0.14 85)"></span><span style="width:10px;height:10px;border-radius:50%;background:oklch(0.55 0.06 250)"></span><span style="margin-left:auto;font-size:11px;color:#6C757D">severidad es el único color</span></div>
+  <div style="background:#0E1113;border-radius:8px;padding:12px;display:flex;gap:8px;align-items:center"><button style="font:600 13px Figtree,sans-serif;height:34px;padding:0 14px;background:#EEF1F2;color:#0E1113;border:0;border-radius:6px">Solicitar evidencia</button><span style="font-weight:600;color:#EEF1F2;font-size:13px;text-decoration:underline;text-underline-offset:3px">Ver fuente</span></div>
+</div></div>
+
+</div>
+
+<div style="font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.6);max-width:900px;margin:0 0 20px">Type. Every pairing is Google Fonts, sans for UI + mono for RFC/UUID/money. Same sample text in every card. Judged on: tabular figures (money columns), tight display tracking at 30px, Spanish diacritics, weight range, and how "software" vs "neutral" it feels.</div>
+
+<div class="dv-opts">
+
+<div class="dv-opt" id="2f"><div class="dv-olabel"><a class="dv-oid" href="#2f">2f</a>Figtree + Geist Mono · actual</div>
+<div class="dv-card" style="width:340px;background:#fff;color:#111417;padding:22px;display:flex;flex-direction:column;gap:10px;font-family:Figtree,sans-serif">
+  <div style="font:600 28px/1.15 Figtree,sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font:500 26px 'Geist Mono',monospace">$1.8–2.6 MDP</span></div>
+  <div style="font:600 17px/1.3 Figtree,sans-serif;letter-spacing:-.015em">Expediente · Servicios Integrales del Bajío</div>
+  <div style="font:400 14px/1.5 Figtree,sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal. Plazo: 30 días hábiles.</div>
+  <div style="font:600 12px/1.4 Figtree,sans-serif;color:#6C757D;letter-spacing:.02em">ÚLTIMA ACTUALIZACIÓN · 22 D RESTANTES</div>
+  <div style="font:400 12.5px/1.6 'Geist Mono',monospace;color:#3A4147">SIB040512AB3<br>$2,340,118.00 · 14 CFDI<br>$840,000.00 · 3 CFDI</div>
+  <div style="font-size:12px;color:#6C757D;line-height:1.5;border-top:1px solid #E4E8EA;padding-top:10px"><b style="color:#111417">Geométrica amable.</b> Rasgo redondo, ojos grandes, muy legible a 13px. Tabulares vía font-feature. Geist Mono es contemporáneo y estrecho. Riesgo: Figtree se ve "startup" en el reporte PDF.</div>
+</div></div>
+
+<div class="dv-opt" id="2g"><div class="dv-olabel"><a class="dv-oid" href="#2g">2g</a>Manrope + JetBrains Mono</div>
+<div class="dv-card" style="width:340px;background:#fff;color:#111417;padding:22px;display:flex;flex-direction:column;gap:10px;font-family:Manrope,sans-serif">
+  <div style="font:600 28px/1.15 Manrope,sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font:500 26px 'JetBrains Mono',monospace">$1.8–2.6 MDP</span></div>
+  <div style="font:600 17px/1.3 Manrope,sans-serif;letter-spacing:-.015em">Expediente · Servicios Integrales del Bajío</div>
+  <div style="font:400 14px/1.5 Manrope,sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal. Plazo: 30 días hábiles.</div>
+  <div style="font:600 12px/1.4 Manrope,sans-serif;color:#6C757D;letter-spacing:.02em">ÚLTIMA ACTUALIZACIÓN · 22 D RESTANTES</div>
+  <div style="font:400 12.5px/1.6 'JetBrains Mono',monospace;color:#3A4147">SIB040512AB3<br>$2,340,118.00 · 14 CFDI<br>$840,000.00 · 3 CFDI</div>
+  <div style="font-size:12px;color:#6C757D;line-height:1.5;border-top:1px solid #E4E8EA;padding-top:10px"><b style="color:#111417">Técnica, cerrada.</b> Manrope tiene cifras por defecto casi tabulares y terminales rectas: se siente instrumento. JetBrains Mono es ancho y muy distinguible (0/O, 1/l). Combinación más "consola".</div>
+</div></div>
+
+<div class="dv-opt" id="2h"><div class="dv-olabel"><a class="dv-oid" href="#2h">2h</a>Instrument Sans + IBM Plex Mono</div>
+<div class="dv-card" style="width:340px;background:#fff;color:#111417;padding:22px;display:flex;flex-direction:column;gap:10px;font-family:'Instrument Sans',sans-serif">
+  <div style="font:600 28px/1.15 'Instrument Sans',sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font:500 26px 'IBM Plex Mono',monospace">$1.8–2.6 MDP</span></div>
+  <div style="font:600 17px/1.3 'Instrument Sans',sans-serif;letter-spacing:-.015em">Expediente · Servicios Integrales del Bajío</div>
+  <div style="font:400 14px/1.5 'Instrument Sans',sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal. Plazo: 30 días hábiles.</div>
+  <div style="font:600 12px/1.4 'Instrument Sans',sans-serif;color:#6C757D;letter-spacing:.02em">ÚLTIMA ACTUALIZACIÓN · 22 D RESTANTES</div>
+  <div style="font:400 12.5px/1.6 'IBM Plex Mono',monospace;color:#3A4147">SIB040512AB3<br>$2,340,118.00 · 14 CFDI<br>$840,000.00 · 3 CFDI</div>
+  <div style="font-size:12px;color:#6C757D;line-height:1.5;border-top:1px solid #E4E8EA;padding-top:10px"><b style="color:#111417">Neo-grotesca con carácter.</b> Más neutra que Figtree, más viva que Helvetica; envejece bien en PDF. Plex Mono tiene el rasgo más "documento oficial" (slab, generosa). Pareja seria sin ser fría.</div>
+</div></div>
+
+<div class="dv-opt" id="2i"><div class="dv-olabel"><a class="dv-oid" href="#2i">2i</a>Schibsted Grotesk + DM Mono</div>
+<div class="dv-card" style="width:340px;background:#fff;color:#111417;padding:22px;display:flex;flex-direction:column;gap:10px;font-family:'Schibsted Grotesk',sans-serif">
+  <div style="font:600 28px/1.15 'Schibsted Grotesk',sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font:500 26px 'DM Mono',monospace">$1.8–2.6 MDP</span></div>
+  <div style="font:600 17px/1.3 'Schibsted Grotesk',sans-serif;letter-spacing:-.015em">Expediente · Servicios Integrales del Bajío</div>
+  <div style="font:400 14px/1.5 'Schibsted Grotesk',sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal. Plazo: 30 días hábiles.</div>
+  <div style="font:600 12px/1.4 'Schibsted Grotesk',sans-serif;color:#6C757D;letter-spacing:.02em">ÚLTIMA ACTUALIZACIÓN · 22 D RESTANTES</div>
+  <div style="font:400 12.5px/1.6 'DM Mono',monospace;color:#3A4147">SIB040512AB3<br>$2,340,118.00 · 14 CFDI<br>$840,000.00 · 3 CFDI</div>
+  <div style="font-size:12px;color:#6C757D;line-height:1.5;border-top:1px solid #E4E8EA;padding-top:10px"><b style="color:#111417">Editorial-periodística.</b> Diseñada para noticias: densa, alta legibilidad en cuerpos largos, algo de tensión en las curvas. DM Mono es ligera y elegante pero menos robusta en columnas de dinero.</div>
+</div></div>
+
+<div class="dv-opt" id="2j"><div class="dv-olabel"><a class="dv-oid" href="#2j">2j</a>Onest + Geist Mono</div>
+<div class="dv-card" style="width:340px;background:#fff;color:#111417;padding:22px;display:flex;flex-direction:column;gap:10px;font-family:Onest,sans-serif">
+  <div style="font:600 28px/1.15 Onest,sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font:500 26px 'Geist Mono',monospace">$1.8–2.6 MDP</span></div>
+  <div style="font:600 17px/1.3 Onest,sans-serif;letter-spacing:-.015em">Expediente · Servicios Integrales del Bajío</div>
+  <div style="font:400 14px/1.5 Onest,sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal. Plazo: 30 días hábiles.</div>
+  <div style="font:600 12px/1.4 Onest,sans-serif;color:#6C757D;letter-spacing:.02em">ÚLTIMA ACTUALIZACIÓN · 22 D RESTANTES</div>
+  <div style="font:400 12.5px/1.6 'Geist Mono',monospace;color:#3A4147">SIB040512AB3<br>$2,340,118.00 · 14 CFDI<br>$840,000.00 · 3 CFDI</div>
+  <div style="font-size:12px;color:#6C757D;line-height:1.5;border-top:1px solid #E4E8EA;padding-top:10px"><b style="color:#111417">Humanista discreta.</b> Entre Figtree y una grotesca: menos redonda, más cálida en texto largo. Poco usada, así que no arrastra asociaciones. Buena en español por su altura de x.</div>
+</div></div>
+
+<div class="dv-opt" id="2k"><div class="dv-olabel"><a class="dv-oid" href="#2k">2k</a>Geist + Geist Mono</div>
+<div class="dv-card" style="width:340px;background:#fff;color:#111417;padding:22px;display:flex;flex-direction:column;gap:10px;font-family:Geist,sans-serif">
+  <div style="font:600 28px/1.15 Geist,sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font:500 26px 'Geist Mono',monospace">$1.8–2.6 MDP</span></div>
+  <div style="font:600 17px/1.3 Geist,sans-serif;letter-spacing:-.015em">Expediente · Servicios Integrales del Bajío</div>
+  <div style="font:400 14px/1.5 Geist,sans-serif">El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal. Plazo: 30 días hábiles.</div>
+  <div style="font:600 12px/1.4 Geist,sans-serif;color:#6C757D;letter-spacing:.02em">ÚLTIMA ACTUALIZACIÓN · 22 D RESTANTES</div>
+  <div style="font:400 12.5px/1.6 'Geist Mono',monospace;color:#3A4147">SIB040512AB3<br>$2,340,118.00 · 14 CFDI<br>$840,000.00 · 3 CFDI</div>
+  <div style="font-size:12px;color:#6C757D;line-height:1.5;border-top:1px solid #E4E8EA;padding-top:10px"><b style="color:#111417">Una sola familia.</b> Sans y mono diseñadas juntas: mismas alturas, mismo ritmo, cero fricción entre texto y cifras. Muy "producto de software" (es la fuente de Vercel); menos personalidad propia.</div>
+</div></div>
+
+</div>
+<p class="dv-next">Try next: "<a class="dv-oid" href="#2c">2c</a> violeta with <a class="dv-oid" href="#2h">2h</a>" · "keep <a class="dv-oid" href="#2a">2a</a>, show <a class="dv-oid" href="#2g">2g</a> and <a class="dv-oid" href="#2k">2k</a> in the full 1b card" · "rebuild 1b with the picks and start the dashboard"</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Two brand directions</span></div>
+<div class="dv-opts">
+
+<!-- ========== 1a EXPEDIENTE ========== -->
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Expediente — institutional, dense, near-monochrome on warm paper</div>
+<div class="dv-card" style="width:880px;background:#F6F3EE;color:#1C1A17;font-family:'Public Sans',system-ui,sans-serif;font-size:12.5px;line-height:1.45">
+
+  <div style="padding:36px 40px 28px;border-bottom:1px solid #DDD6CB;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.5"><rect x="2.75" y="2.75" width="18.5" height="18.5"></rect><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+        <span style="font:600 34px/1 'Source Serif 4',Georgia,serif;letter-spacing:-.02em">diligo</span>
+      </div>
+      <p style="font:400 15px/1.45 'Source Serif 4',Georgia,serif;margin:22px 0 0;max-width:380px">Un expediente que se sostiene solo. Diligo se ve como el documento que un abogado abre en cinco años: papel, tinta, márgenes y nada que distraiga del dato.</p>
+    </div>
+    <div style="font-size:12px;color:#6B655C;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-content:start">
+      <span>Register</span><span style="color:#1C1A17">Institucional-legal. Serif para títulos y cifras, sans para operación.</span>
+      <span>Density</span><span style="color:#1C1A17">Consola. 12.5px base, filas de 32px, sin aire decorativo.</span>
+      <span>Color</span><span style="color:#1C1A17">Tinta sobre papel. El único color es severidad.</span>
+      <span>Radius</span><span style="color:#1C1A17">2px. Los bordes son reglas, no cajas.</span>
+    </div>
+  </div>
+
+  <div style="padding:28px 40px;border-bottom:1px solid #DDD6CB">
+    <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">01 · Marca — construcción de la X</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#FFFDF9;border:1px solid #DDD6CB;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.25"><rect x="2.75" y="2.75" width="18.5" height="18.5"></rect><line x1="2.75" y1="2.75" x2="21.25" y2="21.25"></line><line x1="21.25" y1="2.75" x2="2.75" y2="21.25"></line></svg></div><div><b>A1 · Esquina a esquina</b><br><span style="color:#6B655C">Trazo fino, la X toca las cuatro esquinas. Se lee como sello, no como error. Recomendada.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#FFFDF9;border:1px solid #DDD6CB;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.25"><rect x="4" y="4" width="16" height="16"></rect><line x1="1.5" y1="1.5" x2="22.5" y2="22.5" stroke-width="2.4"></line><line x1="22.5" y1="1.5" x2="1.5" y2="22.5" stroke-width="2.4"></line></svg></div><div><b>A2 · Tachado</b><br><span style="color:#6B655C">X pesada que desborda la caja. Enérgica; en contexto de riesgo se lee como "rechazado".</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#FFFDF9;border:1px solid #DDD6CB;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.25"><rect x="2.75" y="2.75" width="18.5" height="18.5"></rect><line x1="7.5" y1="7.5" x2="16.5" y2="16.5" stroke-width="1.75"></line><line x1="16.5" y1="7.5" x2="7.5" y2="16.5" stroke-width="1.75"></line></svg></div><div><b>A3 · Inscrita</b><br><span style="color:#6B655C">X pequeña centrada. Neutral, funciona a 12px, pero pierde carácter.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#FFFDF9;border:1px solid #DDD6CB;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.25"><path d="M21.25 2.75 H2.75 V21.25 H21.25"></path><line x1="2.75" y1="2.75" x2="21.25" y2="21.25"></line><line x1="21.25" y1="2.75" x2="2.75" y2="21.25"></line></svg></div><div><b>A4 · Caja abierta</b><br><span style="color:#6B655C">La X cierra el lado derecho. Expediente en curso; más concepto, menos legibilidad.</span></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px">
+      <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:18px;display:flex;align-items:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C1A17" stroke-width="1.5"><rect x="2.75" y="2.75" width="18.5" height="18.5"></rect><line x1="2.75" y1="2.75" x2="21.25" y2="21.25"></line><line x1="21.25" y1="2.75" x2="2.75" y2="21.25"></line></svg><span style="font:600 20px/1 'Source Serif 4',Georgia,serif;letter-spacing:-.02em">diligo</span><span style="margin-left:auto;font-size:11px;color:#6B655C">Lockup horizontal</span></div>
+      <div style="background:#1C1A17;color:#ECE7DE;border:1px solid #1C1A17;padding:18px;display:flex;align-items:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ECE7DE" stroke-width="1.5"><rect x="2.75" y="2.75" width="18.5" height="18.5"></rect><line x1="2.75" y1="2.75" x2="21.25" y2="21.25"></line><line x1="21.25" y1="2.75" x2="2.75" y2="21.25"></line></svg><span style="font:600 20px/1 'Source Serif 4',Georgia,serif;letter-spacing:-.02em">diligo</span><span style="margin-left:auto;font-size:11px;color:#9A9286">Inverso</span></div>
+      <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:14px 18px;font-size:11px;color:#6B655C;line-height:1.5"><b style="color:#1C1A17">Reglas</b><br>Altura mínima del símbolo 12px · área de resguardo = ½ caja · nunca en rojo ni sobre colores de severidad · nunca como icono de "cerrar" en la UI (usar ✕ del sistema, distinto trazo).</div>
+    </div>
+  </div>
+
+  <div style="padding:28px 40px;border-bottom:1px solid #DDD6CB;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div>
+      <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">02 · Color — modo claro</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:10.5px;color:#6B655C">
+        <div><div style="height:44px;background:#F6F3EE;border:1px solid #DDD6CB"></div>paper<br>#F6F3EE</div>
+        <div><div style="height:44px;background:#FFFDF9;border:1px solid #DDD6CB"></div>surface<br>#FFFDF9</div>
+        <div><div style="height:44px;background:#DDD6CB"></div>line<br>#DDD6CB</div>
+        <div><div style="height:44px;background:#6B655C"></div>muted<br>#6B655C</div>
+        <div><div style="height:44px;background:#1C1A17"></div>ink<br>#1C1A17</div>
+      </div>
+    </div>
+    <div>
+      <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">Modo oscuro</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:10.5px;color:#6B655C">
+        <div><div style="height:44px;background:#17150F"></div>paper<br>#17150F</div>
+        <div><div style="height:44px;background:#221F18"></div>surface<br>#221F18</div>
+        <div><div style="height:44px;background:#3A352C"></div>line<br>#3A352C</div>
+        <div><div style="height:44px;background:#9A9286"></div>muted<br>#9A9286</div>
+        <div><div style="height:44px;background:#ECE7DE"></div>ink<br>#ECE7DE</div>
+      </div>
+    </div>
+    <div style="grid-column:1/-1">
+      <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:12px">Severidad — el único color del producto (compartido con <a class="dv-oid" href="#1b">1b</a>)</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:11px">
+        <div style="border:1px solid #DDD6CB;background:#FFFDF9;padding:10px 12px"><div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:oklch(0.5 0.19 25);display:inline-block"></span><b>Crítico</b></div><div style="color:#6B655C;margin-top:4px">69-B definitiva · 49 Bis. Invalida CFDI.</div><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#6B655C;margin-top:6px">oklch(.50 .19 25)</div></div>
+        <div style="border:1px solid #DDD6CB;background:#FFFDF9;padding:10px 12px"><div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:oklch(0.62 0.17 50);display:inline-block"></span><b>Alto</b></div><div style="color:#6B655C;margin-top:4px">69-B presuntos · 69-B Bis RFC propio.</div><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#6B655C;margin-top:6px">oklch(.62 .17 50)</div></div>
+        <div style="border:1px solid #DDD6CB;background:#FFFDF9;padding:10px 12px"><div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:oklch(0.76 0.14 85);display:inline-block"></span><b>Medio</b></div><div style="color:#6B655C;margin-top:4px">69: no localizado. Señal.</div><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#6B655C;margin-top:6px">oklch(.76 .14 85)</div></div>
+        <div style="border:1px solid #DDD6CB;background:#FFFDF9;padding:10px 12px"><div style="display:flex;align-items:center;gap:8px"><span style="width:10px;height:10px;background:oklch(0.55 0.06 250);display:inline-block"></span><b>Informativo</b></div><div style="color:#6B655C;margin-top:4px">Desvirtuado · sentencia favorable · salida de lista.</div><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#6B655C;margin-top:6px">oklch(.55 .06 250)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:28px 40px;border-bottom:1px solid #DDD6CB;display:grid;grid-template-columns:1.3fr 1fr;gap:32px">
+    <div>
+      <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">03 · Tipografía — Source Serif 4 + Public Sans</div>
+      <div style="font:600 28px/1.15 'Source Serif 4',Georgia,serif;letter-spacing:-.015em">Contingencia estimada $1.8 – 2.6 MDP</div>
+      <div style="font:600 18px/1.3 'Source Serif 4',Georgia,serif;margin-top:10px">Expediente · Servicios Integrales del Bajío, S.A. de C.V.</div>
+      <div style="font:500 13px/1.45 'Public Sans',sans-serif;margin-top:10px">Etiqueta / encabezado de tabla · 13 / 500</div>
+      <div style="font:400 12.5px/1.45 'Public Sans',sans-serif;margin-top:6px;color:#1C1A17">Cuerpo · 12.5 / 400. El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal.</div>
+      <div style="font:400 11px/1.4 'Public Sans',sans-serif;margin-top:6px;color:#6B655C">Meta · 11 / 400 · fuente oficial y fecha de publicación siempre visibles.</div>
+      <div style="font:400 12px/1.4 ui-monospace,Menlo,monospace;margin-top:6px;font-variant-numeric:tabular-nums">RFC SIB040512AB3 · UUID 9F1C-…-2A7E · tabular-nums</div>
+    </div>
+    <div>
+      <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">Espacio y radio</div>
+      <div style="display:flex;align-items:flex-end;gap:6px;height:48px">
+        <div style="width:4px;height:4px;background:#1C1A17"></div><div style="width:8px;height:8px;background:#1C1A17"></div><div style="width:12px;height:12px;background:#1C1A17"></div><div style="width:16px;height:16px;background:#1C1A17"></div><div style="width:24px;height:24px;background:#1C1A17"></div><div style="width:32px;height:32px;background:#1C1A17"></div><div style="width:48px;height:48px;background:#1C1A17"></div>
+      </div>
+      <div style="font-size:10.5px;color:#6B655C;margin-top:6px;font-family:ui-monospace,Menlo,monospace">4 · 8 · 12 · 16 · 24 · 32 · 48</div>
+      <div style="display:flex;gap:12px;margin-top:18px;align-items:center">
+        <div style="width:48px;height:32px;border:1px solid #1C1A17;border-radius:2px"></div><span style="font-size:11px;color:#6B655C">radius 2px, todo. Filas 32px. Inputs 32px. Botones 28/32.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:28px 40px;border-bottom:1px solid #DDD6CB">
+    <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">04 · Componentes base</div>
+    <div style="display:grid;grid-template-columns:.9fr 1.4fr;gap:20px">
+      <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:20px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button style="font:500 12.5px 'Public Sans',sans-serif;height:32px;padding:0 14px;background:#1C1A17;color:#F6F3EE;border:1px solid #1C1A17;border-radius:2px">Solicitar evidencia</button>
+          <button style="font:500 12.5px 'Public Sans',sans-serif;height:32px;padding:0 14px;background:transparent;color:#1C1A17;border:1px solid #1C1A17;border-radius:2px">Abrir expediente</button>
+          <button style="font:500 12.5px 'Public Sans',sans-serif;height:32px;padding:0 14px;background:transparent;color:#6B655C;border:1px solid #DDD6CB;border-radius:2px">Exportar</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px"><label style="font:500 11px 'Public Sans',sans-serif;color:#6B655C">RFC del proveedor</label><div style="height:32px;border:1px solid #DDD6CB;border-bottom-color:#1C1A17;background:#F6F3EE;display:flex;align-items:center;padding:0 10px;font-family:ui-monospace,Menlo,monospace;font-size:12px">SIB040512AB3</div></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span style="font:600 10.5px 'Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border:1px solid oklch(0.5 0.19 25);color:oklch(0.5 0.19 25);border-radius:2px">Crítico</span>
+          <span style="font:600 10.5px 'Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border:1px solid oklch(0.62 0.17 50);color:oklch(0.55 0.16 50);border-radius:2px">Alto</span>
+          <span style="font:600 10.5px 'Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border:1px solid oklch(0.76 0.14 85);color:oklch(0.55 0.13 85);border-radius:2px">Medio</span>
+          <span style="font:600 10.5px 'Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border:1px solid oklch(0.55 0.06 250);color:oklch(0.55 0.06 250);border-radius:2px">Informativo</span>
+          <span style="font:600 10.5px 'Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:3px 7px;border:1px solid #DDD6CB;color:#6B655C;border-radius:2px">Solo metadata</span>
+        </div>
+        <div style="border:1px solid #DDD6CB;padding:12px 14px;display:grid;grid-template-columns:1fr auto;gap:2px 16px">
+          <div style="font:600 15px/1.2 'Source Serif 4',Georgia,serif">Servicios Integrales del Bajío</div><div style="font:600 15px/1.2 'Source Serif 4',Georgia,serif;font-variant-numeric:tabular-nums">72%</div>
+          <div style="font-size:11px;color:#6B655C">Nivel A · 14 CFDI · última actualización hace 3 días</div><div style="font-size:11px;color:#6B655C;text-align:right">completitud</div>
+          <div style="grid-column:1/-1;height:3px;background:#DDD6CB;margin-top:8px"><div style="width:72%;height:100%;background:#1C1A17"></div></div>
+        </div>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid #DDD6CB;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .7fr;font:500 11px 'Public Sans',sans-serif;color:#6B655C;border-bottom:1px solid #1C1A17;padding:0 14px;height:32px;align-items:center;gap:12px;white-space:nowrap"><span>Proveedor</span><span>Lista · estatus</span><span style="text-align:right">Monto</span><span style="text-align:right">Plazo</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .7fr;padding:0 14px;height:32px;align-items:center;border-bottom:1px solid #DDD6CB;gap:12px;font-variant-numeric:tabular-nums;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:8px;height:8px;background:oklch(0.5 0.19 25);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis">Servicios Integrales del Bajío</span></span><span style="color:#6B655C">69-B · definitivo</span><span style="text-align:right">$2.3 MDP</span><span style="text-align:right;font-weight:600">22 d</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .7fr;padding:0 14px;height:32px;align-items:center;border-bottom:1px solid #DDD6CB;gap:12px;font-variant-numeric:tabular-nums;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;overflow:hidden;text-overflow:ellipsis;min-width:0"><span style="width:8px;height:8px;background:oklch(0.62 0.17 50)"></span>Consultores Norte, S.C.</span><span style="color:#6B655C">69-B · presunto</span><span style="text-align:right">$840 K</span><span style="text-align:right;color:#6B655C">—</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .7fr;padding:0 14px;height:32px;align-items:center;border-bottom:1px solid #DDD6CB;gap:12px;font-variant-numeric:tabular-nums;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;overflow:hidden;text-overflow:ellipsis;min-width:0"><span style="width:8px;height:8px;background:oklch(0.76 0.14 85)"></span>Limpieza Total MX</span><span style="color:#6B655C">69 · no localizado</span><span style="text-align:right">$310 K</span><span style="text-align:right;color:#6B655C">—</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .7fr;padding:0 14px;height:32px;align-items:center;gap:12px;font-variant-numeric:tabular-nums;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;overflow:hidden;text-overflow:ellipsis;min-width:0"><span style="width:8px;height:8px;background:oklch(0.55 0.06 250)"></span>Fletes Peninsulares</span><span style="color:#6B655C">69-B · desvirtuado</span><span style="text-align:right">$1.1 MDP</span><span style="text-align:right;color:#6B655C">cerrado</span></div>
+        <div style="background:#17150F;color:#ECE7DE;padding:14px;display:flex;flex-direction:column;gap:10px;border-top:1px solid #3A352C">
+          <div style="font-size:10px;color:#9A9286;font-family:ui-monospace,Menlo,monospace;letter-spacing:.08em">MODO OSCURO</div>
+          <div style="display:flex;gap:8px"><button style="font:500 12.5px 'Public Sans',sans-serif;height:32px;padding:0 14px;background:#ECE7DE;color:#17150F;border:1px solid #ECE7DE;border-radius:2px">Solicitar evidencia</button><button style="font:500 12.5px 'Public Sans',sans-serif;height:32px;padding:0 14px;background:transparent;color:#ECE7DE;border:1px solid #ECE7DE;border-radius:2px">Abrir expediente</button></div>
+          <div style="height:32px;border:1px solid #3A352C;border-bottom-color:#ECE7DE;background:#221F18;display:flex;align-items:center;padding:0 10px;font-family:ui-monospace,Menlo,monospace;font-size:12px">SIB040512AB3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:28px 40px 36px">
+    <div style="font:600 10px ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#6B655C;margin-bottom:16px">05 · Tono — impersonal, sobrio, sin jerga innecesaria</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 15px/1.3 'Source Serif 4',Georgia,serif">Principios</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:8px 12px;font-size:12px"><b>1</b><span>El dato primero, la fuente al lado. Nunca una alerta sin lista, fecha de publicación y liga oficial.</span><b>2</b><span>Se dice qué pasó y qué sigue. No se dice qué significa fiscalmente.</span><b>3</b><span>Rangos, no cifras únicas. Método visible junto al número.</span><b>4</b><span>Se notifica el cambio, nunca la permanencia. También se notifica lo bueno.</span><b>5</b><span>Prohibido: garantiza · blinda · asegura · protege de · cumplimiento garantizado.</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px">
+        <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:10px 12px"><div style="font-size:10px;color:#6B655C;font-family:ui-monospace,Menlo,monospace;margin-bottom:4px">ALERTA · CRÍTICO</div>Servicios Integrales del Bajío pasó de presunto a definitivo en 69-B. Publicado por el SAT el 12 ago 2026. 14 CFDI del periodo 2021–2022, $2.3 MDP. Plazo: 30 días hábiles, 22 restantes.</div>
+        <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:10px 12px"><div style="font-size:10px;color:#6B655C;font-family:ui-monospace,Menlo,monospace;margin-bottom:4px">CONTINGENCIA</div>$1.8 – 2.6 MDP. Método: IVA acreditado + ISR 30% + actualización y recargos + multa estimada. Calculado con XML.</div>
+        <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:10px 12px"><div style="font-size:10px;color:#6B655C;font-family:ui-monospace,Menlo,monospace;margin-bottom:4px">COBERTURA</div>Última carga de CFDI hace 52 días. La vigilancia es parcial hasta la siguiente carga.</div>
+        <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:10px 12px"><div style="font-size:10px;color:#6B655C;font-family:ui-monospace,Menlo,monospace;margin-bottom:4px">SIN CAMBIOS</div>Sin movimientos en listas desde el 3 de septiembre. 1,240 proveedores revisados hoy.</div>
+        <div style="background:#FFFDF9;border:1px solid #DDD6CB;padding:10px 12px"><div style="font-size:10px;color:#6B655C;font-family:ui-monospace,Menlo,monospace;margin-bottom:4px">FRONTERA · junto al checklist</div>Puntos sugeridos con base en criterios de tribunales y práctica profesional. La suficiencia la determina el asesor.</div>
+        <div style="padding:10px 12px;border:1px dashed #DDD6CB;color:#6B655C"><div style="font-size:10px;font-family:ui-monospace,Menlo,monospace;margin-bottom:4px">NO</div><s>Tu empresa está blindada.</s> · <s>¡Todo en orden!</s> · <s>Diligo garantiza la deducibilidad.</s></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ========== 1b SEÑAL ========== -->
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Señal — modern software, airy, one teal accent</div>
+<div class="dv-card" style="width:880px;background:#FAFBFB;color:#111417;font-family:Figtree,system-ui,sans-serif;font-size:14px;line-height:1.5">
+
+  <div style="padding:44px 44px 36px;border-bottom:1px solid #E4E8EA;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16"></line></svg>
+        <span style="font:700 34px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span>
+      </div>
+      <p style="font:400 17px/1.45 Figtree,sans-serif;margin:24px 0 0;max-width:380px;color:#3A4147">Una señal clara entre mucho ruido. Diligo se ve como una herramienta de trabajo tranquila: mucho aire, un solo acento, y el color reservado para lo que cambió.</p>
+    </div>
+    <div style="font-size:13px;color:#6C757D;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;align-content:start">
+      <span>Register</span><span style="color:#111417">Software moderno. Una sans geométrica, mono para RFC y cifras.</span>
+      <span>Density</span><span style="color:#111417">Aireada. 14px base, filas de 44px, secciones respiran.</span>
+      <span>Color</span><span style="color:#111417">Neutros frescos + un acento verde-azul para acción y estado "vivo".</span>
+      <span>Radius</span><span style="color:#111417">8px en contenedores, 6px en controles, 999 en pills.</span>
+    </div>
+  </div>
+
+  <div style="padding:32px 44px;border-bottom:1px solid #E4E8EA">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">01 · Marca — construcción de la X</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#fff;border:1px solid #E4E8EA;border-radius:8px;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16"></line></svg></div><div style="font-size:13px"><b>B1 · Redondeada</b><br><span style="color:#6C757D">Caja rx 4, X inscrita con puntas redondas. Amable, se lee como "hecho". Recomendada.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#fff;border:1px solid #E4E8EA;border-radius:8px;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="3" y1="3" x2="21" y2="21"></line><line x1="21" y1="3" x2="3" y2="21"></line></svg></div><div style="font-size:13px"><b>B2 · Esquina a esquina</b><br><span style="color:#6C757D">La X sale de las esquinas redondeadas. Más firme; a 16px se empasta.</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#fff;border:1px solid #E4E8EA;border-radius:8px;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="4" fill="#111417"></rect><line x1="8" y1="8" x2="16" y2="16" stroke="#FAFBFB" stroke-width="2" stroke-linecap="round"></line><line x1="16" y1="8" x2="8" y2="16" stroke="#FAFBFB" stroke-width="2" stroke-linecap="round"></line></svg></div><div style="font-size:13px"><b>B3 · Sólida</b><br><span style="color:#6C757D">Caja rellena, X en negativo. Funciona como favicon y avatar; pierde la idea de "casilla".</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:110px;background:#fff;border:1px solid #E4E8EA;border-radius:8px;display:grid;place-items:center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16" stroke="oklch(0.55 0.11 175)"></line></svg></div><div style="font-size:13px"><b>B4 · Trazo acento</b><br><span style="color:#6C757D">Un brazo de la X en acento. Diferencia la marca del icono; frágil en un solo color.</span></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px">
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:18px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111417" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16"></line></svg><span style="font:700 20px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font-size:11px;color:#6C757D">Lockup</span></div>
+      <div style="background:#0E1113;color:#EEF1F2;border-radius:8px;padding:18px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EEF1F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"></rect><line x1="8" y1="8" x2="16" y2="16"></line><line x1="16" y1="8" x2="8" y2="16"></line></svg><span style="font:700 20px/1 Figtree,sans-serif;letter-spacing:-.04em">diligo</span><span style="margin-left:auto;font-size:11px;color:#8B949C">Inverso</span></div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:14px 18px;font-size:12px;color:#6C757D;line-height:1.5"><b style="color:#111417">Reglas</b><br>Mínimo 16px · resguardo = ½ caja · el símbolo nunca en colores de severidad · el acento solo en B4 y nunca junto a un badge de estado.</div>
+    </div>
+  </div>
+
+  <div style="padding:32px 44px;border-bottom:1px solid #E4E8EA;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">02 · Color — modo claro</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:10.5px;color:#6C757D">
+        <div><div style="height:44px;background:#FAFBFB;border:1px solid #E4E8EA;border-radius:6px"></div>bg<br>#FAFBFB</div>
+        <div><div style="height:44px;background:#fff;border:1px solid #E4E8EA;border-radius:6px"></div>surface<br>#FFFFFF</div>
+        <div><div style="height:44px;background:#E4E8EA;border-radius:6px"></div>line<br>#E4E8EA</div>
+        <div><div style="height:44px;background:#6C757D;border-radius:6px"></div>muted<br>#6C757D</div>
+        <div><div style="height:44px;background:#111417;border-radius:6px"></div>ink<br>#111417</div>
+        <div><div style="height:44px;background:oklch(0.55 0.11 175);border-radius:6px"></div>accent<br>oklch(.55 .11 175)</div>
+      </div>
+    </div>
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">Modo oscuro</div>
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;font-size:10.5px;color:#6C757D">
+        <div><div style="height:44px;background:#0E1113;border-radius:6px"></div>bg<br>#0E1113</div>
+        <div><div style="height:44px;background:#171B1E;border-radius:6px"></div>surface<br>#171B1E</div>
+        <div><div style="height:44px;background:#2A3035;border-radius:6px"></div>line<br>#2A3035</div>
+        <div><div style="height:44px;background:#8B949C;border-radius:6px"></div>muted<br>#8B949C</div>
+        <div><div style="height:44px;background:#EEF1F2;border-radius:6px"></div>ink<br>#EEF1F2</div>
+        <div><div style="height:44px;background:oklch(0.72 0.11 175);border-radius:6px"></div>accent<br>oklch(.72 .11 175)</div>
+      </div>
+    </div>
+    <div style="grid-column:1/-1">
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:14px">Severidad — misma escala que <a class="dv-oid" href="#1a">1a</a>, aquí como pills con fondo tenue</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;font-size:12.5px">
+        <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.03 25);color:oklch(0.45 0.19 25)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.5 0.19 25)"></span>Crítico</span><div style="color:#6C757D;margin-top:8px">69-B definitiva · 49 Bis. Invalida CFDI.</div></div>
+        <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.04 50);color:oklch(0.48 0.16 50)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.62 0.17 50)"></span>Alto</span><div style="color:#6C757D;margin-top:8px">69-B presuntos · 69-B Bis RFC propio.</div></div>
+        <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.96 0.05 85);color:oklch(0.48 0.12 85)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.76 0.14 85)"></span>Medio</span><div style="color:#6C757D;margin-top:8px">69: no localizado. Señal.</div></div>
+        <div style="border:1px solid #E4E8EA;background:#fff;border-radius:8px;padding:12px 14px"><span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.02 250);color:oklch(0.45 0.06 250)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.55 0.06 250)"></span>Informativo</span><div style="color:#6C757D;margin-top:8px">Desvirtuado · sentencia favorable · salida de lista.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:32px 44px;border-bottom:1px solid #E4E8EA;display:grid;grid-template-columns:1.3fr 1fr;gap:32px">
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">03 · Tipografía — Figtree + Geist Mono</div>
+      <div style="font:600 30px/1.15 Figtree,sans-serif;letter-spacing:-.03em">Contingencia estimada <span style="font-family:'Geist Mono',ui-monospace,monospace;font-weight:500">$1.8 – 2.6 MDP</span></div>
+      <div style="font:600 19px/1.3 Figtree,sans-serif;letter-spacing:-.015em;margin-top:12px">Expediente · Servicios Integrales del Bajío</div>
+      <div style="font:600 13px/1.4 Figtree,sans-serif;margin-top:12px;color:#3A4147">Etiqueta / encabezado · 13 / 600</div>
+      <div style="font:400 14px/1.5 Figtree,sans-serif;margin-top:6px">Cuerpo · 14 / 400. El SAT publicó la lista definitiva el 12 de agosto. Los CFDI del periodo señalado no producen efecto fiscal.</div>
+      <div style="font:400 12px/1.45 Figtree,sans-serif;margin-top:6px;color:#6C757D">Meta · 12 / 400 · fuente oficial y fecha siempre visibles.</div>
+      <div style="font:400 12.5px/1.4 'Geist Mono',ui-monospace,monospace;margin-top:6px;color:#3A4147">RFC SIB040512AB3 · UUID 9F1C-…-2A7E</div>
+    </div>
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">Espacio y radio</div>
+      <div style="display:flex;align-items:flex-end;gap:6px;height:64px">
+        <div style="width:4px;height:4px;background:#111417;border-radius:1px"></div><div style="width:8px;height:8px;background:#111417;border-radius:2px"></div><div style="width:12px;height:12px;background:#111417;border-radius:2px"></div><div style="width:16px;height:16px;background:#111417;border-radius:3px"></div><div style="width:24px;height:24px;background:#111417;border-radius:4px"></div><div style="width:32px;height:32px;background:#111417;border-radius:5px"></div><div style="width:48px;height:48px;background:#111417;border-radius:6px"></div><div style="width:64px;height:64px;background:#111417;border-radius:8px"></div>
+      </div>
+      <div style="font-size:10.5px;color:#6C757D;margin-top:6px;font-family:'Geist Mono',ui-monospace,monospace">4 · 8 · 12 · 16 · 24 · 32 · 48 · 64</div>
+      <div style="display:flex;gap:10px;margin-top:18px;align-items:center">
+        <div style="width:48px;height:36px;border:1.5px solid #111417;border-radius:6px"></div><div style="width:48px;height:36px;border:1.5px solid #111417;border-radius:8px"></div><div style="width:48px;height:36px;border:1.5px solid #111417;border-radius:999px"></div><span style="font-size:12px;color:#6C757D">6 · 8 · pill. Filas 44px. Inputs 40px. Botones 36/40.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:32px 44px;border-bottom:1px solid #E4E8EA">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">04 · Componentes base</div>
+    <div style="display:grid;grid-template-columns:.9fr 1.4fr;gap:20px">
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button style="font:600 13.5px Figtree,sans-serif;height:36px;padding:0 16px;background:oklch(0.55 0.11 175);color:#fff;border:0;border-radius:6px">Solicitar evidencia</button>
+          <button style="font:600 13.5px Figtree,sans-serif;height:36px;padding:0 16px;background:#111417;color:#fff;border:0;border-radius:6px">Abrir expediente</button>
+          <button style="font:600 13.5px Figtree,sans-serif;height:36px;padding:0 16px;background:#fff;color:#111417;border:1px solid #D5DADD;border-radius:6px">Exportar</button>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px"><label style="font:600 12px Figtree,sans-serif;color:#3A4147">RFC del proveedor</label><div style="height:40px;border:1px solid #D5DADD;border-radius:6px;background:#fff;display:flex;align-items:center;padding:0 12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:13px;box-shadow:0 0 0 3px oklch(0.55 0.11 175 / .15);border-color:oklch(0.55 0.11 175)">SIB040512AB3</div></div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:12px;font-weight:600">
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.95 0.03 25);color:oklch(0.45 0.19 25)">Crítico</span>
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.95 0.04 50);color:oklch(0.48 0.16 50)">Alto</span>
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.96 0.05 85);color:oklch(0.48 0.12 85)">Medio</span>
+          <span style="padding:3px 10px;border-radius:999px;background:oklch(0.95 0.02 250);color:oklch(0.45 0.06 250)">Informativo</span>
+          <span style="padding:3px 10px;border-radius:999px;background:#EEF1F2;color:#6C757D">Solo metadata</span>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:2px 16px">
+          <div style="font:600 16px/1.2 Figtree,sans-serif;letter-spacing:-.01em">Servicios Integrales del Bajío</div><div style="font:500 16px/1.2 'Geist Mono',ui-monospace,monospace;color:oklch(0.45 0.11 175)">72%</div>
+          <div style="font-size:12px;color:#6C757D">Nivel A · 14 CFDI · actualizado hace 3 días</div><div style="font-size:12px;color:#6C757D;text-align:right">completitud</div>
+          <div style="grid-column:1/-1;height:6px;background:#EEF1F2;border-radius:999px;margin-top:10px;overflow:hidden"><div style="width:72%;height:100%;background:oklch(0.55 0.11 175);border-radius:999px"></div></div>
+        </div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;font:600 12px Figtree,sans-serif;color:#6C757D;border-bottom:1px solid #E4E8EA;padding:0 16px;height:40px;align-items:center;gap:12px;white-space:nowrap"><span>Proveedor</span><span>Lista · estatus</span><span style="text-align:right">Monto</span><span style="text-align:right">Plazo</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.5 0.19 25);flex:none"></span><span style="overflow:hidden;text-overflow:ellipsis">Servicios Integrales del Bajío</span></span><span style="color:#6C757D;font-size:12.5px">69-B · definitivo</span><span style="text-align:right;font-family:'Geist Mono',ui-monospace,monospace;font-size:12.5px">$2.3 MDP</span><span style="text-align:right;font-weight:600">22 d</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;overflow:hidden;text-overflow:ellipsis;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.62 0.17 50)"></span>Consultores Norte, S.C.</span><span style="color:#6C757D;font-size:12.5px">69-B · presunto</span><span style="text-align:right;font-family:'Geist Mono',ui-monospace,monospace;font-size:12.5px">$840 K</span><span style="text-align:right;color:#6C757D">—</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;overflow:hidden;text-overflow:ellipsis;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.76 0.14 85)"></span>Limpieza Total MX</span><span style="color:#6C757D;font-size:12.5px">69 · no localizado</span><span style="text-align:right;font-family:'Geist Mono',ui-monospace,monospace;font-size:12.5px">$310 K</span><span style="text-align:right;color:#6C757D">—</span></div>
+        <div style="display:grid;grid-template-columns:1.5fr .8fr .7fr .6fr;padding:0 16px;height:44px;align-items:center;gap:12px;font-size:13.5px;white-space:nowrap"><span style="display:flex;align-items:center;gap:8px;overflow:hidden;text-overflow:ellipsis;min-width:0"><span style="width:8px;height:8px;border-radius:50%;background:oklch(0.55 0.06 250)"></span>Fletes Peninsulares</span><span style="color:#6C757D;font-size:12.5px">69-B · desvirtuado</span><span style="text-align:right;font-family:'Geist Mono',ui-monospace,monospace;font-size:12.5px">$1.1 MDP</span><span style="text-align:right;color:oklch(0.45 0.11 175);font-weight:600">cerrado</span></div>
+        <div style="background:#0E1113;color:#EEF1F2;padding:16px;display:flex;flex-direction:column;gap:12px">
+          <div style="font:500 10px 'Geist Mono',ui-monospace,monospace;color:#8B949C;letter-spacing:.08em">MODO OSCURO</div>
+          <div style="display:flex;gap:8px"><button style="font:600 13.5px Figtree,sans-serif;height:36px;padding:0 16px;background:oklch(0.72 0.11 175);color:#0E1113;border:0;border-radius:6px">Solicitar evidencia</button><button style="font:600 13.5px Figtree,sans-serif;height:36px;padding:0 16px;background:#171B1E;color:#EEF1F2;border:1px solid #2A3035;border-radius:6px">Abrir expediente</button></div>
+          <div style="height:40px;border:1px solid #2A3035;border-radius:6px;background:#171B1E;display:flex;align-items:center;padding:0 12px;font-family:'Geist Mono',ui-monospace,monospace;font-size:13px">SIB040512AB3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:32px 44px 44px">
+    <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6C757D;margin-bottom:18px">05 · Tono — impersonal, sobrio, sin jerga innecesaria (mismo guion que <a class="dv-oid" href="#1a">1a</a>)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="font:600 16px/1.3 Figtree,sans-serif;letter-spacing:-.01em">Principios</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:10px 12px;font-size:13px;color:#3A4147"><b style="color:#111417">1</b><span>El dato primero, la fuente al lado. Nunca una alerta sin lista, fecha de publicación y liga oficial.</span><b style="color:#111417">2</b><span>Se dice qué pasó y qué sigue. No se dice qué significa fiscalmente.</span><b style="color:#111417">3</b><span>Rangos, no cifras únicas. Método visible junto al número.</span><b style="color:#111417">4</b><span>Se notifica el cambio, nunca la permanencia. También se notifica lo bueno.</span><b style="color:#111417">5</b><span>Prohibido: garantiza · blinda · asegura · protege de · cumplimiento garantizado.</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',ui-monospace,monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">ALERTA · CRÍTICO</div>Servicios Integrales del Bajío pasó de presunto a definitivo en 69-B. Publicado por el SAT el 12 ago 2026. 14 CFDI del periodo 2021–2022, $2.3 MDP. Plazo: 30 días hábiles, 22 restantes.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',ui-monospace,monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">CONTINGENCIA</div>$1.8 – 2.6 MDP. Método: IVA acreditado + ISR 30% + actualización y recargos + multa estimada. Calculado con XML.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',ui-monospace,monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">COBERTURA</div>Última carga de CFDI hace 52 días. La vigilancia es parcial hasta la siguiente carga.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',ui-monospace,monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">SIN CAMBIOS</div>Sin movimientos en listas desde el 3 de septiembre. 1,240 proveedores revisados hoy.</div>
+        <div style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font:500 10px 'Geist Mono',ui-monospace,monospace;color:#6C757D;margin-bottom:5px;letter-spacing:.06em">FRONTERA · junto al checklist</div>Puntos sugeridos con base en criterios de tribunales y práctica profesional. La suficiencia la determina el asesor.</div>
+        <div style="padding:12px 14px;border:1px dashed #D5DADD;border-radius:8px;color:#6C757D"><div style="font:500 10px 'Geist Mono',ui-monospace,monospace;margin-bottom:5px;letter-spacing:.06em">NO</div><s>Tu empresa está blindada.</s> · <s>¡Todo en orden!</s> · <s>Diligo garantiza la deducibilidad.</s></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+</div>
+<p class="dv-next">Try next: "go with <a class="dv-oid" href="#1a">1a</a> but with the B1 rounded mark" · "<a class="dv-oid" href="#1b">1b</a> with the serif from <a class="dv-oid" href="#1a">1a</a> for numbers" · "pick a direction and start the director fiscal dashboard"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Violeta 300&quot;,&quot;Verde-azul 175&quot;,&quot;Tinta (sin acento)&quot;],&quot;default&quot;:&quot;Violeta 300&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;3a · Señal&quot;},&quot;typeface&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Geist&quot;,&quot;Onest&quot;],&quot;default&quot;:&quot;Geist&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;3a · Señal&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const a = this.props.accent ?? 'Violeta 300';
+    const f = this.props.typeface ?? 'Geist';
+    const hue = a === 'Verde-azul 175' ? 175 : 300;
+    const ink = a === 'Tinta (sin acento)';
+    return {
+      ac: ink ? '#111417' : `oklch(.55 .11 ${hue})`,
+      acT: ink ? '#111417' : `oklch(.45 .11 ${hue})`,
+      acS: ink ? '#EEF1F2' : `oklch(.95 .03 ${hue})`,
+      acD: ink ? '#EEF1F2' : `oklch(.72 .11 ${hue})`,
+      acArm: ink ? '#8B949C' : `oklch(.55 .11 ${hue})`,
+      sans: f === 'Onest' ? 'Onest' : 'Geist'
+    };
+  }
+}
+</script>
+</body>
+</html>

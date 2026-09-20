@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#FAFBFB;color:#111417;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:oklch(.45 .11 300)}a:hover{color:#111417}@keyframes sk{0%{opacity:.5}50%{opacity:1}100%{opacity:.5}}@keyframes spin{to{transform:rotate(360deg)}}@keyframes grow{0%{width:8%}100%{width:64%}}</style></helmet>
+
+<div style="max-width:1180px;margin:0 auto;padding:48px 32px 96px;font-size:14px;line-height:1.5;color:#111417">
+
+  <header style="border-bottom:1px solid #111417;padding-bottom:26px">
+    <div style="font:500 11px 'Geist Mono',monospace;color:oklch(.45 .11 300);letter-spacing:.06em">SISTEMA DE ESTADOS · CATÁLOGO</div>
+    <h1 style="font:600 34px/1.1 Geist,sans-serif;letter-spacing:-.035em;margin:12px 0 0;max-width:18em">Qué ve el usuario cuando no hay nada, todavía no hay nada, o algo falló</h1>
+    <p style="font-size:15px;color:#3A4147;margin:12px 0 0;max-width:44em;text-wrap:pretty">Tres estados por cada una de las 14 pantallas del producto, con las mismas palabras del glosario y la misma forma de confirmar y cerrar. Cada bloque de esta página es el diseño final, no una descripción de él.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px">
+      <div><div style="font:500 26px/1 'Geist Mono',monospace">3</div><div style="font-size:12px;color:#6C757D;margin-top:4px">niveles de carga</div></div>
+      <div><div style="font:500 26px/1 'Geist Mono',monospace">5</div><div style="font-size:12px;color:#6C757D;margin-top:4px">tipos de vacío</div></div>
+      <div><div style="font:500 26px/1 'Geist Mono',monospace">9</div><div style="font-size:12px;color:#6C757D;margin-top:4px">tipos de error</div></div>
+      <div><div style="font:500 26px/1 'Geist Mono',monospace">14</div><div style="font-size:12px;color:#6C757D;margin-top:4px">pantallas cubiertas</div></div>
+    </div>
+  </header>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">1. Seis reglas</h2>
+  <p style="margin:0 0 16px;color:#3A4147;max-width:44em;text-wrap:pretty">Salen del checklist de la auditoría. Si un estado nuevo no cumple las seis, no está terminado.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
+    <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.05em">01</div><div style="font-weight:600;margin-top:4px">Razón y salida</div><div style="color:#3A4147;margin-top:4px;font-size:13.5px">Todo vacío dice por qué está vacío y ofrece una sola acción para salir de él.</div></div>
+    <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.05em">02</div><div style="font-weight:600;margin-top:4px">Fecha y fuente</div><div style="color:#3A4147;margin-top:4px;font-size:13.5px">Todo dato mostrado dice de cuándo es y de dónde viene, sobre todo cuando la fuente falló.</div></div>
+    <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.05em">03</div><div style="font-weight:600;margin-top:4px">El esqueleto tiene la forma real</div><div style="color:#3A4147;margin-top:4px;font-size:13.5px">La carga reproduce el layout que va a aparecer. Nada de girar un círculo en medio de la pantalla.</div></div>
+    <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.05em">04</div><div style="font-weight:600;margin-top:4px">El error no se come lo que sí funciona</div><div style="color:#3A4147;margin-top:4px;font-size:13.5px">Si falla una sección, falla esa sección. La pantalla completa se reserva para cuando no hay nada válido que mostrar.</div></div>
+    <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.05em">05</div><div style="font-weight:600;margin-top:4px">Qué sigue vigente</div><div style="color:#3A4147;margin-top:4px;font-size:13.5px">Ante una falla, el usuario necesita saber si la vigilancia sigue corriendo. Se dice explícitamente.</div></div>
+    <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist Mono',monospace;color:#8B949C;letter-spacing:.05em">06</div><div style="font-weight:600;margin-top:4px">Sin jerga y sin culpa</div><div style="color:#3A4147;margin-top:4px;font-size:13.5px">Se nombra el objeto como en el menú. El código de error va al final, en monoespaciada, para soporte.</div></div>
+  </div>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">2. Anatomía</h2>
+  <p style="margin:0 0 16px;color:#3A4147;max-width:44em;text-wrap:pretty">Los tres estados comparten una sola estructura. Cambia el color del indicador y el peso de la acción, no la forma.</p>
+  <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start">
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:44px 32px;display:grid;place-items:center">
+      <div style="max-width:400px;text-align:center">
+        <div style="width:34px;height:34px;border:1.5px solid #D5DADD;border-radius:8px;margin:0 auto;display:grid;place-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#B8C0C6"></span></div>
+        <div style="font:600 16px Geist,sans-serif;letter-spacing:-.01em;margin-top:14px">Ningún expediente abierto</div>
+        <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">El diagnóstico propuso 68 proveedores con gasto relevante. Ninguno tiene expediente todavía.</div>
+        <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+          <button style="height:34px;padding:0 14px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;cursor:pointer">Documentar los 68 proveedores propuestos</button>
+          <button style="height:34px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;color:#3A4147;font:600 13px Geist,sans-serif;cursor:pointer">Nuevo expediente</button>
+        </div>
+        <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:14px">Diagnóstico del 3 sep 2026 · CFDI 2023–2025</div>
+      </div>
+    </div>
+    <div style="display:grid;gap:8px;font-size:13px">
+      <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:11px 14px"><b>Indicador</b> · 34 px. Contorno neutro en vacío, verde en vacío positivo, ámbar en degradado, rojo en error. Nunca una ilustración.</div>
+      <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:11px 14px"><b>Título</b> · 16 px, describe el hecho, no la emoción. Sin signos de admiración.</div>
+      <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:11px 14px"><b>Cuerpo</b> · máximo dos líneas, 13.5 px. Da la razón concreta con cifras cuando existen.</div>
+      <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:11px 14px"><b>Acción</b> · una principal. La secundaria solo si es un camino distinto, no una variante del mismo.</div>
+      <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:11px 14px"><b>Pie</b> · monoespaciada 11.5 px: fecha del dato, fuente, o código de error. Siempre presente en carga y error.</div>
+      <div style="border:1px solid #E4E8EA;border-radius:8px;background:#fff;padding:11px 14px"><b>Ancho</b> · el bloque se centra en el área de contenido, con la barra lateral y la miga de pan intactas. El usuario nunca pierde de vista en qué módulo está.</div>
+    </div>
+  </div>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">3. Carga</h2>
+  <p style="margin:0 0 16px;color:#3A4147;max-width:44em;text-wrap:pretty">Tres niveles según cuánto tarda. La decisión no es estética: es cuánto tiempo puede quedarse el usuario mirando sin saber si el producto sigue vivo.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+    <div style="border:1px solid #E4E8EA;border-left:3px solid #D5DADD;border-radius:8px;background:#fff;padding:13px 15px"><div style="font:500 11px 'Geist Mono',monospace;color:#6C757D">MENOS DE 400 ms</div><div style="font-weight:600;margin-top:4px">Nada</div><div style="color:#3A4147;font-size:13px;margin-top:3px">Ningún indicador. Un esqueleto que parpadea molesta más que esperar.</div></div>
+    <div style="border:1px solid #E4E8EA;border-left:3px solid oklch(.55 .11 300);border-radius:8px;background:#fff;padding:13px 15px"><div style="font:500 11px 'Geist Mono',monospace;color:#6C757D">400 ms A 10 s</div><div style="font-weight:600;margin-top:4px">Esqueleto con la forma real</div><div style="color:#3A4147;font-size:13px;margin-top:3px">Cuatro arquetipos cubren las 14 pantallas. La cabecera y la navegación son reales desde el primer momento.</div></div>
+    <div style="border:1px solid #E4E8EA;border-left:3px solid oklch(.48 .12 85);border-radius:8px;background:#fff;padding:13px 15px"><div style="font:500 11px 'Geist Mono',monospace;color:#6C757D">MÁS DE 10 s</div><div style="font-weight:600;margin-top:4px">Proceso con etapas nombradas</div><div style="color:#3A4147;font-size:13px;margin-top:3px">Ingesta de CFDI, armado de paquete, diagnóstico. Se puede cerrar la pantalla; avisamos por correo.</div></div>
+  </div>
+
+  <div style="font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.06em;margin:26px 0 8px">ARQUETIPO A · TABLERO · Tablero, Diagnóstico, Cliente (asesor)</div>
+  <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+    <div style="padding:22px 24px;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+      <div><div style="font:500 12px 'Geist Mono',monospace;color:#6C757D">Grupo Almara · 3 RFC</div><div style="font:600 22px Geist,sans-serif;letter-spacing:-.02em;margin-top:3px">Tablero</div></div>
+      <div style="display:flex;align-items:center;gap:8px;font:400 12px 'Geist Mono',monospace;color:#6C757D"><span style="width:11px;height:11px;border:1.5px solid #D5DADD;border-top-color:oklch(.55 .11 300);border-radius:50%;animation:spin .7s linear infinite;display:block"></span>Actualizando</div>
+    </div>
+    <div style="padding:20px 24px;display:grid;gap:18px">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:14px"><div style="height:9px;width:58%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out infinite"></div><div style="height:22px;width:46%;background:#EEF1F2;border-radius:4px;margin-top:12px;animation:sk 1.4s ease-in-out .1s infinite"></div></div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:14px"><div style="height:9px;width:70%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div><div style="height:22px;width:60%;background:#EEF1F2;border-radius:4px;margin-top:12px;animation:sk 1.4s ease-in-out .2s infinite"></div></div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:14px"><div style="height:9px;width:52%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:22px;width:38%;background:#EEF1F2;border-radius:4px;margin-top:12px;animation:sk 1.4s ease-in-out .3s infinite"></div></div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:14px"><div style="height:9px;width:64%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite"></div><div style="height:22px;width:52%;background:#EEF1F2;border-radius:4px;margin-top:12px;animation:sk 1.4s ease-in-out .4s infinite"></div></div>
+      </div>
+      <div style="border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+        <div style="padding:12px 14px;border-bottom:1px solid #E4E8EA;background:#FAFBFB"><div style="height:10px;width:150px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out infinite"></div></div>
+        <div style="display:grid;grid-template-columns:1fr;gap:0">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 90px;gap:14px;padding:13px 14px;border-bottom:1px solid #EEF1F2;align-items:center"><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:20px;background:#EEF1F2;border-radius:999px;animation:sk 1.4s ease-in-out .3s infinite"></div></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 90px;gap:14px;padding:13px 14px;border-bottom:1px solid #EEF1F2;align-items:center;opacity:.75"><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite"></div><div style="height:20px;background:#EEF1F2;border-radius:999px;animation:sk 1.4s ease-in-out .4s infinite"></div></div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 90px;gap:14px;padding:13px 14px;align-items:center;opacity:.5"><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .4s infinite"></div><div style="height:20px;background:#EEF1F2;border-radius:999px;animation:sk 1.4s ease-in-out .5s infinite"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="margin:8px 0 0;font-size:13px;color:#6C757D;max-width:44em">La cabecera con el nombre del grupo y el número de RFC es real: viene de la sesión, no del servidor. Las filas se desvanecen hacia abajo para no prometer un número exacto de resultados.</p>
+
+  <div style="font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.06em;margin:26px 0 8px">ARQUETIPO B · LISTA · Vigilancia, Expedientes, Bitácora, Cola, Clientes, Aprobados</div>
+  <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+    <div style="padding:18px 24px;display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid #E4E8EA">
+      <span style="height:30px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;display:inline-flex;align-items:center;font-size:12.5px;color:#3A4147">Todas las severidades</span>
+      <span style="height:30px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;display:inline-flex;align-items:center;font-size:12.5px;color:#3A4147">Últimos 30 días</span>
+      <span style="height:30px;width:120px;border:1px solid #E4E8EA;border-radius:6px;background:#EEF1F2;animation:sk 1.4s ease-in-out infinite"></span>
+    </div>
+    <div>
+      <div style="display:grid;grid-template-columns:14px 2.2fr 1.2fr 1fr 80px;gap:14px;padding:13px 24px;border-bottom:1px solid #EEF1F2;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#EEF1F2;animation:sk 1.4s ease-in-out infinite"></span><div style="display:grid;gap:6px"><div style="height:11px;width:70%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out infinite"></div><div style="height:9px;width:38%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite"></div><div style="height:20px;background:#EEF1F2;border-radius:999px;animation:sk 1.4s ease-in-out .4s infinite"></div></div>
+      <div style="display:grid;grid-template-columns:14px 2.2fr 1.2fr 1fr 80px;gap:14px;padding:13px 24px;border-bottom:1px solid #EEF1F2;align-items:center;opacity:.8"><span style="width:8px;height:8px;border-radius:50%;background:#EEF1F2;animation:sk 1.4s ease-in-out .1s infinite"></span><div style="display:grid;gap:6px"><div style="height:11px;width:56%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div><div style="height:9px;width:30%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .4s infinite"></div><div style="height:20px;background:#EEF1F2;border-radius:999px;animation:sk 1.4s ease-in-out .5s infinite"></div></div>
+      <div style="display:grid;grid-template-columns:14px 2.2fr 1.2fr 1fr 80px;gap:14px;padding:13px 24px;border-bottom:1px solid #EEF1F2;align-items:center;opacity:.6"><span style="width:8px;height:8px;border-radius:50%;background:#EEF1F2;animation:sk 1.4s ease-in-out .2s infinite"></span><div style="display:grid;gap:6px"><div style="height:11px;width:64%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:9px;width:34%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite"></div></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .4s infinite"></div><div style="height:11px;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .5s infinite"></div><div style="height:20px;background:#EEF1F2;border-radius:999px;animation:sk 1.4s ease-in-out .6s infinite"></div></div>
+      <div style="display:grid;grid-template-columns:14px 2.2fr 1.2fr 1fr 80px;gap:14px;padding:13px 24px;align-items:center;opacity:.35"><span style="width:8px;height:8px;border-radius:50%;background:#EEF1F2"></span><div style="display:grid;gap:6px"><div style="height:11px;width:60%;background:#EEF1F2;border-radius:3px"></div><div style="height:9px;width:32%;background:#EEF1F2;border-radius:3px"></div></div><div style="height:11px;background:#EEF1F2;border-radius:3px"></div><div style="height:11px;background:#EEF1F2;border-radius:3px"></div><div style="height:20px;background:#EEF1F2;border-radius:999px"></div></div>
+    </div>
+  </div>
+  <p style="margin:8px 0 0;font-size:13px;color:#6C757D;max-width:44em">Los filtros ya aplicados se dibujan con su texto real desde el primer momento: son parte de la consulta, no del resultado. Así el usuario ve qué está pidiendo mientras espera.</p>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:26px">
+    <div>
+      <div style="font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.06em;margin-bottom:8px">ARQUETIPO C · FICHA · Ficha de proveedor, Exportar</div>
+      <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden;height:calc(100% - 26px);box-sizing:border-box">
+        <div style="padding:18px 20px;border-bottom:1px solid #E4E8EA">
+          <div style="font:400 12px 'Geist Mono',monospace;color:#6C757D">Vigilancia / Proveedor</div>
+          <div style="height:16px;width:54%;background:#EEF1F2;border-radius:4px;margin-top:8px;animation:sk 1.4s ease-in-out infinite"></div>
+          <div style="height:10px;width:30%;background:#EEF1F2;border-radius:3px;margin-top:8px;animation:sk 1.4s ease-in-out .1s infinite"></div>
+          <div style="display:flex;gap:6px;margin-top:14px">
+            <span style="padding:5px 12px;border-radius:999px;background:#111417;color:#EEF1F2;font:600 12px Geist,sans-serif">Riesgo</span>
+            <span style="padding:5px 12px;border-radius:999px;background:#EEF1F2;color:#3A4147;font:600 12px Geist,sans-serif">Expediente</span>
+            <span style="padding:5px 12px;border-radius:999px;background:#EEF1F2;color:#3A4147;font:600 12px Geist,sans-serif">Archivos</span>
+          </div>
+        </div>
+        <div style="padding:18px 20px;display:grid;gap:12px">
+          <div style="height:11px;width:88%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out infinite"></div>
+          <div style="height:11px;width:72%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div>
+          <div style="height:64px;background:#EEF1F2;border-radius:8px;animation:sk 1.4s ease-in-out .2s infinite"></div>
+          <div style="height:11px;width:60%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .3s infinite;opacity:.6"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.06em;margin-bottom:8px">ARQUETIPO D · FORMULARIO · Configuración, Asesor y terceros</div>
+      <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden;height:calc(100% - 26px);box-sizing:border-box">
+        <div style="padding:18px 20px;border-bottom:1px solid #E4E8EA;display:flex;gap:16px;font-size:12.5px;color:#6C757D"><span style="color:#111417;font-weight:600;border-bottom:2px solid oklch(.55 .11 300);padding-bottom:6px">Grupo</span><span>Checklists</span><span>Notificaciones</span><span>Almacenamiento</span></div>
+        <div style="padding:18px 20px;display:grid;gap:16px">
+          <div style="display:grid;gap:7px"><div style="height:9px;width:22%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out infinite"></div><div style="height:34px;border:1px solid #E4E8EA;border-radius:6px;background:#FAFBFB"></div></div>
+          <div style="display:grid;gap:7px"><div style="height:9px;width:30%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .1s infinite"></div><div style="height:34px;border:1px solid #E4E8EA;border-radius:6px;background:#FAFBFB"></div></div>
+          <div style="display:grid;gap:7px;opacity:.6"><div style="height:9px;width:26%;background:#EEF1F2;border-radius:3px;animation:sk 1.4s ease-in-out .2s infinite"></div><div style="height:34px;border:1px solid #E4E8EA;border-radius:6px;background:#FAFBFB"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.06em;margin:26px 0 8px">NIVEL 3 · PROCESO LARGO · Ingesta de CFDI, armado de paquete, diagnóstico</div>
+  <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;padding:24px 26px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap">
+      <div style="font:600 17px Geist,sans-serif;letter-spacing:-.015em">Cargando CFDI de Grupo Almara</div>
+      <div style="font:500 13px 'Geist Mono',monospace;color:#6C757D">3 de 4 · aprox. 6 min restantes</div>
+    </div>
+    <div style="height:6px;background:#EEF1F2;border-radius:999px;margin-top:14px;overflow:hidden"><div style="height:100%;background:oklch(.55 .11 300);border-radius:999px;width:64%;animation:grow 6s ease-out"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;font-size:13px">
+      <div style="display:grid;gap:4px"><div style="display:flex;align-items:center;gap:7px;font-weight:600;color:oklch(0.42 0.12 150)"><span style="width:14px;height:14px;border-radius:50%;background:oklch(0.95 0.04 150);color:oklch(0.42 0.12 150);display:grid;place-items:center;font-size:9px">✓</span>Descarga</div><div style="color:#6C757D;font-size:12.5px">340 XML del SAT</div></div>
+      <div style="display:grid;gap:4px"><div style="display:flex;align-items:center;gap:7px;font-weight:600;color:oklch(0.42 0.12 150)"><span style="width:14px;height:14px;border-radius:50%;background:oklch(0.95 0.04 150);color:oklch(0.42 0.12 150);display:grid;place-items:center;font-size:9px">✓</span>Validación</div><div style="color:#6C757D;font-size:12.5px">28 rechazados</div></div>
+      <div style="display:grid;gap:4px"><div style="display:flex;align-items:center;gap:7px;font-weight:600"><span style="width:11px;height:11px;border:1.5px solid #D5DADD;border-top-color:oklch(.55 .11 300);border-radius:50%;animation:spin .7s linear infinite;margin:0 1.5px"></span>Conciliación</div><div style="color:#6C757D;font-size:12.5px">198 de 312 proveedores</div></div>
+      <div style="display:grid;gap:4px;color:#8B949C"><div style="display:flex;align-items:center;gap:7px;font-weight:600"><span style="width:14px;height:14px;border-radius:50%;border:1.5px solid #E4E8EA;box-sizing:border-box"></span>Indexado</div><div style="font-size:12.5px">Pendiente</div></div>
+    </div>
+    <div style="margin-top:18px;padding-top:16px;border-top:1px solid #EEF1F2;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="font-size:13px;color:#3A4147;max-width:46em">Puedes cerrar esta pantalla. La carga sigue en el servidor y te avisamos por correo a <b>direccion.fiscal@almara.mx</b> cuando termine.</div>
+      <button style="height:32px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font:600 12.5px Geist,sans-serif;color:#3A4147;cursor:pointer">Cancelar la carga</button>
+    </div>
+  </div>
+  <p style="margin:8px 0 0;font-size:13px;color:#6C757D;max-width:46em">Las etapas se nombran con las palabras del producto y cada una reporta su cifra. «28 rechazados» aparece en cuanto se sabe, no al final: el usuario puede ir resolviéndolo mientras el resto avanza.</p>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">4. Vacío</h2>
+  <p style="margin:0 0 16px;color:#3A4147;max-width:44em;text-wrap:pretty">Cinco tipos. Confundirlos es el error más caro: un director fiscal que ve «sin resultados» donde debería leer «ningún proveedor en listas negras» concluye que el producto no cargó.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px">
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">TIPO 1 · PRIMER USO</span><span style="font-size:11.5px;color:#8B949C">Tablero, Expedientes, Datos, Clientes</span></div>
+      <div style="padding:34px 24px;display:grid;place-items:center;text-align:center">
+        <div style="max-width:340px">
+          <div style="width:34px;height:34px;border:1.5px solid #D5DADD;border-radius:8px;margin:0 auto;display:grid;place-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#B8C0C6"></span></div>
+          <div style="font:600 16px Geist,sans-serif;margin-top:14px">Aún no hay nada que vigilar</div>
+          <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">La vigilancia empieza cuando cargamos tus CFDI. Con un ejercicio completo alcanza para el primer diagnóstico.</div>
+          <button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;margin-top:16px;cursor:pointer">Cargar CFDI</button>
+          <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">Grupo Almara · 3 RFC registrados</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(0.42 0.12 150)">TIPO 2 · VACÍO POSITIVO</span><span style="font-size:11.5px;color:#8B949C">Vigilancia, Cola, Riesgo del proveedor</span></div>
+      <div style="padding:34px 24px;display:grid;place-items:center;text-align:center">
+        <div style="max-width:360px">
+          <div style="width:34px;height:34px;border:1.5px solid oklch(0.55 0.11 150);border-radius:8px;margin:0 auto;display:grid;place-items:center;color:oklch(0.42 0.12 150);font-size:14px">✓</div>
+          <div style="font:600 16px Geist,sans-serif;margin-top:14px">Ninguna alerta abierta</div>
+          <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">Los 312 proveedores del periodo están limpios en las listas del SAT. La vigilancia sigue corriendo todos los días.</div>
+          <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap"><button style="height:34px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font:600 13px Geist,sans-serif;color:#3A4147;cursor:pointer">Ver alertas resueltas (14)</button></div>
+          <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">Última revisión hoy 06:00 · listas 69-B del SAT</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">TIPO 3 · FILTRO SIN RESULTADOS</span><span style="font-size:11.5px;color:#8B949C">Toda lista con filtros</span></div>
+      <div style="padding:14px 18px;border-bottom:1px solid #EEF1F2;display:flex;gap:8px;flex-wrap:wrap">
+        <span style="height:28px;padding:0 12px;border:1px solid oklch(.55 .11 300);background:oklch(.95 .03 300);color:oklch(.45 .11 300);border-radius:6px;display:inline-flex;align-items:center;gap:7px;font:500 12.5px Geist,sans-serif">Severidad: crítica <span style="font-size:13px">✕</span></span>
+        <span style="height:28px;padding:0 12px;border:1px solid oklch(.55 .11 300);background:oklch(.95 .03 300);color:oklch(.45 .11 300);border-radius:6px;display:inline-flex;align-items:center;gap:7px;font:500 12.5px Geist,sans-serif">Altamira Servicios <span style="font-size:13px">✕</span></span>
+        <span style="height:28px;padding:0 12px;border:1px solid oklch(.55 .11 300);background:oklch(.95 .03 300);color:oklch(.45 .11 300);border-radius:6px;display:inline-flex;align-items:center;gap:7px;font:500 12.5px Geist,sans-serif">Últimos 7 días <span style="font-size:13px">✕</span></span>
+      </div>
+      <div style="padding:30px 24px;display:grid;place-items:center;text-align:center">
+        <div style="max-width:350px">
+          <div style="font:600 16px Geist,sans-serif">Ninguna alerta con estos tres filtros</div>
+          <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">Sin el filtro de severidad hay <b>4 alertas</b> de Altamira Servicios en los últimos 7 días.</div>
+          <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+            <button style="height:34px;padding:0 14px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;cursor:pointer">Quitar «severidad: crítica»</button>
+            <button style="height:34px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font:600 13px Geist,sans-serif;color:#3A4147;cursor:pointer">Quitar los tres filtros</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">TIPO 4 · BLOQUEADO POR CONTRATO</span><span style="font-size:11.5px;color:#8B949C">Modo diagnóstico</span></div>
+      <div style="padding:30px 24px;display:grid;place-items:center;text-align:center">
+        <div style="max-width:370px">
+          <div style="width:34px;height:34px;border:1.5px solid #D5DADD;border-radius:8px;margin:0 auto;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B949C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"></path></svg></div>
+          <div style="font:600 16px Geist,sans-serif;margin-top:14px">Los expedientes se activan con el contrato</div>
+          <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">En modo diagnóstico ya tienes carga, diagnóstico y reporte. Expedientes, vigilancia diaria y acceso del asesor entran con Diligo Corporativo.</div>
+          <button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;margin-top:16px;cursor:pointer">Activar Diligo · Corporativo</button>
+          <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">Un solo camino de activación en todo el producto</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden;grid-column:1/-1">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(0.48 0.16 50)">TIPO 5 · VACÍO PARCIAL</span><span style="font-size:11.5px;color:#8B949C">Hay datos, pero no de todo el grupo. Nunca se dibuja como vacío</span></div>
+      <div style="padding:18px 20px">
+        <div style="border:1px solid oklch(0.85 0.08 50);background:oklch(0.97 0.03 50);border-radius:8px;padding:13px 15px;display:flex;gap:13px;align-items:flex-start;flex-wrap:wrap">
+          <span style="width:8px;height:8px;border-radius:50%;background:oklch(0.62 0.17 50);margin-top:6px;flex:none"></span>
+          <div style="flex:1;min-width:240px">
+            <div style="font-weight:600;color:oklch(0.48 0.16 50)">Cobertura parcial: 2 de 3 RFC</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:3px">Altamira Servicios no carga CFDI desde el 21 de julio. Sus proveedores no aparecen en esta lista y no están bajo vigilancia.</div>
+          </div>
+          <button style="height:32px;padding:0 14px;border:1px solid oklch(0.85 0.08 50);border-radius:6px;background:#fff;font:600 12.5px Geist,sans-serif;color:oklch(0.48 0.16 50);cursor:pointer;flex:none">Cargar CFDI de Altamira</button>
+        </div>
+        <div style="margin-top:14px;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden;font-size:13px">
+          <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:14px;padding:10px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.04em"><span>PROVEEDOR</span><span>RFC EMISOR</span><span>GASTO DEL PERIODO</span></div>
+          <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:14px;padding:11px 14px;border-bottom:1px solid #EEF1F2"><span>Servicios Integrales del Bajío</span><span style="font:400 12.5px 'Geist Mono',monospace;color:#6C757D">ALM940512J31</span><span style="font:500 12.5px 'Geist Mono',monospace">$4,120,880</span></div>
+          <div style="display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:14px;padding:11px 14px"><span>Transportes Peninsular</span><span style="font:400 12.5px 'Geist Mono',monospace;color:#6C757D">ALM940512J31</span><span style="font:500 12.5px 'Geist Mono',monospace">$2,905,410</span></div>
+        </div>
+        <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:10px">Lo que sí hay se muestra completo. El aviso explica qué falta, de quién y desde cuándo.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">5. Error</h2>
+  <p style="margin:0 0 16px;color:#3A4147;max-width:44em;text-wrap:pretty">Tres alcances según cuánto se pierde: una franja cuando el dato sirve pero está viejo, un bloque cuando falla una sección, la pantalla completa solo cuando no hay nada válido. En los tres casos se dice si la vigilancia sigue corriendo.</p>
+
+  <div style="display:grid;gap:14px">
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">ALCANCE 1 · FRANJA · el dato sirve, pero no es de hoy</span><span style="font-size:11.5px;color:#8B949C">Fuente externa caída · Sincronización parcial · Sin conexión</span></div>
+      <div style="padding:18px 20px;display:grid;gap:10px">
+        <div style="border:1px solid oklch(0.85 0.08 50);background:oklch(0.97 0.03 50);border-radius:8px;padding:12px 15px;display:flex;gap:13px;align-items:flex-start;flex-wrap:wrap">
+          <span style="width:8px;height:8px;border-radius:50%;background:oklch(0.62 0.17 50);margin-top:6px;flex:none"></span>
+          <div style="flex:1;min-width:260px"><div style="font-weight:600;color:oklch(0.48 0.16 50)">El portal del SAT no responde desde las 04:10</div><div style="color:#3A4147;font-size:13.5px;margin-top:3px">Estás viendo el estatus en listas del <b>9 sep, 06:00</b>. No podemos confirmar cambios de hoy. Reintentamos cada 30 minutos.</div></div>
+          <button style="height:32px;padding:0 14px;border:1px solid oklch(0.85 0.08 50);border-radius:6px;background:#fff;font:600 12.5px Geist,sans-serif;color:oklch(0.48 0.16 50);cursor:pointer;flex:none">Reintentar ahora</button>
+        </div>
+        <div style="border:1px solid #D5DADD;background:#FAFBFB;border-radius:8px;padding:12px 15px;display:flex;gap:13px;align-items:center;flex-wrap:wrap">
+          <span style="width:8px;height:8px;border-radius:50%;background:#8B949C;flex:none"></span>
+          <div style="flex:1;min-width:260px;color:#3A4147;font-size:13.5px">Sin conexión. Puedes seguir leyendo lo ya cargado; los cambios no se guardarán hasta que vuelva la red.</div>
+          <span style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;flex:none">Reintentando… 0:12</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">ALCANCE 2 · BLOQUE · falla una sección, el resto de la pantalla vive</span><span style="font-size:11.5px;color:#8B949C">Tablero, Ficha de proveedor, Diagnóstico</span></div>
+      <div style="padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:14px 16px"><div style="font-size:12.5px;color:#6C757D">Alertas abiertas</div><div style="font:500 26px/1.1 'Geist Mono',monospace;margin-top:6px">7</div><div style="font-size:12px;color:#6C757D;margin-top:4px">2 críticas</div></div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;padding:14px 16px"><div style="font-size:12.5px;color:#6C757D">Cobertura de CFDI</div><div style="font:500 26px/1.1 'Geist Mono',monospace;margin-top:6px">68%</div><div style="font-size:12px;color:#6C757D;margin-top:4px">2 de 3 RFC</div></div>
+        <div style="border:1px solid oklch(0.85 0.08 50);background:oklch(0.97 0.03 50);border-radius:8px;padding:14px 16px"><div style="font-size:12.5px;color:oklch(0.48 0.16 50);font-weight:600">Exposición estimada</div><div style="color:#3A4147;font-size:13px;margin-top:6px;line-height:1.45">No se pudo calcular. El resto del tablero está al día.</div><button style="height:28px;padding:0 12px;border:1px solid oklch(0.85 0.08 50);border-radius:6px;background:#fff;font:600 12px Geist,sans-serif;color:oklch(0.48 0.16 50);margin-top:10px;cursor:pointer">Reintentar</button></div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+      <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA;display:flex;justify-content:space-between;gap:10px"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:oklch(0.45 0.19 25)">ALCANCE 3 · PANTALLA · no hay nada válido que mostrar</span><span style="font-size:11.5px;color:#8B949C">500 · 404 · 403 · timeout</span></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0">
+
+        <div style="padding:30px 24px;border-right:1px solid #EEF1F2;border-bottom:1px solid #EEF1F2;display:grid;place-items:center;text-align:center">
+          <div style="max-width:330px">
+            <div style="width:34px;height:34px;border:1.5px solid oklch(0.5 0.19 25);border-radius:8px;margin:0 auto;display:grid;place-items:center;color:oklch(0.45 0.19 25);font-weight:600">!</div>
+            <div style="font:600 16px Geist,sans-serif;margin-top:14px">No pudimos cargar Vigilancia</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">Es una falla nuestra, no de tus datos. La vigilancia diaria sigue corriendo y las alertas críticas se siguen enviando por correo.</div>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap"><button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;cursor:pointer">Reintentar</button><button style="height:34px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font:600 13px Geist,sans-serif;color:#3A4147;cursor:pointer">Escribir a soporte</button></div>
+            <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">ERR-5031 · 10 sep 2026 11:42 · sesión 4f7a</div>
+          </div>
+        </div>
+
+        <div style="padding:30px 24px;border-bottom:1px solid #EEF1F2;display:grid;place-items:center;text-align:center">
+          <div style="max-width:330px">
+            <div style="width:34px;height:34px;border:1.5px solid #D5DADD;border-radius:8px;margin:0 auto;display:grid;place-items:center;color:#6C757D;font-weight:600">?</div>
+            <div style="font:600 16px Geist,sans-serif;margin-top:14px">Ese proveedor ya no está en tu grupo</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">El RFC <b style="font-family:'Geist Mono',monospace;font-weight:500">TPE080219QK4</b> salió del alcance cuando se ajustó el periodo al ejercicio 2025.</div>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap"><button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;cursor:pointer">Ir a Expedientes</button><button style="height:34px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font:600 13px Geist,sans-serif;color:#3A4147;cursor:pointer">Ajustar periodo</button></div>
+            <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">ERR-404 · objeto: proveedor</div>
+          </div>
+        </div>
+
+        <div style="padding:30px 24px;border-right:1px solid #EEF1F2;display:grid;place-items:center;text-align:center">
+          <div style="max-width:330px">
+            <div style="width:34px;height:34px;border:1.5px solid #D5DADD;border-radius:8px;margin:0 auto;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B949C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"></path></svg></div>
+            <div style="font:600 16px Geist,sans-serif;margin-top:14px">Grupo Almara revocó tu acceso</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">El 4 de septiembre, por Ana Robledo. Los tres expedientes que aprobaste siguen en su bitácora; tú ya no puedes abrirlos.</div>
+            <button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;margin-top:16px;cursor:pointer">Solicitar acceso al cliente</button>
+            <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">ERR-403 · acceso revocado 4 sep 2026</div>
+          </div>
+        </div>
+
+        <div style="padding:30px 24px;display:grid;place-items:center;text-align:center">
+          <div style="max-width:340px">
+            <div style="width:34px;height:34px;border:1.5px solid oklch(0.76 0.14 85);border-radius:8px;margin:0 auto;display:grid;place-items:center;color:oklch(0.48 0.12 85);font-weight:600">·</div>
+            <div style="font:600 16px Geist,sans-serif;margin-top:14px">La carga se detuvo en la conciliación</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:6px;text-wrap:pretty">Se conservan los <b>340 XML</b> ya descargados y validados. Al reintentar, se retoma desde la conciliación; no hay que volver a subir nada.</div>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:16px;flex-wrap:wrap"><button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;cursor:pointer">Retomar la carga</button><button style="height:34px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font:600 13px Geist,sans-serif;color:#3A4147;cursor:pointer">Descartar y empezar de nuevo</button></div>
+            <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:12px">ERR-TIMEOUT · etapa 3 de 4 · 10 sep 11:12</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px">
+      <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+        <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">ARCHIVO RECHAZADO EN LA CARGA</span></div>
+        <div style="padding:18px 20px">
+          <div style="border:1px solid oklch(0.85 0.08 50);background:oklch(0.97 0.03 50);border-radius:8px;padding:13px 15px">
+            <div style="font-weight:600;color:oklch(0.48 0.16 50)">312 de 340 XML cargados</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:3px">28 se rechazaron: 19 son de un RFC que no pertenece al grupo y 9 están cancelados en el SAT. El resto ya está en cobertura.</div>
+            <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap"><button style="height:30px;padding:0 12px;border:1px solid oklch(0.85 0.08 50);border-radius:6px;background:#fff;font:600 12.5px Geist,sans-serif;color:oklch(0.48 0.16 50);cursor:pointer">Ver los 28 rechazados</button><button style="height:30px;padding:0 12px;border:0;border-radius:6px;background:transparent;font:600 12.5px Geist,sans-serif;color:oklch(.45 .11 300);cursor:pointer">Descargar informe (CSV)</button></div>
+          </div>
+          <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:10px">Un rechazo parcial nunca detiene la carga completa.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #E4E8EA;border-radius:10px;background:#fff;overflow:hidden">
+        <div style="padding:9px 14px;background:#FAFBFB;border-bottom:1px solid #E4E8EA"><span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D">SESIÓN EXPIRADA · MISMA FORMA QUE CERRAR SESIÓN</span></div>
+        <div style="padding:22px 20px;background:#EEF1F2;display:grid;place-items:center">
+          <div style="background:#fff;border-radius:10px;max-width:380px;width:100%;padding:22px;box-shadow:0 12px 32px rgba(14,17,19,.16);box-sizing:border-box">
+            <div style="font:600 17px Geist,sans-serif;letter-spacing:-.02em">Tu sesión expiró</div>
+            <div style="color:#3A4147;font-size:13.5px;margin-top:8px;line-height:1.55">Por seguridad cerramos la sesión tras 30 minutos sin actividad. Guardamos el expediente de Transportes Peninsular como borrador.</div>
+            <div style="margin-top:12px;padding:11px 13px;background:#FAFBFB;border:1px solid #E4E8EA;border-radius:8px;font-size:12.5px;color:#6C757D;line-height:1.5">La vigilancia diaria siguió corriendo con la sesión cerrada. Las alertas críticas se enviaron por correo.</div>
+            <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:16px"><button style="height:34px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font:600 13px Geist,sans-serif;cursor:pointer">Volver a entrar</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">6. Pantalla por pantalla</h2>
+  <p style="margin:0 0 16px;color:#3A4147;max-width:44em;text-wrap:pretty">El texto de esta tabla es el texto final. Cuando una pantalla tiene dos vacíos posibles, se listan los dos: elegir mal entre ellos es el error de contenido más frecuente.</p>
+
+  <div style="border:1px solid #E4E8EA;border-radius:10px;overflow:hidden;background:#fff">
+    <table style="width:100%;border-collapse:collapse;font-size:12.5px">
+      <thead><tr style="background:#FAFBFB;text-align:left;font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D"><th style="padding:10px 14px;font-weight:500;width:15%;border-bottom:1px solid #E4E8EA">PANTALLA</th><th style="padding:10px 14px;font-weight:500;width:16%;border-bottom:1px solid #E4E8EA">CARGA</th><th style="padding:10px 14px;font-weight:500;width:35%;border-bottom:1px solid #E4E8EA">VACÍO</th><th style="padding:10px 14px;font-weight:500;border-bottom:1px solid #E4E8EA">ERROR</th></tr></thead>
+      <tbody style="color:#3A4147">
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Tablero</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo A</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Primer uso:</b> «Aún no hay nada que vigilar» → Cargar CFDI.<br><b>Positivo:</b> «Ninguna alerta abierta» con la hora de la última revisión.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Por bloque: cada cifra falla sola y se reintenta sola.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Vigilancia</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo B</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Positivo:</b> «Ninguna alerta abierta. Los 312 proveedores del periodo están limpios».<br><b>Filtro:</b> nombra el filtro que sobra y ofrece quitarlo.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Franja: el SAT no responde, se ve el estatus del día anterior con su fecha.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Ficha de proveedor</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo C, con la cabecera real desde el primer momento</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Riesgo:</b> «Sin alertas. Limpio en las listas del SAT al 10 sep».<br><b>Archivos:</b> «Ningún archivo cargado» → Subir evidencia.<br><b>Expediente:</b> «Sin expediente» → Nuevo expediente.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Pantalla 404 cuando el RFC salió del alcance, con el porqué.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Expedientes</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo B</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Primer uso:</b> «Ningún expediente abierto» → Documentar los 68 proveedores propuestos.<br><b>Filtro:</b> estándar.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Pantalla, con la vigilancia declarada como vigente.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Exportar expediente</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Proceso con etapas: Reunir, Verificar, Sellar, Comprimir</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Nada seleccionado:</b> el botón queda deshabilitado con la razón: «Selecciona al menos un expediente».</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Falla en la etapa N: se conserva lo generado y se retoma desde ahí.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Asesor y terceros</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo D</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Primer uso:</b> «Ningún asesor con acceso» → Invitar a un asesor. Explica que el asesor ve expedientes, no los CFDI en bruto.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Bloque en la lista de accesos; la invitación pendiente no se pierde.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Datos · CFDI</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Proceso con etapas: Descarga, Validación, Conciliación, Indexado</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Primer uso:</b> zona de carga con los formatos aceptados y el tamaño máximo, no un texto de bienvenida.<br><b>Parcial:</b> aviso de cobertura por RFC.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Rechazo parcial con el conteo y el motivo por grupo; timeout que retoma la etapa.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Diagnóstico</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Proceso con etapas, hasta 3 min</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Sin insumo:</b> «Necesitamos al menos un ejercicio completo de CFDI» → Cargar CFDI. Dice qué se obtiene al terminar.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Pantalla; el diagnóstico anterior sigue disponible con su fecha.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Bitácora</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo B</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Filtro:</b> «Ningún evento entre el 1 y el 8 de septiembre» → Ampliar a los últimos 90 días. La bitácora nunca está vacía de origen.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Pantalla, con aviso de que el registro no se interrumpió.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Configuración</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo D</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Sin permisos:</b> los campos se ven en solo lectura con «Solo el administrador del grupo puede cambiar esto» → Pedir el cambio a Ana Robledo.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Error de guardado en el propio campo, con el valor anterior a la vista.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Cola de revisión</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo B</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Positivo:</b> «Cola vacía. Aprobaste 6 expedientes esta semana» → Ver aprobados.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Pantalla.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Clientes</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo B</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Primer uso:</b> «Ningún cliente te ha dado acceso» → Solicitar acceso al cliente.</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Pantalla.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top;border-bottom:1px solid #EEF1F2">Cliente (asesor)</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">Arquetipo A</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2"><b>Sin expedientes del cliente:</b> «Este cliente aún no envía expedientes a revisión».</td><td style="padding:11px 14px;vertical-align:top;border-bottom:1px solid #EEF1F2">403 de acceso revocado, con fecha y quién lo revocó.</td></tr>
+        <tr><td style="padding:11px 14px;font-weight:600;color:#111417;vertical-align:top">Aprobados</td><td style="padding:11px 14px;vertical-align:top">Arquetipo B</td><td style="padding:11px 14px;vertical-align:top"><b>Primer uso:</b> «Aún no apruebas ningún expediente» → Ir a la cola de revisión.</td><td style="padding:11px 14px;vertical-align:top">Pantalla.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 style="font:600 19px/1.2 Geist,sans-serif;letter-spacing:-.02em;margin:44px 0 6px">7. Reglas de redacción</h2>
+  <div style="border:1px solid #E4E8EA;border-radius:10px;overflow:hidden;background:#fff">
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <thead><tr style="background:#FAFBFB;text-align:left;font:500 10.5px 'Geist Mono',monospace;letter-spacing:.05em;color:#6C757D"><th style="padding:10px 14px;font-weight:500;width:38%;border-bottom:1px solid #E4E8EA">NO</th><th style="padding:10px 14px;font-weight:500;border-bottom:1px solid #E4E8EA">SÍ</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:11px 14px;color:#6C757D;border-bottom:1px solid #EEF1F2">«No hay datos»</td><td style="padding:11px 14px;border-bottom:1px solid #EEF1F2">«Altamira Servicios no carga CFDI desde el 21 de julio»</td></tr>
+        <tr><td style="padding:11px 14px;color:#6C757D;border-bottom:1px solid #EEF1F2">«¡Todo listo! 🎉»</td><td style="padding:11px 14px;border-bottom:1px solid #EEF1F2">«Ninguna alerta abierta. Última revisión hoy 06:00»</td></tr>
+        <tr><td style="padding:11px 14px;color:#6C757D;border-bottom:1px solid #EEF1F2">«Algo salió mal»</td><td style="padding:11px 14px;border-bottom:1px solid #EEF1F2">«No pudimos cargar Vigilancia. La vigilancia diaria sigue corriendo»</td></tr>
+        <tr><td style="padding:11px 14px;color:#6C757D;border-bottom:1px solid #EEF1F2">«Error 500: Internal Server Error»</td><td style="padding:11px 14px;border-bottom:1px solid #EEF1F2">Frase en español arriba, <span style="font-family:'Geist Mono',monospace;font-size:12px">ERR-5031</span> abajo para soporte</td></tr>
+        <tr><td style="padding:11px 14px;color:#6C757D;border-bottom:1px solid #EEF1F2">«Comienza tu viaje con Diligo»</td><td style="padding:11px 14px;border-bottom:1px solid #EEF1F2">«La vigilancia empieza cuando cargamos tus CFDI»</td></tr>
+        <tr><td style="padding:11px 14px;color:#6C757D;border-bottom:1px solid #EEF1F2">«Reintentar» a secas en un proceso largo</td><td style="padding:11px 14px;border-bottom:1px solid #EEF1F2">«Retomar la carga» y decir desde qué etapa</td></tr>
+        <tr><td style="padding:11px 14px;color:#6C757D">Tres formas de cerrar un aviso</td><td style="padding:11px 14px">Una sola: <b>Cerrar</b>, con la misma posición en todo el producto</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:40px;border:1px solid #111417;border-radius:10px;padding:20px 22px;background:#fff">
+    <div style="font:600 15px Geist,sans-serif;margin-bottom:10px">Antes de dar por buena una pantalla nueva</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 24px;font-size:13.5px">
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>Tiene los tres estados, no solo el que tenía datos al diseñarla.</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>Distingue vacío de primer uso, vacío positivo y filtro sin resultados.</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>El esqueleto se parece al resultado y conserva la cabecera real.</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>El error usa el alcance más pequeño que alcance.</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>Dice si la vigilancia diaria sigue corriendo.</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>Una sola acción principal, con verbo y objeto: «Cargar CFDI», no «Continuar».</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>Nombra el módulo igual que el menú y la miga de pan.</span></div>
+      <div style="display:grid;grid-template-columns:16px 1fr;gap:9px;padding:7px 0;border-bottom:1px solid #EEF1F2"><span style="width:12px;height:12px;border:1.2px solid #B8C0C6;border-radius:3px;margin-top:3px"></span><span>Pie con fecha, fuente o código de error.</span></div>
+    </div>
+  </div>
+
+  <p style="margin:26px 0 0;font-size:13px;color:#6C757D;max-width:46em;text-wrap:pretty">Los mismos estados están montados dentro del prototipo: en <a href="Diligo App.dc.html">Diligo App</a>, el control <b>Estado</b> cambia la pantalla actual entre normal, carga, vacío y error sin salir del flujo.</p>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180}}"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#F4F6F7}a{color:#4A3F80}a:hover{color:#111417}</style></helmet>
+
+<div style="--ac:{{ ac }};--acT:{{ acT }};--acS:{{ acS }};padding:48px 56px 72px;font-family:Geist,system-ui,sans-serif;color:#111417;background:#F4F6F7;box-sizing:border-box;min-width:min-content">
+
+  <header style="display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex-wrap:wrap;max-width:1100px;margin-bottom:36px">
+    <div>
+      <div style="font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.09em;text-transform:uppercase;color:#6C757D">Diligo · notificaciones</div>
+      <h1 style="font:600 32px/1.15 Geist,sans-serif;letter-spacing:-.035em;margin:12px 0 0">Correos de notificación</h1>
+      <p style="font:400 15px/1.5 Geist,sans-serif;color:#3A4147;margin:12px 0 0;max-width:620px">Cuatro plantillas: alerta, recordatorio, escalamiento y cobertura. El contenido es fijo; el cliente configura destinatarios y tiempos. Todas citan fuente oficial, fecha de publicación y plazo.</p>
+    </div>
+    <div style="font-size:12.5px;color:#6C757D;display:grid;grid-template-columns:auto 1fr;gap:8px 14px;align-content:end">
+      <span>Ancho</span><span style="color:#111417">600 px, una columna</span>
+      <span>Tipografía</span><span style="color:#111417">Arial / Courier New (segura en correo)</span>
+      <span>Construcción</span><span style="color:#111417">Tablas anidadas, estilos en línea, sin imágenes</span>
+      <span>Bitácora</span><span style="color:#111417">Cada envío registra destinatario, fecha, hora y estado</span>
+    </div>
+  </header>
+
+  <div style="display:flex;gap:32px;align-items:flex-start;flex-wrap:nowrap">
+
+    <div style="width:600px;flex:none">
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+        <div style="display:inline-flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#C03B33"></span><span style="font:600 12px Geist,sans-serif;color:#A93129;letter-spacing:.02em">01 · ALERTA</span></div>
+        <div style="font:400 12px/1.6 'Geist Mono',ui-monospace,monospace;color:#6C757D">Para: 3 administradores · Envío inmediato · No desactivable</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;font-size:12.5px;line-height:1.7">
+        <div style="color:#6C757D">Asunto</div><div style="font-weight:600">Crítico · Servicios Integrales del Bajío pasó a 69-B definitivo</div>
+        <div style="color:#6C757D;margin-top:8px">Vista previa</div><div style="color:#3A4147">SIB040512AB3 · 14 CFDI por $2,340,118 · plazo 23 sep 2026</div>
+      </div>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse;background:#FAFBFB;font-family:Arial,Helvetica,sans-serif;border:1px solid #E4E8EA;border-radius:4px">
+        <tr><td style="padding:0">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse">
+            <tr><td width="600" style="padding:20px 32px;background:#111417;color:#FFFFFF;font:bold 19px Arial,Helvetica,sans-serif;letter-spacing:-0.5px">diligo<span style="color:var(--ac,#6B5FA6)">.</span><span style="float:right;font:normal 12px Arial,Helvetica,sans-serif;color:#8B949C;letter-spacing:0">Grupo Alcázar</span></td></tr>
+            <tr><td width="600" style="padding:10px 32px;background:#FBEAE7;border-bottom:2px solid #C03B33;font:bold 12px Arial,Helvetica,sans-serif;color:#A93129;letter-spacing:1px;mso-line-height-rule:exactly;line-height:16px">CRÍTICO · INVALIDA CFDI · ALERTA 2026-0142</td></tr>
+            <tr><td width="600" style="padding:28px 32px 8px;background:#FFFFFF">
+              <div style="font:bold 22px/1.25 Arial,Helvetica,sans-serif;color:#111417;mso-line-height-rule:exactly">Servicios Integrales del Bajío, S.A. de C.V.</div>
+              <div style="font:normal 15px/1.55 Arial,Helvetica,sans-serif;color:#3A4147;padding-top:12px;mso-line-height-rule:exactly">El SAT publicó el cambio de estatus de este proveedor: pasó de <b>69-B presunto</b> a <b style="color:#A93129">69-B definitivo</b>. Los CFDI que le expidió en el periodo señalado no producen efecto fiscal.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:20px 32px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="536" style="width:536px;border-collapse:collapse;border-top:1px solid #E4E8EA">
+                <tr><td width="180" style="padding:11px 0 11px;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">RFC</td><td width="356" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#111417">SIB040512AB3</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Publicación</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">12 ago 2026 · oficio 500-05-2026-18342</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Plazo de respuesta</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:bold 13px Arial,Helvetica,sans-serif;color:#A93129">23 sep 2026 · 22 días hábiles restantes<span style="display:block;font:normal 12px Arial,Helvetica,sans-serif;color:#57606A;padding-top:3px">30 días hábiles desde la publicación de la lista definitiva.</span></td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">CFDI afectados</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#111417">14 · $2,340,118</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Contingencia estimada</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#111417">$1.84 – 2.62 MDP<span style="display:block;font:normal 12px Arial,Helvetica,sans-serif;color:#57606A;padding-top:3px">IVA acreditado + ISR al 30% + actualización y recargos + multa 0–55%. Calculada con XML.</span></td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Periodo señalado</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">ene 2021 – dic 2022</td></tr>
+              </table>
+            </td></tr>
+            <tr><td width="600" style="padding:4px 32px 28px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+                <tr><td style="background:var(--ac,#6B5FA6);border-radius:6px;padding:13px 22px"><a href="https://app.diligo.mx/alertas/2026-0142" style="font:bold 14px Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;display:block">Ver la alerta en Diligo</a></td>
+                <td style="padding-left:18px"><a href="https://www.dof.gob.mx" style="font:bold 13px Arial,Helvetica,sans-serif;color:var(--acT,#4A3F80);text-decoration:none">Fuente oficial &#8599;</a></td></tr>
+              </table>
+              <div style="font:normal 13px/1.55 Arial,Helvetica,sans-serif;color:#6C757D;padding-top:18px;mso-line-height-rule:exactly">Acción sugerida: acreditar materialidad del servicio antes del 23 sep o corregir la situación fiscal. El expediente ya tiene 6 de 11 documentos.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:18px 32px;background:#EEF1F2;border-top:1px solid #E4E8EA;font:normal 12px/1.6 Arial,Helvetica,sans-serif;color:#57606A;mso-line-height-rule:exactly">
+              Enviado a los 3 administradores de Grupo Alcázar. Las alertas críticas se envían de inmediato y no se pueden silenciar. Diligo transporta el dato oficial con su fuente y fecha; no determina deducibilidad ni emite opinión fiscal.<br><br>
+              Diligo · Av. Vasconcelos 210, Monterrey, N.L. · <a href="https://app.diligo.mx/config/notificaciones" style="color:var(--acT,#4A3F80);text-decoration:underline">Preferencias de notificación</a>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="width:600px;flex:none">
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+        <div style="display:inline-flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:var(--ac,#6B5FA6)"></span><span style="font:600 12px Geist,sans-serif;color:var(--acT,#4A3F80);letter-spacing:.02em">02 · RECORDATORIO</span></div>
+        <div style="font:400 12px/1.6 'Geist Mono',ui-monospace,monospace;color:#6C757D">Para: responsable del bloque · Día 3 desde la solicitud</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;font-size:12.5px;line-height:1.7">
+        <div style="color:#6C757D">Asunto</div><div style="font-weight:600">Recordatorio · Evidencia operativa pendiente de Servicios Integrales del Bajío</div>
+        <div style="color:#6C757D;margin-top:8px">Vista previa</div><div style="color:#3A4147">3 documentos sin cargar desde el 5 sep · vence 23 sep 2026</div>
+      </div>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse;background:#FAFBFB;font-family:Arial,Helvetica,sans-serif;border:1px solid #E4E8EA;border-radius:4px">
+        <tr><td style="padding:0">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse">
+            <tr><td width="600" style="padding:20px 32px;background:#111417;color:#FFFFFF;font:bold 19px Arial,Helvetica,sans-serif;letter-spacing:-0.5px">diligo<span style="color:var(--ac,#6B5FA6)">.</span><span style="float:right;font:normal 12px Arial,Helvetica,sans-serif;color:#8B949C;letter-spacing:0">Grupo Alcázar</span></td></tr>
+            <tr><td width="600" style="padding:10px 32px;background:var(--acS,#EFEDF7);border-bottom:2px solid var(--ac,#6B5FA6);font:bold 12px Arial,Helvetica,sans-serif;color:var(--acT,#4A3F80);letter-spacing:1px;mso-line-height-rule:exactly;line-height:16px">RECORDATORIO · DÍA 3 DE 10 · EXPEDIENTE SIB-2026</td></tr>
+            <tr><td width="600" style="padding:28px 32px 8px;background:#FFFFFF">
+              <div style="font:bold 22px/1.25 Arial,Helvetica,sans-serif;color:#111417;mso-line-height-rule:exactly">Falta el bloque operativo</div>
+              <div style="font:normal 15px/1.55 Arial,Helvetica,sans-serif;color:#3A4147;padding-top:12px;mso-line-height-rule:exactly">Jorge, el 5 sep le enviamos su liga de evidencia de <b>Servicios Integrales del Bajío</b>, el proveedor de mantenimiento que usted contrató. Faltan tres puntos. No hay que crear cuenta ni instalar nada: la liga abre en el celular, un punto por pantalla, toma unos 3 minutos.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:16px 32px 4px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="536" style="width:536px;border-collapse:collapse;background:#FAFBFB;border:1px solid #E4E8EA;border-radius:4px">
+                <tr><td width="536" style="padding:16px 20px;font:normal 14px/1.9 Arial,Helvetica,sans-serif;color:#111417;mso-line-height-rule:exactly">
+                  <b style="font:bold 12px Arial,Helvetica,sans-serif;color:#57606A;letter-spacing:0.6px">PUNTOS SUGERIDOS PENDIENTES · 3 DE 11</b><br>
+                  Bitácoras de asistencia 2021–2022<br>
+                  Fotos fechadas de los trabajos<br>
+                  Reportes de servicio firmados por el residente
+                </td></tr>
+              </table>
+            </td></tr>
+            <tr><td width="600" style="padding:16px 32px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="536" style="width:536px;border-collapse:collapse;border-top:1px solid #E4E8EA">
+                <tr><td width="180" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Solicitado</td><td width="356" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">5 sep 2026 · por Contraloría</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Vence</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:bold 13px Arial,Helvetica,sans-serif;color:#111417">23 sep 2026</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Expediente</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">Nivel 2 · 6 de 11 documentos</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Alerta ligada</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#A93129">2026-0142 · crítica</td></tr>
+              </table>
+            </td></tr>
+            <tr><td width="600" style="padding:4px 32px 28px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+                <tr><td style="background:var(--ac,#6B5FA6);border-radius:6px;padding:13px 22px"><a href="https://ev.diligo.mx/l/9f3b2c71" style="font:bold 14px Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;display:block">Abrir mi liga de evidencia</a></td>
+                <td style="padding-left:18px"><a href="https://ev.diligo.mx/l/9f3b2c71?nc=1" style="font:bold 13px Arial,Helvetica,sans-serif;color:var(--acT,#4A3F80);text-decoration:none">No aplica en este caso</a></td></tr>
+              </table>
+              <div style="font:normal 13px/1.55 Arial,Helvetica,sans-serif;color:#6C757D;padding-top:18px;mso-line-height-rule:exactly">Liga personal, de un solo uso, válida hasta el 23 sep. Si no hay carga, el 12 sep se avisa a su jefatura y el 15 sep el caso pasa al asesor fiscal con el expediente incompleto.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:18px 32px;background:#EEF1F2;border-top:1px solid #E4E8EA;font:normal 12px/1.6 Arial,Helvetica,sans-serif;color:#57606A;mso-line-height-rule:exactly">
+              Recordatorio automático del expediente. Se detiene cuando la evidencia queda cargada. Los puntos son sugeridos; la suficiencia la determina el asesor fiscal.<br><br>
+              Diligo · Av. Vasconcelos 210, Monterrey, N.L. · <a href="https://app.diligo.mx/config/notificaciones" style="color:var(--acT,#4A3F80);text-decoration:underline">Preferencias de notificación</a>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="width:600px;flex:none">
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+        <div style="display:inline-flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#C97A18"></span><span style="font:600 12px Geist,sans-serif;color:#93540A;letter-spacing:.02em">03 · ESCALAMIENTO</span></div>
+        <div style="font:400 12px/1.6 'Geist Mono',ui-monospace,monospace;color:#6C757D">Para: jefatura del responsable · Día 7 · Copia al solicitante</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;font-size:12.5px;line-height:1.7">
+        <div style="color:#6C757D">Asunto</div><div style="font-weight:600">Escalamiento · 7 días sin respuesta en el expediente de Servicios Integrales del Bajío</div>
+        <div style="color:#6C757D;margin-top:8px">Vista previa</div><div style="color:#3A4147">$2,340,118 en CFDI y 22 días hábiles de plazo · sin evidencia operativa</div>
+      </div>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse;background:#FAFBFB;font-family:Arial,Helvetica,sans-serif;border:1px solid #E4E8EA;border-radius:4px">
+        <tr><td style="padding:0">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse">
+            <tr><td width="600" style="padding:20px 32px;background:#111417;color:#FFFFFF;font:bold 19px Arial,Helvetica,sans-serif;letter-spacing:-0.5px">diligo<span style="color:var(--ac,#6B5FA6)">.</span><span style="float:right;font:normal 12px Arial,Helvetica,sans-serif;color:#8B949C;letter-spacing:0">Grupo Alcázar</span></td></tr>
+            <tr><td width="600" style="padding:10px 32px;background:#FDF3E9;border-bottom:2px solid #C97A18;font:bold 12px Arial,Helvetica,sans-serif;color:#93540A;letter-spacing:1px;mso-line-height-rule:exactly;line-height:16px">ESCALAMIENTO · DÍA 7 DE 10 · SIN RESPUESTA</td></tr>
+            <tr><td width="600" style="padding:28px 32px 8px;background:#FFFFFF">
+              <div style="font:bold 22px/1.25 Arial,Helvetica,sans-serif;color:#111417;mso-line-height-rule:exactly">Mariana, Compras no ha respondido</div>
+              <div style="font:normal 15px/1.55 Arial,Helvetica,sans-serif;color:#3A4147;padding-top:12px;mso-line-height-rule:exactly">Jorge Medina recibió su liga de evidencia el 5 sep y dos recordatorios. El expediente de <b>Servicios Integrales del Bajío</b> sigue sin el bloque operativo. Le escribimos como responsable del área.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:20px 32px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="536" style="width:536px;border-collapse:collapse;border-top:1px solid #E4E8EA">
+                <tr><td width="180" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Responsable</td><td width="356" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">Jorge Medina · Compras</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Sin respuesta desde</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">5 sep 2026 · 7 días · 2 recordatorios</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Plazo del SAT</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:bold 13px Arial,Helvetica,sans-serif;color:#93540A">23 sep 2026 · 22 días hábiles</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Exposición</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#111417">$2,340,118 · 14 CFDI</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Alerta ligada</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#A93129">2026-0142 · 69-B definitivo</td></tr>
+              </table>
+            </td></tr>
+            <tr><td width="600" style="padding:4px 32px 28px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+                <tr><td style="background:var(--ac,#6B5FA6);border-radius:6px;padding:13px 22px"><a href="https://app.diligo.mx/expedientes/sib-2026" style="font:bold 14px Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;display:block">Ver expediente</a></td>
+                <td style="padding-left:18px"><a href="https://app.diligo.mx/expedientes/sib-2026/responsable" style="font:bold 13px Arial,Helvetica,sans-serif;color:var(--acT,#4A3F80);text-decoration:none">Reasignar responsable</a></td></tr>
+              </table>
+              <div style="font:normal 13px/1.55 Arial,Helvetica,sans-serif;color:#6C757D;padding-top:18px;mso-line-height-rule:exactly">Siguiente paso automático: el 15 sep el caso pasa al asesor fiscal con el expediente como esté.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:18px 32px;background:#EEF1F2;border-top:1px solid #E4E8EA;font:normal 12px/1.6 Arial,Helvetica,sans-serif;color:#57606A;mso-line-height-rule:exactly">
+              Escalamiento automático del expediente. Copia a Jorge Medina y a Contraloría.<br><br>
+              Diligo · Av. Vasconcelos 210, Monterrey, N.L. · <a href="https://app.diligo.mx/config/notificaciones" style="color:var(--acT,#4A3F80);text-decoration:underline">Preferencias de notificación</a>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+    <div style="width:600px;flex:none">
+      <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:14px">
+        <div style="display:inline-flex;align-items:center;gap:8px"><span style="width:7px;height:7px;border-radius:50%;background:#C97A18"></span><span style="font:600 12px Geist,sans-serif;color:#93540A;letter-spacing:.02em">04 · COBERTURA</span></div>
+        <div style="font:400 12px/1.6 'Geist Mono',ui-monospace,monospace;color:#6C757D">Para: responsable de carga · Umbral fijo de 45 días</div>
+      </div>
+      <div style="background:#fff;border:1px solid #E4E8EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;font-size:12.5px;line-height:1.7">
+        <div style="color:#6C757D">Asunto</div><div style="font-weight:600">Cobertura parcial · Altamira Servicios lleva 51 días sin carga de CFDI</div>
+        <div style="color:#6C757D;margin-top:8px">Vista previa</div><div style="color:#3A4147">GAS010219LM5 sin CFDI nuevos desde el 19 jul · vigilancia parcial</div>
+      </div>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse;background:#FAFBFB;font-family:Arial,Helvetica,sans-serif;border:1px solid #E4E8EA;border-radius:4px">
+        <tr><td style="padding:0">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;border-collapse:collapse">
+            <tr><td width="600" style="padding:20px 32px;background:#111417;color:#FFFFFF;font:bold 19px Arial,Helvetica,sans-serif;letter-spacing:-0.5px">diligo<span style="color:var(--ac,#6B5FA6)">.</span><span style="float:right;font:normal 12px Arial,Helvetica,sans-serif;color:#8B949C;letter-spacing:0">Grupo Alcázar</span></td></tr>
+            <tr><td width="600" style="padding:10px 32px;background:#FDF3E9;border-bottom:2px solid #C97A18;font:bold 12px Arial,Helvetica,sans-serif;color:#93540A;letter-spacing:1px;mso-line-height-rule:exactly;line-height:16px">COBERTURA · VIGILANCIA PARCIAL EN 1 RFC</td></tr>
+            <tr><td width="600" style="padding:28px 32px 8px;background:#FFFFFF">
+              <div style="font:bold 22px/1.25 Arial,Helvetica,sans-serif;color:#111417;mso-line-height-rule:exactly">Altamira Servicios lleva 51 días sin carga</div>
+              <div style="font:normal 15px/1.55 Arial,Helvetica,sans-serif;color:#3A4147;padding-top:12px;mso-line-height-rule:exactly">Ana, no hemos recibido CFDI nuevos de <b>GAS010219LM5</b> desde el 19 jul. Pasados 45 días la vigilancia sobre ese RFC queda parcialmente ciega: un proveedor que aparezca en listas puede no detectarse porque no conocemos sus facturas recientes.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:20px 32px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="536" style="width:536px;border-collapse:collapse;border-top:1px solid #E4E8EA">
+                <tr><td width="180" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">RFC</td><td width="356" style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px 'Courier New',Courier,monospace;color:#111417">GAS010219LM5</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Última carga</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">19 jul 2026 · 1,204 CFDI</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Días sin carga</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:bold 13px 'Courier New',Courier,monospace;color:#93540A">51 · umbral 45</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Cobertura del grupo</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">2 de 3 RFC al día</td></tr>
+                <tr><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#6C757D">Falta cargar</td><td style="padding:11px 0;border-bottom:1px solid #EEF1F2;font:normal 13px Arial,Helvetica,sans-serif;color:#111417">CFDI de agosto y septiembre 2026</td></tr>
+              </table>
+            </td></tr>
+            <tr><td width="600" style="padding:4px 32px 28px;background:#FFFFFF">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">
+                <tr><td style="background:var(--ac,#6B5FA6);border-radius:6px;padding:13px 22px"><a href="https://app.diligo.mx/datos/carga" style="font:bold 14px Arial,Helvetica,sans-serif;color:#FFFFFF;text-decoration:none;display:block">Cargar CFDI</a></td>
+                <td style="padding-left:18px"><a href="https://app.diligo.mx/datos/cobertura" style="font:bold 13px Arial,Helvetica,sans-serif;color:var(--acT,#4A3F80);text-decoration:none">Ver cobertura por RFC</a></td></tr>
+              </table>
+              <div style="font:normal 13px/1.55 Arial,Helvetica,sans-serif;color:#6C757D;padding-top:18px;mso-line-height-rule:exactly">Recordatorio mensual programado el día 25. Siguiente carga esperada: 1 oct 2026 con los CFDI de septiembre.</div>
+            </td></tr>
+            <tr><td width="600" style="padding:18px 32px;background:#EEF1F2;border-top:1px solid #E4E8EA;font:normal 12px/1.6 Arial,Helvetica,sans-serif;color:#57606A;mso-line-height-rule:exactly">
+              El umbral de 45 días lo fija Diligo. Mientras la carga no se actualice, el producto marca este RFC como vigilancia parcial.<br><br>
+              Diligo · Av. Vasconcelos 210, Monterrey, N.L. · <a href="https://app.diligo.mx/config/notificaciones" style="color:var(--acT,#4A3F80);text-decoration:underline">Preferencias de notificación</a>
+            </td></tr>
+          </table>
+        </td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentHue&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:300,&quot;min&quot;:180,&quot;max&quot;:330,&quot;step&quot;:5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Marca&quot;}}">
+class Component extends DCLogic {
+  hex(l, c, h) {
+    const a = c * Math.cos(h * Math.PI / 180), b = c * Math.sin(h * Math.PI / 180);
+    const l_ = l + 0.3963377774 * a + 0.2158037573 * b, m_ = l - 0.1055613458 * a - 0.0638541728 * b, s_ = l - 0.0894841775 * a - 1.2914855480 * b;
+    const L = l_ ** 3, M = m_ ** 3, S = s_ ** 3;
+    const lin = [4.0767416621 * L - 3.3077115913 * M + 0.2309699292 * S, -1.2684380046 * L + 2.6097574011 * M - 0.3413193965 * S, -0.0041960863 * L - 0.7034186147 * M + 1.7076147010 * S];
+    return '#' + lin.map(v => {
+      const s = v <= 0.0031308 ? 12.92 * v : 1.055 * Math.pow(Math.max(v, 0), 1 / 2.4) - 0.055;
+      return Math.round(Math.min(1, Math.max(0, s)) * 255).toString(16).padStart(2, '0');
+    }).join('');
+  }
+  renderVals() {
+    const h = this.props.accentHue ?? 300;
+    return { ac: this.hex(0.55, 0.11, h), acT: this.hex(0.45, 0.11, h), acS: this.hex(0.95, 0.03, h) };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"><style>body{margin:0;background:#FAFBFB;color:#111417;font-family:Geist,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:oklch(.45 .11 300)}a:hover{color:#111417}button{cursor:pointer;font-family:inherit;color:inherit}</style></helmet>
+
+<div style="font-family:Geist,system-ui,sans-serif;font-size:14px;line-height:1.5;color:#111417;background:#FAFBFB;min-height:100vh">
+
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 40px;border-bottom:1px dashed #B8C0C6;background:#F3F4F6;font-size:12px;color:#6C757D">
+    <span style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase">Simulación · se llegó a esta ficha desde</span>
+    <div style="display:flex;gap:4px;flex-wrap:wrap">
+      <sc-for list="{{ origins }}" as="o" hint-placeholder-count="4">
+        <button onClick="{{ o.go }}" style="height:26px;padding:0 10px;border:1px solid {{ o.border }};border-radius:999px;background:{{ o.bg }};color:{{ o.color }};font-size:12px;font-weight:600">{{ o.label }}</button>
+      </sc-for>
+    </div>
+    <span style="margin-left:auto">Una sola ficha. Lo único que cambia es la pestaña de entrada y la miga de pan.</span>
+  </div>
+
+  <div data-screen-label="Ficha de proveedor" style="padding:22px 40px 56px;display:flex;flex-direction:column;gap:18px;max-width:1280px;width:100%;box-sizing:border-box">
+
+    <nav style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:#6C757D"><button style="border:0;background:transparent;padding:0;color:oklch(.45 .11 300);font-weight:600;font-size:12.5px">{{ crumb }}</button><span>/</span><span>Proveedores</span><span>/</span><span style="font-family:'Geist Mono',monospace">SIB040512AB3</span></nav>
+
+    <header style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <div style="min-width:0">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:12px;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.03 25);color:oklch(0.45 0.19 25)"><span style="width:6px;height:6px;border-radius:50%;background:oklch(0.5 0.19 25)"></span>69-B definitivo · 22 días para responder</span>
+          <span style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#EEF1F2;color:#3A4147">Nivel A · alcance completo</span>
+          <span style="font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:oklch(0.95 0.04 50);color:oklch(0.48 0.16 50)">En revisión del asesor</span>
+        </div>
+        <h1 style="font:600 26px/1.2 Geist,sans-serif;letter-spacing:-.03em;margin:10px 0 4px">Servicios Integrales del Bajío, S.A. de C.V.</h1>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:#3A4147"><span style="font-family:'Geist Mono',monospace">SIB040512AB3</span><span>Proveedor desde mar 2019</span><span>Titular: Compras · Jorge Castañeda</span><span>2 servicios · 31 CFDI · 61 archivos</span></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button onClick="{{ act }}" style="height:36px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13.5px;font-weight:600">Escalar al asesor</button>
+        <button onClick="{{ act }}" style="height:36px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13.5px;font-weight:600">Exportar expediente</button>
+        <button onClick="{{ act }}" style="height:36px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13.5px;font-weight:600">Solicitar evidencia</button>
+        <button onClick="{{ uploadOpen }}" style="height:36px;padding:0 14px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font-size:13.5px;font-weight:600">Subir evidencia</button>
+      </div>
+    </header>
+
+    <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">
+      <div style="padding:16px 20px;border-right:1px solid #EEF1F2">
+        <div style="font-size:12px;color:oklch(.45 .11 300);font-weight:600">Riesgo vigente</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:6px"><span style="font:500 28px/1 'Geist Mono',monospace;letter-spacing:-.02em;color:oklch(0.45 0.19 25)">22 d</span><span style="font-size:12px;color:#3A4147">para responder · vence 23 sep</span></div>
+        <div style="height:6px;background:#EEF1F2;border-radius:999px;margin-top:12px;overflow:hidden"><div style="width:27%;height:100%;background:oklch(0.5 0.19 25)"></div></div>
+      </div>
+      <div style="padding:16px 20px;border-right:1px solid #EEF1F2">
+        <div style="font-size:12px;color:oklch(.45 .11 300);font-weight:600">Expediente</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:6px"><span style="font:500 28px/1 'Geist Mono',monospace;letter-spacing:-.02em">72%</span><span style="font-size:12px;color:#6C757D">ponderado por monto</span></div>
+        <div style="height:6px;background:#EEF1F2;border-radius:999px;margin-top:12px;overflow:hidden"><div style="width:72%;height:100%;background:oklch(.55 .11 300)"></div></div>
+      </div>
+      <div style="padding:16px 20px;border-right:1px solid #EEF1F2">
+        <div style="font-size:12px;color:oklch(.45 .11 300);font-weight:600">Gasto en alcance</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:6px"><span style="font:500 28px/1 'Geist Mono',monospace;letter-spacing:-.02em">$3.49</span><span style="font-size:12px;color:#6C757D">MDP · 31 CFDI</span></div>
+        <div style="font-size:12px;color:#6C757D;margin-top:12px;line-height:1.45"><b style="color:oklch(0.45 0.19 25)">14</b> en el periodo del oficio · los 31 requieren expediente</div>
+      </div>
+      <div style="padding:16px 20px">
+        <div style="font-size:12px;color:oklch(.45 .11 300);font-weight:600">Última actividad</div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-top:6px"><span style="font:500 28px/1 'Geist Mono',monospace;letter-spacing:-.02em">3 d</span><span style="font-size:12px;color:#6C757D">desde la última evidencia</span></div>
+        <div style="font-size:12px;color:#6C757D;margin-top:12px;line-height:1.45">61 archivos sellados · 41 entradas en bitácora</div>
+      </div>
+    </section>
+
+    <div style="display:flex;align-items:flex-end;gap:2px;border-bottom:1px solid #E4E8EA;flex-wrap:wrap">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <button onClick="{{ t.go }}" style="display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:0;border-bottom:2px solid {{ t.line }};background:transparent;font-size:13.5px;font-weight:{{ t.weight }};color:{{ t.color }}">
+          <span>{{ t.label }}</span>
+          <sc-if value="{{ t.count }}" hint-placeholder-val="{{ false }}"><span style="font:500 11px 'Geist Mono',monospace;padding:1px 7px;border-radius:999px;background:{{ t.countBg }};color:{{ t.countFg }}">{{ t.count }}</span></sc-if>
+        </button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 16px;background:#111417;color:#EEF1F2;font-size:12.5px;border-radius:8px"><span style="width:6px;height:6px;border-radius:50%;background:oklch(.72 .11 300)"></span><span>{{ toast }}</span><button onClick="{{ dismiss }}" style="margin-left:auto;border:0;background:transparent;color:#8B949C;font-size:12px;font-weight:600;padding:0">Cerrar</button></div>
+    </sc-if>
+
+    <sc-if value="{{ isRiesgo }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,540px),1fr));gap:18px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <div style="padding:16px 20px;border-bottom:1px solid #E4E8EA"><h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Qué cambió</h2></div>
+          <div style="padding:18px 20px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;flex-wrap:wrap"><span style="color:#6C757D;text-decoration:line-through;font-weight:500">69-B presunto</span><span style="color:#6C757D">→</span><span style="color:oklch(0.45 0.19 25)">69-B definitivo</span></div>
+            <div style="font-size:12.5px;color:#6C757D;line-height:1.5">Publicado por el SAT el <b style="color:#111417">12 ago 2026</b>. Oficio 500-05-2026-18342. Alerta 2026-0142, abierta hace 27 días. <a href="#" style="font-weight:600;text-decoration:none">Fuente oficial ↗</a></div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:2px;flex-wrap:wrap"><span style="font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:oklch(.95 .03 300);color:oklch(.45 .11 300)">Periodo señalado: ene 2021 – dic 2022</span><button onClick="{{ act }}" style="border:0;background:transparent;padding:0;font-size:12px;font-weight:600;color:oklch(.45 .11 300)">Ajustar periodo señalado</button></div>
+            <div style="font-size:11.5px;color:#6C757D;line-height:1.45">El periodo no viene en la lista; se tomó del oficio y acota el cálculo de contingencia. El señalamiento es al proveedor, no a un servicio ni a un periodo: los dos servicios y los 31 CFDI necesitan expediente.</div>
+          </div>
+        </section>
+
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #E4E8EA;flex-wrap:wrap">
+            <h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Contingencia estimada</h2>
+            <span style="font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:#EEF1F2;color:#3A4147">Calculado con XML</span>
+          </div>
+          <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px;align-items:start">
+            <div>
+              <div style="font:500 30px/1.1 'Geist Mono',monospace;letter-spacing:-.02em">$1.8 – 2.6 <span style="font-size:18px;color:#6C757D">MDP</span></div>
+              <div style="font-size:12.5px;color:#6C757D;margin-top:8px;line-height:1.5">Rango sobre 14 CFDI del periodo señalado. Límite bajo: sin multa. Límite alto: multa al 55% y recargos a la fecha de vencimiento.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px 16px;font-size:13px;align-content:start">
+              <span style="color:#3A4147">IVA acreditado</span><span style="font-family:'Geist Mono',monospace;text-align:right">$322,775</span>
+              <span style="color:#3A4147">ISR (30% del deducible)</span><span style="font-family:'Geist Mono',monospace;text-align:right">$605,203</span>
+              <span style="color:#3A4147">Actualización y recargos</span><span style="font-family:'Geist Mono',monospace;text-align:right">$412,000 – 486,000</span>
+              <span style="color:#3A4147">Multa estimada (0 – 55%)</span><span style="font-family:'Geist Mono',monospace;text-align:right">$0 – 510,000</span>
+              <span style="border-top:1px solid #E4E8EA;padding-top:8px;font-weight:600">Rango</span><span style="border-top:1px solid #E4E8EA;padding-top:8px;font-family:'Geist Mono',monospace;text-align:right;font-weight:500">$1.84 – 2.62 MDP</span>
+            </div>
+          </div>
+          <div style="padding:12px 20px;border-top:1px solid #EEF1F2;font-size:12px;color:#6C757D;line-height:1.5">Estimación con método visible sobre datos del CFDI. No es una opinión fiscal ni determina deducibilidad; eso corresponde al asesor.</div>
+        </section>
+
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <div style="padding:16px 20px 10px;display:flex;align-items:baseline;gap:8px"><h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Notificaciones</h2><span style="font-size:12px;color:#6C757D">a quién se avisó y cuándo</span></div>
+          <sc-for list="{{ notifs }}" as="n" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 20px;border-top:1px solid #EEF1F2;font-size:13px">
+              <span style="min-width:0;flex:1"><span style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ n.text }}</span><span style="display:block;font-size:11.5px;color:#6C757D">{{ n.meta }}</span></span>
+              <span style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;white-space:nowrap">{{ n.when }}</span>
+            </div>
+          </sc-for>
+        </section>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+        <section style="background:#fff;border:1px solid oklch(.55 .11 300);border-radius:8px;overflow:hidden">
+          <div style="padding:14px 18px;background:oklch(.95 .03 300)">
+            <div style="font-size:12px;font-weight:600;color:oklch(.45 .11 300)">Qué falta para poder defenderlo</div>
+            <div style="font-size:13.5px;margin-top:5px;line-height:1.5;color:#111417">Los dos servicios quedan comprometidos: el señalamiento es al proveedor. Antes del 23 sep faltan el bloque operativo de Mantenimiento, con bitácoras de asistencia y fotos fechadas de 2021–2022, y el comprobante de pago pendiente en Suministro. El responsable de Mantenimiento no responde desde hace 9 días; el escalamiento al jefe ocurrió ayer.</div>
+          </div>
+          <div style="padding:12px 18px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid #EEF1F2">
+            <button onClick="{{ goExpediente }}" style="height:32px;padding:0 12px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font-size:12.5px;font-weight:600">Ir al bloque pendiente</button>
+            <button onClick="{{ act }}" style="height:32px;padding:0 12px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12.5px;font-weight:600">Reenviar solicitud</button>
+          </div>
+        </section>
+
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <div style="padding:16px 20px 10px"><h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Historial en listas del SAT</h2></div>
+          <sc-for list="{{ history }}" as="h" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:8px 1fr auto;gap:12px;align-items:start;padding:10px 20px;border-top:1px solid #EEF1F2;font-size:13px">
+              <span style="width:8px;height:8px;border-radius:50%;margin-top:6px;background:{{ h.dot }}"></span>
+              <span style="min-width:0"><span style="display:block">{{ h.text }}</span><span style="display:block;font-size:11.5px;color:#6C757D">{{ h.meta }}</span></span>
+              <span style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;white-space:nowrap">{{ h.when }}</span>
+            </div>
+          </sc-for>
+          <div style="padding:10px 20px 14px;border-top:1px solid #EEF1F2;font-size:12px;color:#6C757D;line-height:1.5">Revisión diaria contra 69-B, 69-B bis, incumplidos, REPSE y no localizados. Última revisión hoy 06:40.</div>
+        </section>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isExpediente }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start">
+      <div style="flex:1 1 560px;min-width:0;display:flex;flex-direction:column;gap:16px">
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <button onClick="{{ n1Toggle }}" style="padding:16px 20px 14px;display:flex;flex-direction:column;gap:12px;width:100%;border:0;background:#fff;text-align:left;box-sizing:border-box" style-hover="background:#FAFBFB">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%">
+              <div style="min-width:0">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6C757D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="{{ n1ChevD }}"></path></svg><span style="font:600 15px/1.3 Geist,sans-serif;letter-spacing:-.01em">Documentos de la empresa</span><span style="font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:oklch(0.95 0.04 50);color:oklch(0.48 0.16 50)">1 falta · 1 por vencer</span></div>
+                <div style="font-size:12.5px;color:#6C757D;margin-top:4px;line-height:1.5;max-width:62ch;text-wrap:pretty">Acredita que la empresa existe, está al corriente y tiene con qué prestar el servicio. Se recaba una vez y aplica a todos sus servicios; si un documento vence, los dos quedan incompletos.</div>
+                <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#6C757D;margin-top:6px"><span style="font-family:'Geist Mono',monospace">Checklist base v3.0</span><span>Vigencia por documento</span><span>Titular: Compras</span></div>
+              </div>
+              <div style="display:flex;align-items:baseline;gap:6px;flex:none"><span style="font:500 22px/1 'Geist Mono',monospace;letter-spacing:-.02em">88%</span><span style="font-size:12px;color:#6C757D">7 de 8 puntos</span></div>
+            </div>
+            <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden;width:100%"><div style="width:88%;height:100%;background:oklch(.55 .11 300)"></div></div>
+            <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#3A4147;width:100%"><span>9 archivos</span><span>Aplica a los 2 servicios</span><span style="color:oklch(0.48 0.16 50);font-weight:600">32-D vence en 12 días</span><sc-if value="{{ n1ClosedNote }}" hint-placeholder-val="{{ false }}"><span style="margin-left:auto;color:#6C757D">{{ n1ClosedNote }}</span></sc-if></div>
+          </button>
+
+          <sc-if value="{{ n1Open }}" hint-placeholder-val="{{ true }}">
+          <sc-for list="{{ n1Docs }}" as="d" hint-placeholder-count="8">
+            <div style="display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:12px;align-items:start;padding:10px 20px;border-top:1px solid #EEF1F2;font-size:13px">
+              <span style="width:16px;height:16px;margin:2px 3px;border-radius:4px;border:1.5px solid {{ d.boxBorder }};background:{{ d.boxBg }};display:grid;place-items:center;font-size:10px;font-weight:700;color:#fff">{{ d.boxMark }}</span>
+              <span style="min-width:0">
+                <span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-weight:600">{{ d.name }}</span><sc-if value="{{ d.required }}" hint-placeholder-val="{{ false }}"><span style="font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;background:#EEF1F2;color:#6C757D">obligatorio</span></sc-if></span>
+                <span style="display:block;font-size:12px;color:#6C757D;margin-top:2px;line-height:1.5">{{ d.accepts }}</span>
+                <sc-if value="{{ d.file }}" hint-placeholder-val="{{ false }}">
+                  <span style="display:flex;align-items:center;gap:8px;margin-top:6px;min-width:0"><span style="width:30px;height:16px;border-radius:3px;background:#111417;color:#fff;display:grid;place-items:center;font:600 8.5px 'Geist Mono',monospace;flex:none">{{ d.ext }}</span><button onClick="{{ act }}" style="border:0;background:transparent;padding:0;font-size:12.5px;font-weight:500;color:#111417" style-hover="text-decoration:underline">{{ d.file }}</button><span style="font:400 11px 'Geist Mono',monospace;color:#6C757D">{{ d.fileMeta }}</span></span>
+                </sc-if>
+                <sc-if value="{{ d.comment }}" hint-placeholder-val="{{ false }}">
+                  <span style="display:block;margin-top:6px;padding:7px 10px;border-radius:6px;font-size:12.5px;line-height:1.5;background:{{ d.commentBg }};color:#3A4147"><b style="color:{{ d.commentFg }}">{{ d.commentTag }} · Óscar Treviño</b> · {{ d.comment }}</span>
+                </sc-if>
+              </span>
+              <span style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;white-space:nowrap">
+                <span style="font-size:12px;font-weight:600;color:{{ d.stateColor }}">{{ d.state }}</span>
+                <span style="display:flex;gap:6px">
+                  <button onClick="{{ d.commentAdd }}" style="height:26px;padding:0 9px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:11.5px;font-weight:600">{{ d.commentLabel }}</button>
+                  <button onClick="{{ d.upload }}" style="height:26px;padding:0 9px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:11.5px;font-weight:600">{{ d.uploadLabel }}</button>
+                </span>
+              </span>
+            </div>
+          </sc-for>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 20px;border-top:1px solid #E4E8EA;background:#FAFBFB;flex-wrap:wrap">
+            <span style="font-size:12px;color:#6C757D;margin-right:auto">Checklist base v3.0 · la vigencia se revisa todos los días contra la fecha de cada documento</span>
+            <button onClick="{{ n1GoArchivos }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600">Ver archivos</button>
+            <button onClick="{{ act }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600">Solicitar documentos</button>
+            <button onClick="{{ act }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600">Pedir revisión al asesor</button>
+          </div>
+          </sc-if>
+        </section>
+
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:6px">
+          <div style="min-width:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">
+            <h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0">Evidencia del servicio</h2>
+            <div style="font-size:12.5px;color:#6C757D;margin-top:3px;line-height:1.5;max-width:62ch;text-wrap:pretty">Acredita que el servicio ocurrió: qué se hizo, cuándo y quién lo recibió. Un checklist por servicio contratado, con la evidencia de cada ejercicio. Los dos están señalados.</div>
+          </div>
+          <button onClick="{{ act }}" style="height:30px;padding:0 12px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12.5px;font-weight:600;flex:none">+ Agregar servicio</button>
+        </div>
+
+        <sc-for list="{{ services }}" as="sv" hint-placeholder-count="2">
+          <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+            <button onClick="{{ sv.toggle }}" style="padding:16px 20px 14px;display:flex;flex-direction:column;gap:12px;width:100%;border:0;background:#fff;text-align:left;box-sizing:border-box" style-hover="background:#FAFBFB">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;width:100%">
+                <div style="min-width:0">
+                  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6C757D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="{{ sv.chevD }}"></path></svg><span style="font:600 15px/1.3 Geist,sans-serif;letter-spacing:-.01em">{{ sv.name }}</span><span style="font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:{{ sv.stBg }};color:{{ sv.stFg }}">{{ sv.status }}</span><sc-if value="{{ sv.alert }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:oklch(0.95 0.03 25);color:oklch(0.45 0.19 25)"><span style="width:5px;height:5px;border-radius:50%;background:oklch(0.5 0.19 25)"></span>{{ sv.alert }}</span></sc-if></div>
+                  <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#6C757D;margin-top:4px"><span style="font-family:'Geist Mono',monospace">{{ sv.contract }}</span><span>{{ sv.period }}</span><span>{{ sv.template }}</span></div>
+                </div>
+                <div style="display:flex;align-items:baseline;gap:6px;flex:none"><span style="font:500 22px/1 'Geist Mono',monospace;letter-spacing:-.02em">{{ sv.pct }}</span><span style="font-size:12px;color:#6C757D">{{ sv.points }}</span></div>
+              </div>
+              <div style="height:6px;background:#EEF1F2;border-radius:999px;overflow:hidden;width:100%"><div style="width:{{ sv.pct }};height:100%;background:oklch(.55 .11 300)"></div></div>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:#3A4147;width:100%"><span><span style="font:500 13px 'Geist Mono',monospace">{{ sv.cfdi }}</span> CFDI</span><span style="font:500 13px 'Geist Mono',monospace">{{ sv.amount }}</span><span>{{ sv.owner }}</span><span style="color:{{ sv.dueColor }};font-weight:600">{{ sv.due }}</span><sc-if value="{{ sv.closedNote }}" hint-placeholder-val="{{ false }}"><span style="margin-left:auto;color:#6C757D">{{ sv.closedNote }}</span></sc-if></div>
+            </button>
+            <sc-if value="{{ sv.open }}" hint-placeholder-val="{{ true }}">
+            <sc-for list="{{ sv.blocks }}" as="blk" hint-placeholder-count="3">
+              <div style="border-top:1px solid #EEF1F2">
+                <button onClick="{{ blk.toggle }}" style="display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:12px;align-items:center;width:100%;padding:11px 20px;border:0;background:#fff;text-align:left;font-size:13.5px;color:#111417" style-hover="background:#FAFBFB">
+                  <span style="width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:12px;font-weight:700;background:{{ blk.bg }};color:{{ blk.fg }}">{{ blk.mark }}</span>
+                  <span style="min-width:0"><span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-weight:600">Bloque {{ blk.lname }}</span><span style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D">{{ blk.count }}</span></span><span style="display:block;font-size:12px;color:#6C757D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ blk.sub }}</span></span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6C757D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="{{ blk.chevD }}"></path></svg>
+                </button>
+                <sc-if value="{{ blk.open }}" hint-placeholder-val="{{ false }}">
+                  <sc-for list="{{ blk.items }}" as="it" hint-placeholder-count="3">
+                    <div style="display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:12px;align-items:start;padding:10px 20px;border-top:1px solid #EEF1F2;background:#FAFBFB;font-size:13px">
+                      <span style="width:16px;height:16px;margin:2px 3px;border-radius:4px;border:1.5px solid {{ it.boxBorder }};background:{{ it.boxBg }};display:grid;place-items:center;font-size:10px;font-weight:700;color:#fff">{{ it.boxMark }}</span>
+                      <span style="min-width:0">
+                        <span style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-weight:600">{{ it.name }}</span><sc-if value="{{ it.required }}" hint-placeholder-val="{{ false }}"><span style="font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:999px;background:#EEF1F2;color:#6C757D">obligatorio</span></sc-if></span>
+                        <span style="display:block;font-size:12px;color:#6C757D;margin-top:2px;line-height:1.5">{{ it.accepts }}</span>
+                      </span>
+                      <span style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;white-space:nowrap"><span style="font-size:12px;font-weight:600;color:{{ it.stateColor }}">{{ it.state }}</span><sc-if value="{{ it.canUpload }}" hint-placeholder-val="{{ false }}"><button onClick="{{ it.upload }}" style="height:26px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:11.5px;font-weight:600">Subir evidencia</button></sc-if></span>
+                    </div>
+                  </sc-for>
+                </sc-if>
+              </div>
+            </sc-for>
+            <div style="display:flex;align-items:center;gap:8px;padding:10px 20px;border-top:1px solid #E4E8EA;background:#FAFBFB;flex-wrap:wrap">
+              <span style="font-size:12px;color:#6C757D;margin-right:auto">{{ sv.foot }}</span>
+              <button onClick="{{ goArchivos }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600">Ver archivos</button>
+              <button onClick="{{ act }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600">Solicitar evidencia</button>
+              <button onClick="{{ act }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600">Pedir revisión al asesor</button>
+            </div>
+            </sc-if>
+          </section>
+        </sc-for>
+        <div style="padding:2px 4px 0;font-size:12px;color:#6C757D;line-height:1.5">Los checklists son sugerencias basadas en criterios de tribunales y práctica profesional; la suficiencia la determina el asesor. Cada servicio conserva la versión de plantilla con la que se abrió.</div>
+      </div>
+
+      <div style="flex:1 1 320px;max-width:400px;min-width:0;display:flex;flex-direction:column;gap:18px">
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <div style="padding:14px 18px 10px;display:flex;align-items:baseline;gap:8px"><h2 style="font:600 15px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Listo para defensa</h2><span style="font-size:12px;color:#6C757D">2 de 4 pasos</span></div>
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;padding:9px 18px;border-top:1px solid #EEF1F2;font-size:13px">
+              <span style="width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;background:{{ s.bg }};color:{{ s.fg }}">{{ s.mark }}</span>
+              <span><span style="display:block;font-weight:600">{{ s.name }}</span><span style="display:block;font-size:12px;color:#6C757D;line-height:1.5">{{ s.detail }}</span></span>
+            </div>
+          </sc-for>
+          <div style="padding:12px 18px;border-top:1px solid #EEF1F2;background:oklch(.95 .03 300);font-size:12.5px;line-height:1.5;color:#3A4147">Un expediente listo para defensa se exporta con índice, hashes y constancia NOM-151 del paquete.</div>
+        </section>
+
+        <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <div style="padding:14px 18px 10px;display:flex;align-items:center;gap:10px"><h2 style="font:600 15px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Asesor</h2><span style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#3A4147"><span style="width:22px;height:22px;border-radius:50%;background:oklch(.95 .03 300);color:oklch(.45 .11 300);display:grid;place-items:center;font-weight:600;font-size:10px">OT</span>Óscar Treviño</span></div>
+          <sc-for list="{{ comments }}" as="c" hint-placeholder-count="2">
+            <div style="padding:9px 18px;border-top:1px solid #EEF1F2;font-size:12.5px">
+              <div style="display:flex;justify-content:space-between;gap:8px;font-size:11.5px;color:#6C757D"><span style="font-weight:600;color:{{ c.tagColor }}">{{ c.tag }} · {{ c.point }}</span><span style="font-family:'Geist Mono',monospace;white-space:nowrap">{{ c.when }}</span></div>
+              <div style="margin-top:3px;line-height:1.5">{{ c.text }}</div>
+            </div>
+          </sc-for>
+        </section>
+      </div>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isArchivos }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start">
+      <aside style="flex:1 1 240px;max-width:280px;min-width:0;background:#fff;border:1px solid #E4E8EA;border-radius:8px;padding:6px;display:flex;flex-direction:column;gap:1px">
+        <sc-for list="{{ tree }}" as="n" hint-placeholder-count="8">
+          <button onClick="{{ n.pick }}" style="display:flex;align-items:center;gap:8px;height:32px;padding:0 8px 0 {{ n.pad }};border:0;border-radius:6px;background:{{ n.bg }};text-align:left;color:{{ n.color }};font-size:13px;width:100%;box-sizing:border-box">
+            <span style="width:10px;flex:none;color:#8B949C;font-size:10px;text-align:center">{{ n.chev }}</span>
+            <span style="min-width:0;flex:1;font-weight:{{ n.weight }};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ n.label }}</span>
+            <span style="font:400 11px 'Geist Mono',monospace;color:#8B949C;flex:none">{{ n.count }}</span>
+          </button>
+        </sc-for>
+      </aside>
+
+      <section style="flex:1 1 520px;min-width:0;background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid #E4E8EA">
+          <div style="min-width:0">
+            <div style="font:500 11px 'Geist Mono',monospace;color:#6C757D;letter-spacing:.02em">{{ arPath }}</div>
+            <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:3px"><h2 style="font:600 16px/1.25 Geist,sans-serif;letter-spacing:-.015em;margin:0">{{ arTitle }}</h2><span style="font-size:12px;color:#6C757D">{{ arSub }}</span></div>
+          </div>
+          <button onClick="{{ act }}" style="height:30px;padding:0 12px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12.5px;font-weight:600">Descargar carpeta</button>
+        </div>
+        <div style="overflow-x:auto">
+          <div style="display:grid;grid-template-columns:16px minmax(0,1.3fr) minmax(0,1.8fr) minmax(0,1.2fr) 60px;gap:10px;align-items:center;height:34px;padding:0 16px;border-bottom:1px solid #E4E8EA;font-size:11.5px;font-weight:600;color:#6C757D;white-space:nowrap;min-width:640px;box-sizing:border-box"><span></span><span>Punto del checklist</span><span>Archivo</span><span>Quién · cuándo</span><span style="text-align:right">Tamaño</span></div>
+          <sc-for list="{{ files }}" as="p" hint-placeholder-count="5">
+            <div style="display:grid;grid-template-columns:16px minmax(0,1.3fr) minmax(0,1.8fr) minmax(0,1.2fr) 60px;gap:10px;align-items:start;padding:9px 16px;border-bottom:1px solid #EEF1F2;font-size:13px;min-width:640px;box-sizing:border-box">
+              <span style="width:8px;height:8px;border-radius:50%;background:{{ p.dot }};margin:6px 0 0 4px"></span>
+              <span style="min-width:0"><span style="display:block;font-weight:600;line-height:20px">{{ p.name }}</span><span style="display:block;font-size:11.5px;color:{{ p.stColor }};font-weight:500;line-height:1.4">{{ p.status }}</span></span>
+              <span style="min-width:0;display:flex;align-items:center;gap:8px">
+                <sc-if value="{{ p.hasFile }}" hint-placeholder-val="{{ true }}"><span style="width:30px;height:16px;border-radius:3px;background:#111417;color:#fff;display:grid;place-items:center;font:600 8.5px 'Geist Mono',monospace;flex:none">{{ p.ext }}</span><button onClick="{{ p.open }}" style="border:0;background:transparent;padding:0;font-weight:500;color:#111417;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:13px" style-hover="text-decoration:underline">{{ p.file }}</button></sc-if>
+                <sc-if value="{{ p.empty }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;color:#6C757D">{{ p.empty }}</span><button onClick="{{ p.upload }}" style="height:22px;padding:0 8px;border:1px solid #D5DADD;border-radius:5px;background:#fff;font-size:11.5px;font-weight:600;flex:none">Subir</button><button onClick="{{ act }}" style="height:22px;padding:0 8px;border:1px solid #D5DADD;border-radius:5px;background:#fff;font-size:11.5px;font-weight:600;flex:none">Solicitar</button></sc-if>
+              </span>
+              <span style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;line-height:20px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ p.meta }}</span>
+              <span style="font-size:12px;color:#6C757D;line-height:20px;text-align:right">{{ p.size }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 16px;font-size:11.5px;color:#6C757D;background:#FAFBFB;flex-wrap:wrap"><span>Sin carpetas: la ruta es nivel › servicio › ejercicio › bloque › punto, y la fija el checklist.</span><span>SHA-256 al cargar · reemplazar crea versión · nada se borra.</span></div>
+      </section>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isCfdi }}" hint-placeholder-val="{{ false }}">
+    <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow-x:auto;min-width:0">
+      <div style="display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid #E4E8EA;flex-wrap:wrap;min-width:600px">
+        <h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">CFDI recibidos de este proveedor</h2>
+        <div style="margin-left:auto;display:flex;gap:4px">
+          <sc-for list="{{ cfdiTabs }}" as="t" hint-placeholder-count="3"><button onClick="{{ t.go }}" style="height:28px;padding:0 10px;border:1px solid {{ t.border }};border-radius:999px;background:{{ t.bg }};color:{{ t.color }};font-size:12px;font-weight:600">{{ t.label }}</button></sc-for>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:150px 80px minmax(0,1fr) 110px 100px 100px;gap:12px;padding:0 20px;height:36px;align-items:center;font-size:12px;font-weight:600;color:#6C757D;border-bottom:1px solid #EEF1F2;white-space:nowrap;min-width:600px;box-sizing:border-box"><span>UUID</span><span>Fecha</span><span>Concepto</span><span style="text-align:right">Total</span><span style="text-align:right">IVA</span><span>Servicio</span></div>
+      <sc-for list="{{ cfdis }}" as="c" hint-placeholder-count="7">
+        <div style="display:grid;grid-template-columns:150px 80px minmax(0,1fr) 110px 100px 100px;gap:12px;padding:0 20px;height:44px;align-items:center;border-bottom:1px solid #EEF1F2;font-size:13px;white-space:nowrap;min-width:600px;box-sizing:border-box;color:{{ c.color }}">
+          <span style="font:400 12px 'Geist Mono',monospace;overflow:hidden;text-overflow:ellipsis">{{ c.uuid }}</span>
+          <span style="font:400 12px 'Geist Mono',monospace">{{ c.date }}</span>
+          <span style="min-width:0;display:flex;align-items:center;gap:8px"><span style="overflow:hidden;text-overflow:ellipsis">{{ c.concept }}</span><sc-if value="{{ c.out }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;background:#EEF1F2;color:#6C757D;flex:none">fuera del periodo</span></sc-if></span>
+          <span style="font:400 12.5px 'Geist Mono',monospace;text-align:right">{{ c.total }}</span>
+          <span style="font:400 12.5px 'Geist Mono',monospace;text-align:right">{{ c.iva }}</span>
+          <span style="font-size:12px;color:#6C757D;overflow:hidden;text-overflow:ellipsis">{{ c.svc }}</span>
+        </div>
+      </sc-for>
+      <div style="padding:12px 20px;font-size:12px;color:#6C757D;display:flex;justify-content:space-between;gap:12px;min-width:600px;box-sizing:border-box;flex-wrap:wrap"><span>{{ cfdiFoot }}</span><button onClick="{{ act }}" style="border:0;background:transparent;padding:0;font-weight:600;font-size:12px;color:oklch(.45 .11 300)">Descargar XML del periodo</button></div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ isBitacora }}" hint-placeholder-val="{{ false }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:18px;align-items:start">
+      <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+        <div style="padding:16px 20px 10px;display:flex;align-items:baseline;gap:8px"><h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Bitácora del proveedor</h2><span style="font-size:12px;color:#6C757D">inmutable · 41 entradas</span></div>
+        <sc-for list="{{ log }}" as="l" hint-placeholder-count="7">
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:9px 20px;border-top:1px solid #EEF1F2;font-size:12.5px">
+            <span style="font:400 11px 'Geist Mono',monospace;color:#6C757D;white-space:nowrap;margin-top:2px">{{ l.when }}</span>
+            <span style="min-width:0;line-height:1.5">{{ l.text }} <span style="color:#6C757D">{{ l.meta }}</span></span>
+          </div>
+        </sc-for>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 14px;padding:12px 20px;border-top:1px solid #EEF1F2;background:#FAFBFB;font-size:12px">
+          <span style="color:#6C757D">Cadena</span><span style="font:400 11.5px 'Geist Mono',monospace;word-break:break-all">…8c2f1e · último eslabón 5 sep 14:22</span>
+          <span style="color:#6C757D">NOM 151</span><span>Constancia al exportar · <span style="font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;background:#EEF1F2;color:#6C757D">v1.1</span></span>
+        </div>
+      </section>
+      <section style="background:#fff;border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+        <div style="padding:16px 20px 10px;display:flex;align-items:baseline;gap:8px"><h2 style="font:600 16px/1.3 Geist,sans-serif;letter-spacing:-.01em;margin:0;padding-left:10px;border-left:3px solid oklch(.55 .11 300)">Exportaciones</h2><span style="font-size:12px;color:#6C757D">paquetes armados de este proveedor</span></div>
+        <sc-for list="{{ exports }}" as="e" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 20px;border-top:1px solid #EEF1F2;font-size:13px">
+            <span style="min-width:0;flex:1"><span style="display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ e.name }}</span><span style="display:block;font-size:11.5px;color:#6C757D">{{ e.meta }}</span></span>
+            <button onClick="{{ act }}" style="height:28px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:12px;font-weight:600;flex:none">Descargar</button>
+          </div>
+        </sc-for>
+        <div style="padding:12px 20px;border-top:1px solid #EEF1F2;font-size:12px;color:#6C757D;line-height:1.5">Cada paquete conserva su índice y su constancia. Un paquete nunca se sobrescribe: exportar de nuevo crea una versión.</div>
+      </section>
+    </div>
+    </sc-if>
+
+  </div>
+
+  <sc-if value="{{ upOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;background:rgba(14,17,19,.5);display:grid;place-items:start center;padding:32px 24px;z-index:80;box-sizing:border-box;overflow:auto">
+    <div style="background:#fff;border-radius:10px;width:100%;max-width:720px;box-shadow:0 24px 60px rgba(14,17,19,.35);overflow:hidden">
+
+      <div style="padding:18px 22px;border-bottom:1px solid #E4E8EA;display:flex;align-items:flex-start;gap:16px">
+        <div style="min-width:0;flex:1">
+          <h2 style="font:600 17px/1.3 Geist,sans-serif;letter-spacing:-.02em;margin:0">{{ upTitle }}</h2>
+          <div style="font:400 11.5px 'Geist Mono',monospace;color:#6C757D;margin-top:5px;line-height:1.5">{{ upPath }}</div>
+        </div>
+        <button onClick="{{ upClose }}" style="width:30px;height:30px;flex:none;display:grid;place-items:center;border:1px solid #E4E8EA;border-radius:6px;background:#fff;color:#6C757D;font-size:13px" title="Cerrar sin guardar">✕</button>
+      </div>
+
+      <div style="display:flex;gap:0;padding:0 22px;border-bottom:1px solid #E4E8EA">
+        <sc-for list="{{ upSteps }}" as="s" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px 10px 0;font-size:12.5px;font-weight:600;color:{{ s.color }}">
+            <span style="width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font:600 10.5px 'Geist Mono',monospace;background:{{ s.bg }};color:{{ s.fg }}">{{ s.mark }}</span>{{ s.label }}
+          </div>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ upIsPick }}" hint-placeholder-val="{{ true }}">
+      <div style="padding:22px;display:flex;flex-direction:column;gap:16px">
+        <button onClick="{{ upPick }}" style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:30px 20px;border:1.5px dashed #B8C0C6;border-radius:10px;background:#FAFBFB;width:100%;text-align:center" style-hover="border-color:oklch(.55 .11 300);background:oklch(.95 .03 300)">
+          <span style="font-size:14px;font-weight:600">Arrastrar archivos aquí o buscar en el equipo</span>
+          <span style="font-size:12.5px;color:#6C757D;line-height:1.5;max-width:44ch;text-wrap:pretty">PDF, imágenes, video, hojas de cálculo y correos. Hasta 2 GB por archivo. El nombre, la fecha del documento y el periodo se leen del archivo cuando vienen; todo se puede corregir en el siguiente paso.</span>
+        </button>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.5;color:#3A4147"><b style="display:block;margin-bottom:3px;color:#111417">Reemplazar no borra</b>Si el punto ya tiene archivo, el nuevo queda como versión y el anterior sigue consultable con su hash.</div>
+          <div style="border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.5;color:#3A4147"><b style="display:block;margin-bottom:3px;color:#111417">Sello al cargar</b>Cada archivo recibe SHA-256 y entra a la cadena de la bitácora en el momento de la carga, no al exportar.</div>
+        </div>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ upIsMeta }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:20px 22px;display:flex;flex-direction:column;gap:18px;max-height:60vh;overflow:auto">
+
+        <section>
+          <div style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#6C757D;text-transform:uppercase;margin-bottom:8px">Archivos · {{ upCount }}</div>
+          <div style="border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+            <sc-for list="{{ upFiles }}" as="f" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #EEF1F2;font-size:13px">
+                <span style="width:32px;height:18px;border-radius:3px;background:#111417;color:#fff;display:grid;place-items:center;font:600 8.5px 'Geist Mono',monospace;flex:none">{{ f.ext }}</span>
+                <span style="min-width:0;flex:1"><span style="display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ f.name }}</span><span style="display:block;font:400 11px 'Geist Mono',monospace;color:#6C757D;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ f.derived }}</span></span>
+                <sc-if value="{{ f.detected }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;background:oklch(.95 .03 300);color:oklch(.45 .11 300);flex:none">{{ f.detected }}</span></sc-if>
+                <button onClick="{{ f.remove }}" style="border:0;background:transparent;padding:0 2px;color:#8B949C;font-size:14px;flex:none" title="Quitar de la carga">✕</button>
+              </div>
+            </sc-for>
+          </div>
+        </section>
+
+        <section style="display:flex;flex-direction:column;gap:12px">
+          <div style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#6C757D;text-transform:uppercase">Qué acredita esta evidencia</div>
+
+          <label style="display:flex;flex-direction:column;gap:5px">
+            <span style="font-size:12.5px;font-weight:600">Punto del checklist</span>
+            <select value="{{ upPoint }}" onChange="{{ upSetPoint }}" style="height:36px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px">
+              <sc-for list="{{ upPointOpts }}" as="o" hint-placeholder-count="3"><option value="{{ o }}">{{ o }}</option></sc-for>
+            </select>
+            <span style="font-size:11.5px;color:#6C757D;line-height:1.45">{{ upPointNote }}</span>
+          </label>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <label style="display:flex;flex-direction:column;gap:5px">
+              <span style="font-size:12.5px;font-weight:600">Periodo que cubre</span>
+              <div style="display:flex;gap:6px;flex-wrap:wrap">
+                <sc-for list="{{ upPeriods }}" as="p" hint-placeholder-count="3"><button onClick="{{ p.go }}" style="height:32px;padding:0 12px;border:1px solid {{ p.border }};border-radius:6px;background:{{ p.bg }};color:{{ p.color }};font-size:12.5px;font-weight:600">{{ p.label }}</button></sc-for>
+              </div>
+              <span style="font-size:11.5px;color:#6C757D;line-height:1.45">Define en qué ejercicio del expediente se cuelga el archivo.</span>
+            </label>
+            <label style="display:flex;flex-direction:column;gap:5px">
+              <span style="font-size:12.5px;font-weight:600">Fecha del documento</span>
+              <input type="date" value="{{ upDate }}" onChange="{{ upSetDate }}" style="height:36px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px" />
+              <span style="font-size:11.5px;color:oklch(.45 .11 300);font-weight:600;line-height:1.45">{{ upDateNote }}</span>
+            </label>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <label style="display:flex;flex-direction:column;gap:5px">
+              <span style="font-size:12.5px;font-weight:600">Quién elaboró el documento</span>
+              <input type="text" value="{{ upAuthor }}" onChange="{{ upSetAuthor }}" placeholder="Persona o área que lo firma" style="height:36px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px" />
+            </label>
+            <label style="display:flex;flex-direction:column;gap:5px">
+              <span style="font-size:12.5px;font-weight:600">Origen</span>
+              <select value="{{ upSource }}" onChange="{{ upSetSource }}" style="height:36px;padding:0 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px">
+                <sc-for list="{{ upSourceOpts }}" as="o" hint-placeholder-count="3"><option value="{{ o }}">{{ o }}</option></sc-for>
+              </select>
+            </label>
+          </div>
+
+          <label style="display:flex;flex-direction:column;gap:5px">
+            <span style="font-size:12.5px;font-weight:600">Nota para el asesor <span style="font-weight:400;color:#6C757D">· opcional</span></span>
+            <textarea value="{{ upNote }}" onChange="{{ upSetNote }}" rows="2" placeholder="Qué contiene y por qué acredita el punto. Aparece junto al archivo en la revisión." style="padding:9px 10px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px;line-height:1.5;resize:vertical;font-family:inherit"></textarea>
+          </label>
+
+          <label style="display:flex;flex-direction:column;gap:5px">
+            <span style="font-size:12.5px;font-weight:600">Quién puede verlo</span>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <sc-for list="{{ upVis }}" as="v" hint-placeholder-count="3"><button onClick="{{ v.go }}" style="height:32px;padding:0 12px;border:1px solid {{ v.border }};border-radius:6px;background:{{ v.bg }};color:{{ v.color }};font-size:12.5px;font-weight:600">{{ v.label }}</button></sc-for>
+            </div>
+            <span style="font-size:11.5px;color:#6C757D;line-height:1.45">{{ upVisNote }}</span>
+          </label>
+        </section>
+
+        <section style="border:1px solid #E4E8EA;border-radius:8px;background:#FAFBFB;padding:12px 14px">
+          <div style="font:500 10.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#6C757D;text-transform:uppercase;margin-bottom:8px">Se registra solo · no se edita</div>
+          <div style="display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:12.5px">
+            <span style="color:#6C757D">Cargado por</span><span>Mariana Ríos · Fiscal · Grupo Altamira</span>
+            <span style="color:#6C757D">Fecha de carga</span><span style="font-family:'Geist Mono',monospace">9 sep 2026 11:47 (UTC−6)</span>
+            <span style="color:#6C757D">Huella</span><span style="font-family:'Geist Mono',monospace">SHA-256 al terminar la carga</span>
+            <span style="color:#6C757D">Bitácora</span><span>Entrada inmutable con usuario, punto y hash</span>
+          </div>
+        </section>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;padding:14px 22px;border-top:1px solid #E4E8EA;background:#FAFBFB;flex-wrap:wrap">
+        <span style="font-size:12px;color:#6C757D;margin-right:auto">{{ upFootNote }}</span>
+        <button onClick="{{ upBack }}" style="height:36px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px;font-weight:600">Atrás</button>
+        <button onClick="{{ upConfirm }}" style="height:36px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font-size:13px;font-weight:600">Cargar y sellar</button>
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ upIsDone }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:22px;display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:26px;height:26px;border-radius:50%;background:oklch(0.55 0.11 150);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700">✓</span>
+          <span style="font-size:14.5px;font-weight:600">{{ upDoneTitle }}</span>
+        </div>
+        <div style="border:1px solid #E4E8EA;border-radius:8px;overflow:hidden">
+          <sc-for list="{{ upFiles }}" as="f" hint-placeholder-count="2">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #EEF1F2;font-size:13px">
+              <span style="width:32px;height:18px;border-radius:3px;background:#111417;color:#fff;display:grid;place-items:center;font:600 8.5px 'Geist Mono',monospace;flex:none">{{ f.ext }}</span>
+              <span style="min-width:0;flex:1"><span style="display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ f.name }}</span><span style="display:block;font:400 11px 'Geist Mono',monospace;color:#6C757D">{{ f.hash }}</span></span>
+              <span style="font-size:11.5px;color:#6C757D;flex:none">{{ f.version }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font-size:12px;color:oklch(.45 .11 300);font-weight:600">Mantenimiento de inmuebles</div><div style="display:flex;align-items:baseline;gap:8px;margin-top:5px"><span style="font:500 22px/1 'Geist Mono',monospace">58% → 66%</span></div><div style="font-size:12px;color:#6C757D;margin-top:8px;line-height:1.45">El punto pasa a completo. Quedan 8 puntos del bloque operativo.</div></div>
+          <div style="border:1px solid #E4E8EA;border-radius:8px;padding:12px 14px"><div style="font-size:12px;color:oklch(.45 .11 300);font-weight:600">Revisión</div><div style="font-size:12.5px;color:#3A4147;margin-top:5px;line-height:1.5">Óscar Treviño recibe aviso de evidencia nueva en su resumen diario. El punto queda como «por revisar» hasta que lo apruebe.</div></div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end">
+          <button onClick="{{ upAnother }}" style="height:36px;padding:0 14px;border:1px solid #D5DADD;border-radius:6px;background:#fff;font-size:13px;font-weight:600">Subir otra evidencia</button>
+          <button onClick="{{ upGoFiles }}" style="height:36px;padding:0 16px;border:0;border-radius:6px;background:oklch(.55 .11 300);color:#fff;font-size:13px;font-weight:600">Ver en Archivos</button>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { origin: 'Tablero', tab: null, blk: 'operativo', node: 'mant-op', toast: null, cfdiF: 'Todos' };
+
+  renderVals() {
+    const ac = 'oklch(.55 .11 300)', acT = 'oklch(.45 .11 300)', acS = 'oklch(.95 .03 300)';
+    const crit = 'oklch(0.45 0.19 25)', critDot = 'oklch(0.5 0.19 25)';
+    const high = 'oklch(0.48 0.16 50)', highDot = 'oklch(0.62 0.17 50)';
+    const okT = 'oklch(0.42 0.12 150)', okDot = 'oklch(0.55 0.11 150)';
+
+    const originDefs = {
+      'Tablero': { crumb: 'Tablero', tab: 'riesgo' },
+      'Vigilancia': { crumb: 'Vigilancia', tab: 'riesgo' },
+      'Expedientes': { crumb: 'Expedientes', tab: 'expediente' },
+      'Cola del asesor': { crumb: 'Cola de revisión', tab: 'expediente' },
+    };
+    const origin = this.state.origin;
+    const def = originDefs[origin];
+    const tab = this.state.tab || def.tab;
+
+    const origins = Object.keys(originDefs).map(l => {
+      const on = l === origin;
+      return { label: l, go: () => this.setState({ origin: l, tab: null, toast: null }),
+        bg: on ? '#111417' : '#fff', color: on ? '#fff' : '#6C757D', border: on ? '#111417' : '#D5DADD' };
+    });
+
+    const tabDefs = [
+      { id: 'riesgo', label: 'Riesgo', count: '1', sev: true },
+      { id: 'expediente', label: 'Expediente', count: '72%' },
+      { id: 'archivos', label: 'Archivos', count: '61' },
+      { id: 'cfdi', label: 'CFDI', count: '31' },
+      { id: 'bitacora', label: 'Bitácora', count: false },
+    ];
+    const tabs = tabDefs.map(t => {
+      const on = t.id === tab;
+      return { ...t, go: () => this.setState({ tab: t.id, toast: null }),
+        line: on ? ac : 'transparent', color: on ? '#111417' : '#6C757D', weight: on ? 600 : 500,
+        countBg: t.sev ? 'oklch(0.95 0.03 25)' : '#EEF1F2', countFg: t.sev ? crit : '#6C757D' };
+    });
+
+    const act = () => this.setState({ toast: 'Acción de demostración. En el producto real abre el flujo correspondiente y queda registrada en la bitácora del proveedor.' });
+
+    const notifs = [
+      { text: 'Alerta crítica enviada a 3 administradores', meta: 'correo inmediato · regla «Crítico»', when: '12 ago' },
+      { text: 'Solicitud de evidencia a Jorge Castañeda', meta: 'bloque operativo · liga con vencimiento', when: '19 ago' },
+      { text: 'Recordatorio automático al día 3', meta: 'sin respuesta', when: '22 ago' },
+      { text: 'Escalamiento al jefe de Compras', meta: 'sin respuesta al día 7', when: 'ayer' },
+    ];
+    const history = [
+      { text: 'Pasó a 69-B definitivo', meta: 'DOF · oficio 500-05-2026-18342', when: '12 ago 2026', dot: critDot },
+      { text: 'Aparece en 69-B presunto', meta: 'publicación del SAT', when: '4 mar 2026', dot: highDot },
+      { text: 'Sin coincidencias en listas', meta: 'revisión diaria desde el alta', when: '2019 – 2026', dot: okDot },
+    ];
+
+    const blk = this.state.blk;
+    const mkBlock = (id, lname, count, sub, mark, tone, items) => {
+      const tones = { ok: { bg: 'oklch(0.95 0.04 150)', fg: okT }, warn: { bg: 'oklch(0.95 0.04 50)', fg: high }, bad: { bg: 'oklch(0.95 0.03 25)', fg: crit } };
+      const open = blk === id;
+      return { lname, count, sub, mark, bg: tones[tone].bg, fg: tones[tone].fg, open,
+        chevD: open ? 'M6 9l6 6 6-6' : 'M9 6l6 6-6 6',
+        toggle: () => this.setState({ blk: open ? null : id }), items };
+    };
+    const upBlank = { step: 'pick', point: 'Fotografías fechadas del servicio', period: '2021', date: '2022-11-18',
+      author: '', source: 'Carga web · usuario interno', note: '', vis: 'Expediente y asesor', files: [] };
+
+    const item = (name, accepts, state, tone, required) => {
+      const map = { ok: { boxBg: okDot, boxBorder: okDot, boxMark: '✓', stateColor: okT },
+        miss: { boxBg: '#fff', boxBorder: '#B8C0C6', boxMark: '', stateColor: '#6C757D' },
+        bad: { boxBg: '#fff', boxBorder: critDot, boxMark: '', stateColor: crit } };
+      return { name, accepts, state, required: !!required, ...map[tone],
+        canUpload: tone !== 'ok', upload: () => this.setState({ up: { ...upBlank, point: name } }) };
+    };
+
+    const services = [
+      { name: 'Mantenimiento de inmuebles', status: 'En revisión del asesor', stBg: 'oklch(0.95 0.04 50)', stFg: high,
+        alert: '69-B · proveedor señalado', contract: 'MSA-2019-07', period: 'ene 2021 – dic 2022', template: 'Servicios especializados v1.1',
+        pct: '58%', points: '14 de 24 puntos', cfdi: '14', amount: '$2,340,118', owner: 'Jorge Castañeda', due: 'vence 23 sep', dueColor: crit,
+        foot: 'Checklist v1.1 · abierto el 19 ago 2026',
+        blocks: [
+          mkBlock('contractual', 'contractual', '6/6', 'Jorge Castañeda · vence 23 sep · sin escalamiento', '✓', 'ok', [
+            item('Contrato firmado con anexos', 'PDF firmado, con fecha cierta', 'Completo', 'ok', true),
+            item('Cotización previa y orden de compra', 'PDF o correo con la cotización', 'Completo', 'ok'),
+          ]),
+          mkBlock('operativo', 'operativo', '3/11', 'Jorge Castañeda · vence 23 sep · escalado al jefe ayer', '!', 'bad', [
+            item('Bitácoras de asistencia del personal', 'PDF o XLSX por mes, con nombre y firma', 'Faltan 2021 y 2022', 'bad', true),
+            item('Fotografías fechadas del servicio', 'JPG o PNG con metadatos de fecha', 'Faltan 18 meses', 'bad', true),
+            item('Reportes mensuales de trabajo', 'PDF por mes', 'Completo 2022 · falta 2021', 'miss'),
+            item('Personal asignado y su alta ante el IMSS', 'PDF de la relación y constancias', 'Completo', 'ok', true),
+          ]),
+          mkBlock('pago', 'de pago', '5/7', 'Tesorería · vence 23 sep · recordatorio al día 3', '~', 'warn', [
+            item('Comprobantes de transferencia', 'PDF del banco por cada CFDI', 'Faltan 2 de 14', 'miss', true),
+            item('Estado de cuenta con el cargo', 'PDF del estado de cuenta', 'Completo', 'ok'),
+          ]),
+        ] },
+      { name: 'Suministro de material eléctrico', status: 'Falta 1 punto', stBg: 'oklch(0.95 0.04 50)', stFg: high,
+        alert: '69-B · proveedor señalado', contract: 'OC-2023-1184', period: 'ene 2023 – ago 2026', template: 'Suministro de bienes v2.0',
+        pct: '94%', points: '17 de 18 puntos', cfdi: '17', amount: '$1,151,086', owner: 'Compras', due: 'vence 23 sep', dueColor: crit,
+        foot: 'Checklist v2.0 · abierto el 3 feb 2023',
+        blocks: [
+          mkBlock('sum-entrega', 'de entrega', '9/9', 'Almacén · sin plazo abierto', '✓', 'ok', [
+            item('Remisiones firmadas de recepción', 'PDF con sello de almacén', 'Completo', 'ok', true),
+          ]),
+          mkBlock('sum-pago', 'de pago', '8/9', 'Tesorería · sin plazo abierto', '~', 'warn', [
+            item('Comprobantes de transferencia', 'PDF del banco por cada CFDI', 'Falta 1 de 17', 'miss', true),
+          ]),
+        ] },
+    ];
+
+    const svcClosed = this.state.svcClosed || [];
+    services.forEach(sv => {
+      const closed = svcClosed.includes(sv.name);
+      sv.open = !closed;
+      sv.chevD = closed ? 'M9 6l6 6-6 6' : 'M6 9l6 6 6-6';
+      sv.closedNote = closed ? `${sv.blocks.length} bloques ocultos` : false;
+      sv.toggle = () => this.setState({ svcClosed: closed ? svcClosed.filter(n => n !== sv.name) : [...svcClosed, sv.name] });
+    });
+
+    const n1Raw = [
+      { name: 'Acta constitutiva', accepts: 'PDF del testimonio con datos de inscripción en el RPC', state: 'Vigente', tone: 'ok', required: true, ext: 'PDF', file: 'acta-constitutiva-1998.pdf', fileMeta: 'Compras · 19 mar 2019' },
+      { name: 'Poder del representante legal', accepts: 'PDF del instrumento notarial, vigente y no revocado', state: 'Vigente', tone: 'ok', required: true, ext: 'PDF', file: 'poder-notarial-2021.pdf', fileMeta: 'Compras · 4 feb 2021' },
+      { name: 'Constancia de situación fiscal', accepts: 'PDF emitido por el SAT, no mayor a 3 meses', state: 'Vigente · 41 días', tone: 'ok', required: true, ext: 'PDF', file: 'csf-sib-2026-07.pdf', fileMeta: 'Contacto del proveedor · 30 jul 2026' },
+      { name: 'Opinión de cumplimiento 32-D', accepts: 'PDF en sentido positivo, no mayor a 30 días', state: 'Vence en 12 días', tone: 'warn', required: true, ext: 'PDF', file: 'opinion-32d-2026-08.pdf', fileMeta: 'Contacto del proveedor · 22 ago 2026',
+        commentTag: 'Comentario', comment: 'Renovarla antes de armar el paquete: una opinión vencida al momento de exportar debilita el expediente.' },
+      { name: 'Registro patronal IMSS', accepts: 'PDF de la tarjeta patronal o alta ante el IMSS', state: 'Vigente', tone: 'ok', required: true, ext: 'PDF', file: 'registro-patronal-imss.pdf', fileMeta: 'RH · 9 ago 2026' },
+      { name: 'Registro REPSE', accepts: 'PDF del registro vigente, si presta servicios especializados', state: 'No aplica', tone: 'na', required: false,
+        commentTag: 'Comentario', comment: 'Mantenimiento de inmuebles con personal en sitio puede caer en servicios especializados. Conviene confirmarlo con el proveedor.' },
+      { name: 'Identificación del representante', accepts: 'INE o pasaporte vigente, por ambos lados', state: 'Vigente', tone: 'ok', required: true, ext: 'PDF', file: 'ine-representante.pdf', fileMeta: 'Compras · 4 feb 2021' },
+      { name: 'Comprobante de domicilio', accepts: 'Recibo de servicios a nombre de la empresa, no mayor a 3 meses', state: 'Falta', tone: 'miss', required: true,
+        commentTag: 'Insuficiente', comment: 'El recibo que se cargó en marzo está a nombre de un tercero y no coincide con el domicilio fiscal de la CSF.' },
+    ];
+    const n1Tone = {
+      ok: { boxBg: okDot, boxBorder: okDot, boxMark: '✓', stateColor: okT },
+      warn: { boxBg: '#fff', boxBorder: highDot, boxMark: '', stateColor: high },
+      miss: { boxBg: '#fff', boxBorder: critDot, boxMark: '', stateColor: crit },
+      na: { boxBg: '#EEF1F2', boxBorder: '#B8C0C6', boxMark: '—', stateColor: '#6C757D' },
+    };
+    const n1Docs = n1Raw.map(d => ({
+      ...d, ...n1Tone[d.tone],
+      file: d.file || false, comment: d.comment || false, commentTag: d.commentTag || '',
+      commentBg: d.commentTag === 'Insuficiente' ? 'oklch(0.95 0.03 25)' : '#EEF1F2',
+      commentFg: d.commentTag === 'Insuficiente' ? crit : acT,
+      commentLabel: d.comment ? 'Responder' : 'Comentar',
+      commentAdd: act,
+      uploadLabel: d.file ? 'Reemplazar' : 'Subir',
+      upload: () => this.setState({ up: { ...upBlank, point: d.name } }),
+    }));
+    const n1Closed = !!this.state.n1Closed;
+
+    const steps = [
+      { name: 'Documentos de la empresa al día', detail: 'Falta comprobante de domicilio y 32-D por renovar.', mark: '2', bg: 'oklch(0.95 0.04 50)', fg: high },
+      { name: 'Checklist al 100% en los dos servicios', detail: 'Mantenimiento al 58%. Suministro al 94%. El señalamiento es al proveedor: los dos entran.', mark: '3', bg: '#EEF1F2', fg: '#6C757D' },
+      { name: 'Revisión del asesor', detail: 'Óscar Treviño marcó 2 puntos como insuficientes.', mark: '4', bg: '#EEF1F2', fg: '#6C757D' },
+      { name: 'Paquete sellado', detail: 'Se arma cuando los tres pasos anteriores están en verde.', mark: '5', bg: '#EEF1F2', fg: '#6C757D' },
+    ];
+
+    const comments = [
+      { tag: 'Insuficiente', tagColor: crit, point: 'Fotografías fechadas', when: '2 sep', text: 'Las fotos de 2022 no traen metadatos de fecha. Se necesita el respaldo original del dispositivo o la bitácora que las referencie.' },
+      { tag: 'Comentario', tagColor: acT, point: 'Bitácoras de asistencia', when: '28 ago', text: 'Con dos meses representativos por ejercicio es suficiente si el contrato acredita continuidad.' },
+    ];
+
+    const node = this.state.node;
+    const treeDefs = [
+      { id: 'prov', label: 'Servicios Integrales del Bajío', count: '61', pad: '8px', weight: 600, chev: '▾' },
+      { id: 'n1', label: 'Documentos de la empresa', count: '9', pad: '22px', chev: '▸' },
+      { id: 'mant', label: 'Mantenimiento de inmuebles', count: '38', pad: '22px', chev: '▾' },
+      { id: 'mant-con', label: 'Bloque contractual', count: '6', pad: '38px', chev: '' },
+      { id: 'mant-op', label: 'Bloque operativo', count: '21', pad: '38px', chev: '' },
+      { id: 'mant-pago', label: 'Bloque de pago', count: '11', pad: '38px', chev: '' },
+      { id: 'sum', label: 'Suministro de material eléctrico', count: '14', pad: '22px', chev: '▸' },
+    ];
+    const tree = treeDefs.map(n => {
+      const on = n.id === node;
+      return { ...n, pick: () => this.setState({ node: n.id }), bg: on ? acS : 'transparent',
+        color: on ? acT : '#111417', weight: n.weight || (on ? 600 : 500) };
+    });
+
+    const filesN1 = n1Raw.map(d => ({
+      name: d.name, status: d.state, dot: n1Tone[d.tone].boxBg === okDot ? okDot : n1Tone[d.tone].boxBorder,
+      stColor: n1Tone[d.tone].stateColor, hasFile: !!d.file, ext: d.ext || '', file: d.file || '',
+      empty: d.file ? false : (d.tone === 'na' ? 'No aplica' : 'Sin archivo'),
+      meta: d.fileMeta || '—', size: d.file ? '1.4 MB' : '—',
+    }));
+    const filesOp = [
+      { name: 'Bitácoras de asistencia', status: 'Faltan 2021 y 2022', stColor: crit, dot: critDot, hasFile: false, empty: 'Sin archivo', file: '', ext: '', meta: '—', size: '—' },
+      { name: 'Fotografías fechadas', status: 'Faltan 18 meses', stColor: crit, dot: critDot, hasFile: true, ext: 'ZIP', file: 'fotos-mant-2022-q4.zip', meta: 'J. Castañeda · 2 sep · liga externa', size: '84 MB' },
+      { name: 'Reportes mensuales', status: 'Completo 2022 · falta 2021', stColor: high, dot: highDot, hasFile: true, ext: 'PDF', file: 'reporte-mensual-2022-12.pdf', meta: 'J. Castañeda · 14 ago · carga web', size: '1.2 MB' },
+      { name: 'Personal asignado e IMSS', status: 'Completo', stColor: okT, dot: okDot, hasFile: true, ext: 'PDF', file: 'relacion-personal-imss.pdf', meta: 'RH · 9 ago · carga web', size: '640 KB' },
+      { name: 'Constancias de capacitación', status: 'Completo', stColor: okT, dot: okDot, hasFile: true, ext: 'PDF', file: 'dc3-personal-2022.pdf', meta: 'RH · 9 ago · carga web', size: '2.8 MB' },
+    ];
+    const files = (node === 'n1' ? filesN1 : filesOp).map(f => ({ ...f, open: act, empty: f.empty || false,
+      upload: () => this.setState({ up: { ...upBlank, point: f.name } }) }));
+
+    const cfdiFilters = ['Del periodo señalado', 'Todos', 'Sin servicio asignado'];
+    const cf = this.state.cfdiF;
+    const cfdiTabs = cfdiFilters.map(l => {
+      const on = l === cf;
+      return { label: l, go: () => this.setState({ cfdiF: l }), bg: on ? acS : '#fff', color: on ? acT : '#6C757D', border: on ? acS : '#D5DADD' };
+    });
+    const allCfdis = [
+      { uuid: 'a3f1…9c42', date: '15 ene 21', concept: 'Mantenimiento preventivo enero', total: '$168,780', iva: '$23,280', svc: 'Mantenimiento', out: false },
+      { uuid: 'b7d2…1e08', date: '15 abr 21', concept: 'Mantenimiento preventivo abril', total: '$168,780', iva: '$23,280', svc: 'Mantenimiento', out: false },
+      { uuid: 'c1a9…7b33', date: '30 sep 21', concept: 'Mantenimiento correctivo subestación', total: '$412,500', iva: '$56,896', svc: 'Mantenimiento', out: false },
+      { uuid: 'd4e6…2f70', date: '15 mar 22', concept: 'Mantenimiento preventivo marzo', total: '$182,400', iva: '$25,158', svc: 'Mantenimiento', out: false },
+      { uuid: 'e8b3…5a19', date: '20 dic 22', concept: 'Mantenimiento correctivo cierre', total: '$298,300', iva: '$41,145', svc: 'Mantenimiento', out: false },
+      { uuid: 'f2c7…8d61', date: '12 feb 23', concept: 'Material eléctrico · lote 1', total: '$96,420', iva: '$13,299', svc: 'Suministro', out: true },
+      { uuid: '0a5d…4c92', date: '8 jun 25', concept: 'Material eléctrico · lote 9', total: '$142,880', iva: '$19,708', svc: 'Suministro', out: true },
+    ];
+    const cfdis = allCfdis.filter(c => cf === 'Todos' ? true : cf === 'Del periodo señalado' ? !c.out : false)
+      .map(c => ({ ...c, color: '#111417' }));
+    const cfdiFoot = cf === 'Sin servicio asignado'
+      ? 'Ningún CFDI de este proveedor está sin servicio asignado.'
+      : `${cfdis.length} de 31 CFDI · 14 caen en el periodo del oficio y entran al cálculo de contingencia. Los 31 requieren expediente: el señalamiento es al proveedor.`;
+
+    const log = [
+      { when: '5 sep 14:22', text: 'Óscar Treviño marcó Fotografías fechadas como insuficiente', meta: '· asesor externo' },
+      { when: '2 sep 09:10', text: 'J. Castañeda cargó fotos-mant-2022-q4.zip', meta: '· 84 MB · SHA-256 …4d1a' },
+      { when: '28 ago 17:41', text: 'Óscar Treviño comentó en Bitácoras de asistencia', meta: '· asesor externo' },
+      { when: '22 ago 06:00', text: 'Recordatorio automático al día 3', meta: '· sin respuesta' },
+      { when: '19 ago 11:05', text: 'M. Ríos solicitó evidencia del bloque operativo', meta: '· liga con vencimiento 23 sep' },
+      { when: '12 ago 06:40', text: 'Alerta 2026-0142 abierta por cambio a 69-B definitivo', meta: '· DOF' },
+      { when: '19 mar 19 10:12', text: 'Alta del proveedor con los documentos de la empresa completos', meta: '· Compras' },
+    ];
+    const exports = [
+      { name: 'Expediente Mantenimiento · 2021–2022', meta: '14 sep 2026 · 312 MB · constancia NOM-151 · v2' },
+      { name: 'Expediente Mantenimiento · 2021–2022', meta: '3 sep 2026 · 288 MB · constancia NOM-151 · v1' },
+      { name: 'Índice de evidencia (CSV)', meta: '3 sep 2026 · 41 KB' },
+    ];
+
+    const up = this.state.up;
+    const setUp = patch => this.setState({ up: { ...this.state.up, ...patch } });
+    const mockFiles = [
+      { ext: 'JPG', name: 'bitacora-fotos-nov-2021-001.jpg', derived: '4.2 MB · 4032×3024 · EXIF 18 nov 2021 14:06 · 20.6774, −103.3475', detected: 'Fecha y ubicación leídas del archivo', hash: 'SHA-256 …a91f3c', version: 'v1' },
+      { ext: 'PDF', name: 'bitacora-asistencia-nov-2021.pdf', derived: '1.1 MB · 12 páginas · creado 30 nov 2021', detected: 'Fecha leída del archivo', hash: 'SHA-256 …4d02be', version: 'v2 · sustituye a v1 del 14 ago' },
+    ];
+    const upSteps = ['Archivos', 'Metadata', 'Sellado'].map((label, i) => {
+      const idx = up ? ['pick', 'meta', 'done'].indexOf(up.step) : 0;
+      const state = i < idx ? 'done' : i === idx ? 'now' : 'next';
+      return { label, mark: state === 'done' ? '✓' : String(i + 1),
+        bg: state === 'next' ? '#EEF1F2' : state === 'now' ? ac : 'oklch(0.55 0.11 150)',
+        fg: state === 'next' ? '#6C757D' : '#fff',
+        color: state === 'next' ? '#6C757D' : '#111417' };
+    });
+    const pointOpts = ['Bitácoras de asistencia del personal', 'Fotografías fechadas del servicio', 'Reportes mensuales de trabajo', 'Comprobantes de transferencia', 'Contrato firmado con anexos'];
+    const periodOpts = ['2021', '2022', 'Todo el contrato'];
+    const visOpts = ['Solo expediente', 'Expediente y asesor', 'También terceros con acceso'];
+    const sourceOpts = ['Carga web · usuario interno', 'Liga externa · contacto del proveedor', 'Correo reenviado', 'Digitalización de original en papel'];
+    const visNotes = {
+      'Solo expediente': 'Visible para el equipo interno. El asesor no lo verá al revisar el punto.',
+      'Expediente y asesor': 'Óscar Treviño puede abrirlo, comentarlo y aprobar el punto.',
+      'También terceros con acceso': 'Se incluye para los terceros con acceso vigente y queda registrado en la bitácora de accesos.',
+    };
+    const upVals = up ? {
+      upOpen: true,
+      upTitle: up.step === 'done' ? 'Evidencia cargada y sellada' : 'Subir evidencia',
+      upPath: 'Servicios Integrales del Bajío › Mantenimiento de inmuebles › Bloque operativo › ' + up.point,
+      upSteps,
+      upIsPick: up.step === 'pick', upIsMeta: up.step === 'meta', upIsDone: up.step === 'done',
+      upPick: () => setUp({ step: 'meta', files: mockFiles, author: 'Jorge Castañeda · Compras' }),
+      upClose: () => this.setState({ up: null }),
+      upBack: () => setUp({ step: 'pick' }),
+      upConfirm: () => setUp({ step: 'done' }),
+      upAnother: () => this.setState({ up: { ...upBlank } }),
+      upGoFiles: () => this.setState({ up: null, tab: 'archivos', node: 'mant-op' }),
+      upFiles: (up.files || []).map((f, i) => ({ ...f, remove: () => setUp({ files: up.files.filter((_, j) => j !== i) }) })),
+      upCount: `${(up.files || []).length} archivos · 5.3 MB`,
+      upPoint: up.point, upPointOpts: pointOpts,
+      upSetPoint: e => setUp({ point: e.target.value }),
+      upPointNote: 'El punto define la ruta del archivo y qué checklist se marca. No hay carpetas que elegir.',
+      upPeriods: periodOpts.map(l => { const on = l === up.period; return { label: l, go: () => setUp({ period: l }), bg: on ? acS : '#fff', color: on ? acT : '#3A4147', border: on ? acT : '#D5DADD' }; }),
+      upDate: up.date, upSetDate: e => setUp({ date: e.target.value }),
+      upDateNote: up.date === '2022-11-18' ? 'Leída del EXIF del primer archivo. Corregible.' : 'Modificada a mano; queda registrado en la bitácora.',
+      upAuthor: up.author, upSetAuthor: e => setUp({ author: e.target.value }),
+      upSource: up.source, upSourceOpts: sourceOpts, upSetSource: e => setUp({ source: e.target.value }),
+      upNote: up.note, upSetNote: e => setUp({ note: e.target.value }),
+      upVis: visOpts.map(l => { const on = l === up.vis; return { label: l, go: () => setUp({ vis: l }), bg: on ? acS : '#fff', color: on ? acT : '#3A4147', border: on ? acT : '#D5DADD' }; }),
+      upVisNote: visNotes[up.vis],
+      upFootNote: 'Al cargar, cada archivo recibe su huella y entra a la bitácora.',
+      upDoneTitle: `2 archivos en ${up.point}, periodo ${up.period}`,
+    } : { upOpen: false, upSteps, upIsPick: true, upIsMeta: false, upIsDone: false, upFiles: [] };
+
+    return {
+      uploadOpen: () => this.setState({ up: { ...upBlank } }),
+      ...upVals,
+      origins, crumb: def.crumb, tabs, act, goExpediente: () => this.setState({ tab: 'expediente', blk: 'operativo', toast: null }),
+      goArchivos: () => this.setState({ tab: 'archivos', toast: null }),
+      toast: this.state.toast || false, dismiss: () => this.setState({ toast: null }),
+      isRiesgo: tab === 'riesgo', isExpediente: tab === 'expediente', isArchivos: tab === 'archivos',
+      isCfdi: tab === 'cfdi', isBitacora: tab === 'bitacora',
+      notifs, history, services, n1Docs, steps, comments, tree, files,
+      n1Open: !n1Closed, n1ChevD: n1Closed ? 'M9 6l6 6-6 6' : 'M6 9l6 6 6-6',
+      n1ClosedNote: n1Closed ? '8 documentos ocultos' : false,
+      n1Toggle: () => this.setState({ n1Closed: !n1Closed }),
+      n1GoArchivos: () => this.setState({ tab: 'archivos', node: 'n1' }),
+      arPath: node === 'n1' ? 'Documentos de la empresa' : 'Evidencia del servicio › Mantenimiento de inmuebles › 2021–2022 › Bloque operativo',
+      arTitle: node === 'n1' ? 'Documentos de la empresa' : 'Bloque operativo',
+      arSub: node === 'n1' ? '9 archivos · 7 de 8 puntos con evidencia' : '21 archivos · 3 de 11 puntos con evidencia',
+      cfdiTabs, cfdis, cfdiFoot, log, exports,
+    };
+  }
+}
+</script>
+</body>
+</html>
